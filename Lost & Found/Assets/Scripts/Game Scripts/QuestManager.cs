@@ -12,14 +12,14 @@ public class QuestManager : MonoBehaviour
     private void Awake()
     {
         //Singleton convention, allows access from anything at any time via QuestManager.instance
-        if (PlayerInventory.instance == null)
+        if (QuestManager.instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 

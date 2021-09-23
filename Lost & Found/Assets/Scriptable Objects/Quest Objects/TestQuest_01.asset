@@ -16,7 +16,10 @@ MonoBehaviour:
   questItems:
   - Test Item 01
   initialQuestState: 1
-  curQuestState: 4
+  curQuestState: 1
+  runOnComplete:
+    m_PersistentCalls:
+      m_Calls: []
   unlockOnComplete: []
   inactiveDialogue: {fileID: 11400000, guid: 595ebde26ac007d4d8d6d94ecd254516, type: 2}
   startDialogue: {fileID: 11400000, guid: 1238fa550400fdf43ab2079fa95bba1b, type: 2}

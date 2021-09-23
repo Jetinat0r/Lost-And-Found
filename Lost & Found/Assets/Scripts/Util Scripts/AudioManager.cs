@@ -36,6 +36,11 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        Play("Main Theme");
+    }
+
     public void Play(string soundName)
     {
         Sound s = Array.Find(sounds, sound => sound.name == soundName);
@@ -47,5 +52,18 @@ public class AudioManager : MonoBehaviour
         }
 
         s.source.Play();
+    }
+
+    public void Stop(string soundName)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == soundName);
+
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + soundName + " not found!");
+            return;
+        }
+
+        s.source.Stop();
     }
 }

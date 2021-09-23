@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public enum QuestState
 {
@@ -22,6 +23,7 @@ public class QuestScriptableObject : ScriptableObject
     private QuestState initialQuestState = QuestState.Inactive;
     public QuestState curQuestState = QuestState.Inactive;
 
+    public UnityEvent runOnComplete;
     public List<string> unlockOnComplete;
 
     [Space]
@@ -49,6 +51,9 @@ public class QuestScriptableObject : ScriptableObject
             case (QuestState.End):
                 //TODO: Not this
                 curQuestState = QuestState.Completed;
+                runOnComplete?.Invoke();
+                //TODO: remove
+                AudioManager.instance.Play("Quest Complete 1");
 
                 return endDialogue;
             case (QuestState.Completed):

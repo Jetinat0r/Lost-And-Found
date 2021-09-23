@@ -6,6 +6,8 @@ public class PlayerInteract : MonoBehaviour
 {
     [SerializeField]
     private string interactableTag = "Interactable";
+    [SerializeField]
+    private Animator animator;
 
     private IInteractable targetedObject;
 
@@ -18,6 +20,8 @@ public class PlayerInteract : MonoBehaviour
             //And when you get to a new object, that shoves its way to the front?
             Debug.Log("Interact!" + targetedObject);
             targetedObject.Interact();
+
+            animator.Play("Player_Grab");
 
             targetedObject = null;
         }
