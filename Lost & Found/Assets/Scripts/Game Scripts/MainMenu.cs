@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
     {
         //TODO: not this
         AudioManager.instance.Stop("Main Theme");
-        AudioManager.instance.Play("First Day 1");
+        AudioManager.instance.Play("Level One Loop 1");
 
 
         SceneController.instance.SetScene("Level_00");

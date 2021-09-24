@@ -1020,6 +1020,10 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 3.96
       objectReference: {fileID: 0}
+    - target: {fileID: 7115457505035172554, guid: ed1d9876ef75752489fea38d82dd61bc, type: 3}
+      propertyPath: npcName
+      value: Boy
+      objectReference: {fileID: 0}
     - target: {fileID: 7115457505035172555, guid: ed1d9876ef75752489fea38d82dd61bc, type: 3}
       propertyPath: m_Name
       value: Test NPC 01

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Test_NPC_01 InProgress Dialogue
   m_EditorClassIdentifier: 
   dialogueText:
-  - IN PROGRESS
+  - Have you found it yet?

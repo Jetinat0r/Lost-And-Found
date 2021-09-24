@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Test_NPC_01 Completed Dialogue
   m_EditorClassIdentifier: 
   dialogueText:
-  - COMPLETED
+  - I don't need anything else. Stop bothering me.

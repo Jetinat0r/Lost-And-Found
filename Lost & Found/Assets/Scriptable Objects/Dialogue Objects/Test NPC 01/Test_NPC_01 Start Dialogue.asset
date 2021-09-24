@@ -13,4 +13,9 @@ MonoBehaviour:
   m_Name: Test_NPC_01 Start Dialogue
   m_EditorClassIdentifier: 
   dialogueText:
-  - START
+  - Hey.
+  - I need a favor. You're good for that, right?
+  - I need my compass. It's in a blue backpack in locker 85, right out there in the
+    hallway.
+  - ...
+  - Why are you looking at me like that? Just do it.

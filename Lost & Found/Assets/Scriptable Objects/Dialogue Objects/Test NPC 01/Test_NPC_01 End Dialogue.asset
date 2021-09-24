@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Test_NPC_01 End Dialogue
   m_EditorClassIdentifier: 
   dialogueText:
-  - END
+  - Nice. Thanks.
