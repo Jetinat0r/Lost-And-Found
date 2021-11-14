@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Doorway : MonoBehaviour, IInteractable
+public class Doorway : MonoBehaviour
 {
     [SerializeField]
     private string placeToTp;

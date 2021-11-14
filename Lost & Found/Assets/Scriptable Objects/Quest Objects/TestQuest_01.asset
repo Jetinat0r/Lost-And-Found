@@ -12,17 +12,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b7453d244ea4d841a7029c8afceb34b, type: 3}
   m_Name: TestQuest_01
   m_EditorClassIdentifier: 
-  questName: Test_01
-  questItems:
-  - Test Item 01
+  idQuestName: test_quest_01
+  idQuestItemNames:
+  - knife_01
+  - pencil_03
+  - notebook_penny
   initialQuestState: 1
-  curQuestState: 1
-  runOnComplete:
-    m_PersistentCalls:
-      m_Calls: []
-  unlockOnComplete: []
-  inactiveDialogue: {fileID: 11400000, guid: 595ebde26ac007d4d8d6d94ecd254516, type: 2}
-  startDialogue: {fileID: 11400000, guid: 1238fa550400fdf43ab2079fa95bba1b, type: 2}
-  inProgressDialogue: {fileID: 11400000, guid: b73408c2f30cbca4db72453e4d024061, type: 2}
-  endDialogue: {fileID: 11400000, guid: 0009c24bdec131a4197df3e9bc1de630, type: 2}
-  completedDialogue: {fileID: 11400000, guid: 944a47337fc73824f8f4085798db10fe, type: 2}
+  curQuestState: 2
+  unlockOnComplete:
+  - test_quest_02
+  - test_quest_04
+  idNpcName: test_npc_01
+  displayQuestName: Mysterious Upperclassman
+  displayNpcName: Gregory
+  displayQuestDescription: 'Some upperclassman claims that they can give you great
+    social status,
+
+    and all you need to do for them is find them a few things...'
+  reputationPoints: 0
+  inactiveDialogue: {fileID: 11400000, guid: b2c194566d61d754abfc1588e743a779, type: 2}
+  startDialogue: {fileID: 11400000, guid: 0598687d132b2404b849e5ae16d7fff5, type: 2}
+  inProgressDialogue: {fileID: 11400000, guid: 503c65b938ffdc7439460c990b9db997, type: 2}
+  endDialogue: {fileID: 11400000, guid: 187efe2a8261fb543b3809b45e122754, type: 2}
+  completedDialogue: {fileID: 11400000, guid: 3ff0f85baffa84441aa1a6d187c60105, type: 2}
+  failedDialogue: {fileID: 11400000, guid: 9fc849895ea53f644a6a017ec87c7a88, type: 2}
+  onInactiveToStart: []
+  onStartToInProgress:
+  - name: GM Test
+    classToCall: 0
+    functionName: Test
+    stringParams: []
+    intParams: 02000000
+    floatParams:
+    - 9.5
+    boolParams: 0000
+  - name: Play Victory Sound
+    classToCall: 1
+    functionName: Play
+    stringParams:
+    - Quest Complete 1
+    intParams: 
+    floatParams: []
+    boolParams: 
+  - name: Rearrange World
+    classToCall: 2
+    functionName: UpdateWorld
+    stringParams:
+    - test_scene_01
+    - test_scene_04
+    intParams: 
+    floatParams: []
+    boolParams: 
+  onInProgressToEnd: []
+  onEndToCompleted: []
+  onStateToFailed: []

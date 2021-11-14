@@ -1,36 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class QuestItemPhysical : MonoBehaviour, IInteractable
+public class QuestItemPhysical : MonoBehaviour
 {
+    private InteractionTarget interactionTarget;
+
     [SerializeField]
     private QuestItemScriptableObject questItemScriptableObject;
 
     private bool canPickUp = false;
 
-    [SerializeField]
-    private GameObject itemGraphics;
-    //NOTE: itemHighlight should be a child of itemGraphics
-    [SerializeField]
-    private GameObject itemHighlight;
+    public UnityEvent onInteract;
 
-    public void CheckIfQuestActive(List<QuestScriptableObject> curActiveQuests)
+    //[SerializeField]
+    //private GameObject itemGraphics;
+
+    private void Start()
+    {
+        interactionTarget = GetComponent<InteractionTarget>();
+
+        if(interactionTarget == null)
+        {
+            Debug.LogWarning("No interaction target on Physical Quest Item: " + questItemScriptableObject.idItemName);
+        }
+    }
+
+    //TODO: Refactor with lambdas
+    public bool CheckIfQuestActive(List<QuestScriptableObject> curActiveQuests)
     {
         foreach(QuestScriptableObject quest in curActiveQuests)
         {
             if(quest.curQuestState == QuestState.InProgress)
             {
-                foreach (string itemName in quest.questItems)
+                foreach (string itemName in quest.idQuestItemNames)
                 {
-                    if (itemName == questItemScriptableObject.itemName)
+                    if (itemName == questItemScriptableObject.idItemName)
                     {
                         //TODO: Activate pickup
                         canPickUp = true;
 
                         //ChangeItemHighlight(true);
 
-                        return;
+                        return true;
                     }
                 }
             }
@@ -40,29 +53,38 @@ public class QuestItemPhysical : MonoBehaviour, IInteractable
 
         //ChangeItemHighlight(false);
         canPickUp = false;
+
+        return false;
     }
 
-    public void ChangeItemHighlight(bool toggleOn)
-    {
-        itemHighlight.SetActive(toggleOn);
-    }
+    //public void ChangeItemHighlight(bool toggleOn)
+    //{
+    //    itemHighlight.SetActive(toggleOn);
+    //}
 
+    #region AvailableEvents
     public void PickupItem()
     {
-        Debug.Log("Add item");
-        //TODO: Find player Inventory
+        //Debug.Log("Add item");
         PlayerInventory.instance.PickupItem(questItemScriptableObject);
+
+        //TODO: call onTake
 
         Destroy(gameObject);
     }
 
-    public void Interact()
+    public void StartMinigame()
     {
-        if (canPickUp)
+        //TODO: Implement
+        //TODO: add an event for pickupItem if the minigame completes successfully
+    }
+    #endregion
+
+    public void CheckCanInteract()
+    {
+        if (CheckIfQuestActive(QuestManager.instance.curQuests))
         {
-            //TODO: pick up item
-            Debug.Log("INTERACT");
-            PickupItem();
+            interactionTarget.canInteract = true;
         }
     }
 }

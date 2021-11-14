@@ -10,12 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5d1c5b71c808194e9ff7f7a635472a8, type: 3}
-  m_Name: Test_NPC_01 Start Dialogue
+  m_Name: TestQuest_01 Start Dialogue
   m_EditorClassIdentifier: 
-  dialogueText:
-  - Hey.
-  - I need a favor. You're good for that, right?
-  - I need my compass. It's in a blue backpack in locker 85, right out there in the
-    hallway.
-  - ...
-  - Why are you looking at me like that? Just do it.
+  dialogueText: []

@@ -54,6 +54,11 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
     }
 
+    public void Play(QuestScriptableObject.FunctionParams functionParams)
+    {
+        Play(functionParams.stringParams[0]);
+    }
+
     public void Stop(string soundName)
     {
         Sound s = Array.Find(sounds, sound => sound.name == soundName);

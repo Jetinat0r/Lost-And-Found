@@ -27,16 +27,16 @@ public class PlayerInventory : MonoBehaviour
 
         foreach (QuestScriptableObject quest in QuestManager.instance.GetActiveQuests())
         {
-            if (quest.questItems.Contains(questItem.itemName))
+            if (quest.idQuestItemNames.Contains(questItem.idItemName))
             {
                 //If this loop does not break, the player has all the necessary items
-                foreach(string itemName in quest.questItems)
+                foreach(string itemName in quest.idQuestItemNames)
                 {
                     bool hasItem = false;
 
                     foreach(QuestItemScriptableObject heldQuestItem in curHeldItems)
                     {
-                        if(heldQuestItem.itemName == itemName)
+                        if(heldQuestItem.idItemName == itemName)
                         {
                             hasItem = true;
 

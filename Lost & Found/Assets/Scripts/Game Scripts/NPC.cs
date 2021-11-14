@@ -2,15 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPC : MonoBehaviour, IInteractable
+public class NPC : MonoBehaviour
 {
-    [SerializeField]
-    private string questName;
+    private InteractionTarget interactionTarget;
 
-    [SerializeField]
-    private string npcName;
+    
+    [Tooltip("Name used for quest searches, here so if we change a character's name we don't have to change the id elsewhere")]
+    public string idNpcName;
 
-    private bool canTalkTo = true;
+    public string displayNpcName;
+
+    public bool canTalkTo = true;
 
     [SerializeField]
     private GameObject itemGraphics;
@@ -22,6 +24,16 @@ public class NPC : MonoBehaviour, IInteractable
     [SerializeField]
     private GameObject dialogueBoxPrefab;
 
+    private void Start()
+    {
+        interactionTarget = GetComponent<InteractionTarget>();
+
+        if(interactionTarget == null)
+        {
+            Debug.LogWarning("No interaction target on NPC: " + displayNpcName);
+        }
+    }
+
     public void ChangeItemHighlight(bool toggleOn)
     {
         itemHighlight.SetActive(toggleOn);
@@ -29,12 +41,12 @@ public class NPC : MonoBehaviour, IInteractable
 
     public void TalkTo()
     {
-        Debug.Log("Talk to");
+        //Debug.Log("Talk to");
 
         QuestScriptableObject npcQuest = null;
         foreach(QuestScriptableObject quest in QuestManager.instance.curQuests)
         {
-            if(quest.questName == questName)
+            if(quest.idNpcName == idNpcName)
             {
                 npcQuest = quest;
 
@@ -49,21 +61,20 @@ public class NPC : MonoBehaviour, IInteractable
             return;
         }
 
-        Debug.Log("TALKING");
+        //Debug.Log("TALKING");
 
         //TODO: If this is the approach I go with, have a canvas set up in the world to attatch this to
         GameObject _dialogueBoxPrefab = Instantiate(dialogueBoxPrefab);
         DialogueBox _textBox = _dialogueBoxPrefab.GetComponentInChildren<DialogueBox>();
 
-        _textBox.SetupDialogueBox(npcQuest.GetCurrentDialogue(), npcName);
+        _textBox.SetupDialogueBox(npcQuest.GetCurrentDialogue(), displayNpcName);
     }
 
-    public void Interact()
+    public void CheckCanInteract()
     {
         if (canTalkTo)
         {
-            //TODO: pick up item
-            TalkTo();
+            interactionTarget.canInteract = true;
         }
     }
 }
