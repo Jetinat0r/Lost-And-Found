@@ -18,6 +18,6 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        SceneController.instance.QuitGame();
+        GameManager.instance.QuitGame();
     }
 }

@@ -43,4 +43,18 @@ public class WorldObject : ScriptableObject
         //Unless it is, in which case - uh oh
         nodes.Remove(node);
     }
+
+    public WorldNode GetNode(string _nodeName)
+    {
+        foreach(WorldNode _node in nodes)
+        {
+            if(_node.title == _nodeName)
+            {
+                return _node;
+            }
+        }
+
+        Debug.LogWarning("Node (" + _nodeName + ") not found! Returning first node of the world...");
+        return nodes[0];
+    }
 }

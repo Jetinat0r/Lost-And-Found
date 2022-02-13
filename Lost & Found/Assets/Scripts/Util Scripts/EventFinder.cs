@@ -29,13 +29,13 @@ public class EventFinder : MonoBehaviour
     }
 
     public QuestScriptableObject obj;
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            obj.OnStartToInProgress();
-        }
-    }
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.A))
+    //    {
+    //        obj.OnStartToInProgress();
+    //    }
+    //}
 
     //Get passed strings, ints, floats, bools in that order
     //Take only what you need, meaning extraneous is ok

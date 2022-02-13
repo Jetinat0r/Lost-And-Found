@@ -4,15 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class WorldNode : ScriptableObject
 {
     [System.Serializable]
     public class NodeSceneReference
     {
-        public string timeSlot;
+        public TimeBlock timeBlock;
 
-        public SceneAsset scene = null;
         public string sceneTitle = "";
     }
 
@@ -69,7 +69,7 @@ public class WorldNode : ScriptableObject
 
     public List<NodeConnection> outgoingConnections;
 
-
+    #region GUI Functions
     //Called upon Instantiation
     public void SetupNode(WorldObject _world, Vector2 position, float width, float height, GUIStyle nodeStyle, GUIStyle selectedNodeStyle, GUIStyle _connectorStyle, GUIStyle _selectedConnectorStyle, string _path)
     {
@@ -416,5 +416,35 @@ public class WorldNode : ScriptableObject
 
         Debug.LogWarning("Connector not found in outgoing connections, something went wrong!");
         return;
+    }
+#endregion
+
+    public WorldNode GetConnectedNode(string _connectionTitle)
+    {
+        foreach (NodeConnection _connectionStruct in outgoingConnections)
+        {
+            if(_connectionStruct.connector.title == _connectionTitle)
+            {
+                return _connectionStruct.connector.destinationNode;
+            }
+        }
+
+        Debug.LogWarning("No connector with title " + _connectionTitle + " exists, so no node could be found! Returning current node...");
+        return this;
+    }
+
+    public string GetSceneTitle(GamePeriod _period)
+    {
+        foreach(NodeSceneReference _sceneReference in sceneList)
+        {
+            if (_sceneReference.timeBlock.IsEqual(_period.timeBlock))
+            {
+                return _sceneReference.sceneTitle;
+            }
+        }
+
+        //This only runs if a scene is not found
+        Debug.LogWarning("No scene found in node " + this.title + " for period: " + "\n" + _period.ToString());
+        return sceneList[0].sceneTitle;
     }
 }

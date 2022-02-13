@@ -7,6 +7,4 @@ public interface IInteractable
 {
     //TODO: Move highlight stuff here
     public void Interact();
-
-    public UnityEvent canInteractChecks();
 }

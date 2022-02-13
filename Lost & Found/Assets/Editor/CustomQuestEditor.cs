@@ -20,7 +20,12 @@ public class CustomQuestEditor : Editor
     // All vars in the quest scripObj
     // ------------ //
     SerializedProperty idQuestName;                     //string
-    SerializedProperty idNpcName;                       //string
+    SerializedProperty inactiveIdNpcName;               //string
+    SerializedProperty startIdNpcName;                  //string
+    SerializedProperty inProgressIdNpcName;             //string
+    SerializedProperty endIdNpcName;                    //string
+    SerializedProperty completedIdNpcName;              //string
+    SerializedProperty failedIdNpcName;                 //string
     SerializedProperty idQuestItemNames;                //List<string>
 
     SerializedProperty displayQuestName;                //string
@@ -51,7 +56,12 @@ public class CustomQuestEditor : Editor
     private void OnEnable()
     {
         idQuestName = serializedObject.FindProperty("idQuestName");
-        idNpcName = serializedObject.FindProperty("idNpcName");
+        inactiveIdNpcName = serializedObject.FindProperty("inactiveIdNpcName");
+        startIdNpcName = serializedObject.FindProperty("startIdNpcName");
+        inProgressIdNpcName = serializedObject.FindProperty("inProgressIdNpcName");
+        endIdNpcName = serializedObject.FindProperty("endIdNpcName");
+        completedIdNpcName = serializedObject.FindProperty("completedIdNpcName");
+        failedIdNpcName = serializedObject.FindProperty("endIdNpcName");
         idQuestItemNames = serializedObject.FindProperty("idQuestItemNames");
 
         displayQuestName = serializedObject.FindProperty("displayQuestName");
@@ -97,9 +107,31 @@ public class CustomQuestEditor : Editor
 
         GUILayout.Space(10);
 
-        #region NPC ID
-        GUILayout.Label("ID of NPC name", EditorStyles.label);
-        idNpcName.stringValue = EditorGUILayout.TextField(idNpcName.stringValue);
+        #region NPC IDs
+        GUILayout.Label("IDs of NPC names", EditorStyles.label);
+
+        GUILayout.Label("Inactive NPC ID", EditorStyles.label);
+        inactiveIdNpcName.stringValue = EditorGUILayout.TextField(inactiveIdNpcName.stringValue);
+        GUILayout.Space(10);
+
+        GUILayout.Label("Start NPC ID", EditorStyles.label);
+        startIdNpcName.stringValue = EditorGUILayout.TextField(startIdNpcName.stringValue);
+        GUILayout.Space(10);
+
+        GUILayout.Label("In Progress NPC ID", EditorStyles.label);
+        inProgressIdNpcName.stringValue = EditorGUILayout.TextField(inProgressIdNpcName.stringValue);
+        GUILayout.Space(10);
+
+        GUILayout.Label("End NPC ID", EditorStyles.label);
+        endIdNpcName.stringValue = EditorGUILayout.TextField(endIdNpcName.stringValue);
+        GUILayout.Space(10);
+
+        GUILayout.Label("Completed NPC ID", EditorStyles.label);
+        completedIdNpcName.stringValue = EditorGUILayout.TextField(completedIdNpcName.stringValue);
+        GUILayout.Space(10);
+
+        GUILayout.Label("Failed NPC ID", EditorStyles.label);
+        failedIdNpcName.stringValue = EditorGUILayout.TextField(failedIdNpcName.stringValue);
         #endregion
 
         GUILayout.Space(10);

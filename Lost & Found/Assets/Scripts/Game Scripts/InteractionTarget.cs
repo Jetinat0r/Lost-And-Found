@@ -3,33 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class InteractionTarget : MonoBehaviour
+public class InteractionTarget : MonoBehaviour/*, IInteractable*/
 {
-    [SerializeField]
-    private GameObject objectHighlight;
-    //Objects that put their functions here must have a reference to this object
-    [SerializeField]
-    public UnityEvent checkCanInteractEvents;
-    [SerializeField]
-    public UnityEvent interactEvents;
+    //The "IT" before variable names are to separate them from the variables of the classes that inherit this
 
-    public bool canInteract = false;
+    [SerializeField]
+    private GameObject itObjectHighlight;
+    [SerializeField]
+    public UnityEvent itInteractEvents;
 
-    public void CheckCanInteract()
+    //itCanInteract is controlled by classes that inherit it
+    public bool itCanInteract = true;
+
+    public virtual void DetermineState()
     {
-        checkCanInteractEvents?.Invoke();
-
-        ToggleInteract(canInteract);
+        SetInteract(itCanInteract);
     }
 
-    public void ToggleInteract(bool _canInteract)
+    public void SetInteract(bool _canInteract)
     {
-        canInteract = _canInteract;
-        objectHighlight.SetActive(canInteract);
+        itCanInteract = _canInteract;
+    }
+
+    //public void EnableHighlight()
+    //{
+    //    ITobjectHighlight.SetActive(true);
+    //}
+
+    public void SetHighlight(bool _isHighlighted)
+    {
+        itObjectHighlight.SetActive(_isHighlighted);
     }
 
     public void Interact()
     {
-        interactEvents?.Invoke();
+        itInteractEvents?.Invoke();
     }
 }

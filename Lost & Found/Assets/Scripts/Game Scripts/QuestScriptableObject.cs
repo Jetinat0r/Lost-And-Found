@@ -33,6 +33,9 @@ public class QuestScriptableObject : ScriptableObject
         public bool[] boolParams;
     }
 
+    //TODO: Add struct fields so that the quest can move its characters around depending on its state
+    //      and a bool to check if the quest should bother using the fields (to not break anything we put down before implementation)
+
     [Tooltip("Name used for quest searching (i.e. intro_quest_01)")]
     public string idQuestName;
 
@@ -47,7 +50,12 @@ public class QuestScriptableObject : ScriptableObject
     public List<string> unlockOnComplete;
 
     [Space]
-    public string idNpcName;
+    public string inactiveIdNpcName;
+    public string startIdNpcName;
+    public string inProgressIdNpcName;
+    public string endIdNpcName;
+    public string completedIdNpcName;
+    public string failedIdNpcName;
 
     [Tooltip("Name displayed in player notebook")]
     public string displayQuestName;
@@ -162,5 +170,39 @@ public class QuestScriptableObject : ScriptableObject
         {
             EventFinder.instance.CallFunction(funcParams);
         }
+    }
+
+    public string GetCurNpcId()
+    {
+        string _id = inactiveIdNpcName;
+
+        switch (curQuestState)
+        {
+            case (QuestState.Inactive):
+                _id = inactiveIdNpcName;
+                break;
+
+            case (QuestState.Start):
+                _id = startIdNpcName;
+                break;
+
+            case (QuestState.InProgress):
+                _id = inProgressIdNpcName;
+                break;
+
+            case (QuestState.End):
+                _id = endIdNpcName;
+                break;
+
+            case (QuestState.Completed):
+                _id = completedIdNpcName;
+                break;
+
+            case (QuestState.Failed):
+                _id = failedIdNpcName;
+                break;
+        }
+
+        return _id;
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class QuestItemPhysical : MonoBehaviour
+public class QuestItemPhysical : InteractionTarget
 {
     private InteractionTarget interactionTarget;
 
@@ -19,15 +19,30 @@ public class QuestItemPhysical : MonoBehaviour
 
     private void Start()
     {
-        interactionTarget = GetComponent<InteractionTarget>();
+        //interactionTarget = GetComponent<InteractionTarget>();
 
-        if(interactionTarget == null)
-        {
-            Debug.LogWarning("No interaction target on Physical Quest Item: " + questItemScriptableObject.idItemName);
-        }
+        //if (interactionTarget == null)
+        //{
+        //    Debug.LogWarning("No interaction target on Physical Quest Item: " + questItemScriptableObject.idItemName);
+        //}
+    }
+
+    //Kept separate for InteractionTarget bc not all targets will be NPCs/QuestItemPhysicals and so that I can do extra stuff with each state
+    //Determines how the object will exist
+    //Valid States:
+    // - Inactive: Item is visible but not interactable
+    // - Active: Item is visible and interactable
+    // - Completed: Item is not visible and not interactable (may just destroy, though this may cause problems w/ player interact)
+    //
+    //Called upon load in, quest state change, and interact
+    public override void DetermineState()
+    {
+
+        //TODO: If state is active, allow interact in InteractionTarget
     }
 
     //TODO: Refactor with lambdas
+    //or change entirely
     public bool CheckIfQuestActive(List<QuestScriptableObject> curActiveQuests)
     {
         foreach(QuestScriptableObject quest in curActiveQuests)
@@ -84,7 +99,7 @@ public class QuestItemPhysical : MonoBehaviour
     {
         if (CheckIfQuestActive(QuestManager.instance.curQuests))
         {
-            interactionTarget.canInteract = true;
+            itCanInteract = true;
         }
     }
 }

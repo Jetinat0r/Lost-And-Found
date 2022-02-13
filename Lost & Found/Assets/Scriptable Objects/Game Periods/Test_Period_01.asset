@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f13e00aa30222224ca5e401cbd0db3ca, type: 3}
+  m_Name: Test_Period_01
+  m_EditorClassIdentifier: 
+  timeBlock:
+    day: 0
+    time: 0
+  questInfos:
+  - quest: {fileID: 11400000, guid: 2009e01fb42569f40a63f3c6953fd986, type: 2}
+    initialQuestState: 1
+    questNpc:
+      inactiveNpcPrefab: {fileID: 3350966203038361818, guid: 37e2debadd6ab504fa085af7dbf15251, type: 3}
+      InactiveNpcSceneInfo:
+        priority: 0
+        objectSceneInfo:
+          sceneId: test_scene_01
+          positionInScene: {x: 1.56, y: -1.25, z: 0}
+      startNpcPrefab: {fileID: 3350966203038361818, guid: 37e2debadd6ab504fa085af7dbf15251, type: 3}
+      StartNpcSceneInfo:
+        priority: 0
+        objectSceneInfo:
+          sceneId: test_scene_01
+          positionInScene: {x: 1.56, y: -1.25, z: 0}
+      inProgressNpcPrefab: {fileID: 0}
+      InProgressNpcSceneInfo:
+        priority: 0
+        objectSceneInfo:
+          sceneId: 
+          positionInScene: {x: 0, y: 0, z: 0}
+      endNpcPrefab: {fileID: 0}
+      EndNpcSceneInfo:
+        priority: 0
+        objectSceneInfo:
+          sceneId: 
+          positionInScene: {x: 0, y: 0, z: 0}
+      completedNpcPrefab: {fileID: 0}
+      CompletedNpcSceneInfo:
+        priority: 0
+        objectSceneInfo:
+          sceneId: 
+          positionInScene: {x: 0, y: 0, z: 0}
+      failedNpcPrefab: {fileID: 0}
+      FailedNpcSceneInfo:
+        priority: 0
+        objectSceneInfo:
+          sceneId: 
+          positionInScene: {x: 0, y: 0, z: 0}
+  physicalQuestItems: []
+  fillerNpcs: []
