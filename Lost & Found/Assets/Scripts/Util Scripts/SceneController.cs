@@ -21,7 +21,7 @@ public class SceneController : MonoBehaviour
     [SerializeField]
     private WorldObject worldObject;
     public WorldNode curWorldNode = null;
-    public string curSceneId = "main_menu";
+    public string curNodeId = "main_menu";
 
     private void Awake()
     {
@@ -64,7 +64,7 @@ public class SceneController : MonoBehaviour
     public void GotoNode(string _nodeTitle)
     {
         curWorldNode = worldObject.GetNode(_nodeTitle);
-        curSceneId = curWorldNode.title;
+        curNodeId = curWorldNode.title;
 
         SetScene(curWorldNode.GetSceneTitle(GameManager.instance.GetCurrentPeriod()));
     }
@@ -72,7 +72,7 @@ public class SceneController : MonoBehaviour
     public void MoveThroughConnection(string _connectionTitle)
     {
         curWorldNode = curWorldNode.GetConnectedNode(_connectionTitle);
-        curSceneId = curWorldNode.title;
+        curNodeId = curWorldNode.title;
 
         SetScene(curWorldNode.GetSceneTitle(GameManager.instance.GetCurrentPeriod()));
     }
@@ -169,7 +169,7 @@ public class SceneController : MonoBehaviour
 
         foreach(NpcSpawn _npc in _npcs)
         {
-            if(_npc.objectSceneInfo.sceneId == curSceneId)
+            if(_npc.objectSceneInfo.nodeId == curNodeId)
             {
                 GameObject _newNpc = Instantiate(_npc.npcPrefab, _npc.objectSceneInfo.positionInScene, Quaternion.identity);
                 //TODO: Tell the NPCs that they have LIFE!
@@ -179,7 +179,7 @@ public class SceneController : MonoBehaviour
 
         foreach(PhysicalQuestItemInfo _itemInfo in _curPeriod.physicalQuestItems)
         {
-            if(_itemInfo.objectSceneInfo.sceneId == curSceneId)
+            if(_itemInfo.objectSceneInfo.nodeId == curNodeId)
             {
                 QuestItemPhysical _newItem = Instantiate(_itemInfo.itemPrefab, _itemInfo.objectSceneInfo.positionInScene, Quaternion.identity);
                 //TODO: Tell quest items how to behave

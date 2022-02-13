@@ -47,7 +47,7 @@ public struct TimeBlock
 [System.Serializable]
 public struct ObjectSceneInfo
 {
-    public string sceneId;
+    public string nodeId;
     public Vector3 positionInScene;
 }
 [System.Serializable]
@@ -216,11 +216,6 @@ public struct FillerNpcInfo
     public DialogueScriptableObject neutralDialogue;
     public DialogueScriptableObject popularDialogue;
 }
-//[System.Serializable]
-//public struct GamePeriod
-//{
-
-//}
 #endregion
 
 [CreateAssetMenu(fileName = "NewGamePeriod", menuName = "ScriptableObjects/Game Period")]
