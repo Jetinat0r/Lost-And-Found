@@ -7,10 +7,14 @@ using UnityEngine.UI;
 
 public class DialogueBox : MonoBehaviour
 {
+    [SerializeField]
+    private DialogueManager dialogueManager;
+
     private DialogueScriptableObject dialogueScriptableObject;
     private string characterName;
 
     private Queue<string> text = new Queue<string>();
+    private Queue<Sprite> portraits = new Queue<Sprite>();
     private Coroutine textDisplayCoroutine = null;
     private bool isTextExhausted = false;
     //storedText is for skipping text
@@ -23,9 +27,12 @@ public class DialogueBox : MonoBehaviour
     [SerializeField]
     private TMP_Text nameTextArea;
     [SerializeField]
+    private Image portraitDisplay;
+    [SerializeField]
     private float timeBetweenChars = 0.1f;
 
     //TODO: Allow for multiple boxes of dialogue to be written out
+    //A more recent me: may be done already? or its talking abt multiple dialogueScripObjs
     public void SetupDialogueBox(DialogueScriptableObject _dialogue, string _characterName)
     {
         dialogueScriptableObject = _dialogue;
@@ -36,12 +43,19 @@ public class DialogueBox : MonoBehaviour
             text.Enqueue(_text);
         }
 
-        //dialogueTextArea.text = dialogueScriptableObject.dialogueText[0];
+        foreach (PortraitMood _mood in dialogueScriptableObject.moodsForLines)
+        {
+            portraits.Enqueue(dialogueScriptableObject.GetPortrait(_mood));
+        }
+
         nameTextArea.text = characterName;
 
         storedText = text.Dequeue();
+        timeBetweenChars = _dialogue.timeBetweenChars;
+
         isTextExhausted = false;
         textDisplayCoroutine = StartCoroutine(AdvanceText(storedText, timeBetweenChars));
+        portraitDisplay.sprite = portraits.Dequeue();
     }
 
     // Update is called once per frame
@@ -56,7 +70,7 @@ public class DialogueBox : MonoBehaviour
                 //TODO: don't destroy it you idiot.
                 if(text.Count == 0)
                 {
-                    Destroy(gameObject);
+                    dialogueManager.EndDialogue();
                     return;
                 }
                 else
@@ -65,6 +79,7 @@ public class DialogueBox : MonoBehaviour
                     storedText = text.Dequeue();
                     isTextExhausted = false;
                     textDisplayCoroutine = StartCoroutine(AdvanceText(storedText, timeBetweenChars));
+                    portraitDisplay.sprite = portraits.Dequeue();
                 }
             }
             else

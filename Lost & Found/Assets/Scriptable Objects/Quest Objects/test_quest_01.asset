@@ -15,16 +15,21 @@ MonoBehaviour:
   idQuestName: test_quest_01
   idQuestItemNames: []
   initialQuestState: 1
-  curQuestState: 0
+  curQuestState: 2
   unlockOnComplete: []
-  idNpcName: test_npc_01
+  inactiveIdNpcName: test_npc_01
+  startIdNpcName: test_npc_02
+  inProgressIdNpcName: 
+  endIdNpcName: 
+  completedIdNpcName: 
+  failedIdNpcName: 
   displayQuestName: Test Quest 01
   displayNpcName: Gregory (sus)
   displayQuestDescription: You gotta vent gregory. I know it's going to be hard to
     be sus.
   reputationPoints: 0
-  inactiveDialogue: {fileID: 0}
-  startDialogue: {fileID: 0}
+  inactiveDialogue: {fileID: 11400000, guid: 77899ec5e25e93d44bb6ab6e7a09c79d, type: 2}
+  startDialogue: {fileID: 11400000, guid: 77899ec5e25e93d44bb6ab6e7a09c79d, type: 2}
   inProgressDialogue: {fileID: 0}
   endDialogue: {fileID: 0}
   completedDialogue: {fileID: 0}

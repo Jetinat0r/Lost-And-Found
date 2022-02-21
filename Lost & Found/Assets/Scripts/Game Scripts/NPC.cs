@@ -21,6 +21,8 @@ public class NPC : InteractionTarget
     [SerializeField]
     private GameObject dialogueBoxPrefab;
 
+    public DialogueScriptableObject defaultDialogue;
+
     private void Start()
     {
         //interactionTarget = GetComponent<InteractionTarget>();
@@ -67,31 +69,109 @@ public class NPC : InteractionTarget
     {
         //Debug.Log("Talk to");
 
-        QuestScriptableObject npcQuest = null;
+        //QuestScriptableObject npcQuest = null;
+
+        Dictionary<QuestScriptableObject, QuestState> _questDict = new Dictionary<QuestScriptableObject, QuestState>();
+        
+        //Adds all available quests for the npc to a dictionary
         foreach(QuestScriptableObject quest in QuestManager.instance.curQuests)
         {
             if(quest.GetCurNpcId() == idNpcName)
             {
-                npcQuest = quest;
+                _questDict.Add(quest, quest.curQuestState);
+                //npcQuest = quest;
 
-                break;
+                //break;
             }
         }
 
-        if(npcQuest == null)
+        //Quest State Priority
+        //1. End
+        //2. Start
+        //3. InProgress
+        //4. Completed
+        //5. Failed
+        //6. Inactive
+        QuestScriptableObject _npcQuest = null;
+            
+        foreach(KeyValuePair<QuestScriptableObject, QuestState> _questPair in _questDict)
         {
-            Debug.LogWarning("No Quest Assigned!!!");
+            if(_npcQuest == null)
+            {
+                _npcQuest = _questPair.Key;
+            }
+            else
+            {
+                QuestState _curQuestState = _questDict[_npcQuest];
 
-            return;
+                switch (_curQuestState)
+                {
+                    case (QuestState.End):
+                        //Do nothing
+                        break;
+
+                    case (QuestState.Start):
+                        if(_questPair.Value == QuestState.End)
+                        {
+                            _npcQuest = _questPair.Key;
+                        }
+                        break;
+
+                    case (QuestState.InProgress):
+                        if (_questPair.Value == QuestState.End || _questPair.Value == QuestState.Start)
+                        {
+                            _npcQuest = _questPair.Key;
+                        }
+                        break;
+
+                    case (QuestState.Completed):
+                        if (_questPair.Value == QuestState.End || _questPair.Value == QuestState.Start
+                            || _questPair.Value == QuestState.InProgress)
+                        {
+                            _npcQuest = _questPair.Key;
+                        }
+                        break;
+
+                    case (QuestState.Failed):
+                        if (_questPair.Value == QuestState.End || _questPair.Value == QuestState.Start
+                            || _questPair.Value == QuestState.InProgress || _questPair.Value == QuestState.Completed)
+                        {
+                            _npcQuest = _questPair.Key;
+                        }
+                        break;
+
+                    case (QuestState.Inactive):
+                        if(_questPair.Value != QuestState.Inactive)
+                        {
+                            _npcQuest = _questPair.Key;
+                        }
+                        break;
+
+                    default:
+                        Debug.LogWarning("Invalid quest state??");
+                        break;
+                }
+            }
         }
 
-        //Debug.Log("TALKING");
+        //Display Dialogue
+        if(_npcQuest != null)
+        {
+           DialogueManager.instance.StartDialogue(_npcQuest.GetCurrentDialogue(), displayNpcName);
+        }
+        else
+        {
+            Debug.Log("No quest assigned for character id ( " + idNpcName + "), using default dialogue...");
 
-        //TODO: If this is the approach I go with, have a canvas set up in the world to attatch this to
-        GameObject _dialogueBoxPrefab = Instantiate(dialogueBoxPrefab);
-        DialogueBox _textBox = _dialogueBoxPrefab.GetComponentInChildren<DialogueBox>();
+            if(defaultDialogue == null)
+            {
+                Debug.LogWarning("No default dialogue found!!!");
+                return;
+            }
 
-        _textBox.SetupDialogueBox(npcQuest.GetCurrentDialogue(), displayNpcName);
+            DialogueManager.instance.StartDialogue(defaultDialogue, displayNpcName);
+
+        }
     }
 
     public void CheckCanInteract()

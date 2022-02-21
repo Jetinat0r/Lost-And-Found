@@ -155,7 +155,7 @@ public class CustomQuestEditor : Editor
         GUILayout.Space(10);
 
         #region NPC Name
-        GUILayout.Label("Display name of NPC");
+        GUILayout.Label("Display name of Quest Giver NPC");
         displayNpcName.stringValue = EditorGUILayout.TextField(displayNpcName.stringValue);
         #endregion
 

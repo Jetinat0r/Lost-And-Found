@@ -107,9 +107,16 @@ public class SceneController : MonoBehaviour
 
                 _curNpc = new NpcSpawn();
 
-                Debug.Log("State: " + _questInfo.quest.curQuestState);
+                //Debug.Log("State: " + _questInfo.quest.curQuestState);
 
                 _curNpc.npcPrefab = _questInfo.questNpc.GetNpcPrefab(_questInfo.quest.curQuestState);
+
+                if(_curNpc.npcPrefab == null)
+                {
+                    Debug.LogWarning("NPC Does not exist!");
+                    return;
+                }
+
                 _curNpc.npcScript = _curNpc.npcPrefab.GetComponent<NPC>();
                 _curNpc.priority = _questInfo.questNpc.GetPriority(_questInfo.quest.curQuestState);
                 _curNpc.objectSceneInfo = _questInfo.questNpc.GetScene(_questInfo.quest.curQuestState).objectSceneInfo;

@@ -42,7 +42,45 @@ public class QuestManager : MonoBehaviour
                 activeQuests.Add(quest);
             }
         }
-
+        
         return activeQuests;
+    }
+
+    public void AddQuest(QuestScriptableObject _newQuest, bool _forceAdd = false)
+    {
+        if(_forceAdd)
+        {
+            curQuests.Add(_newQuest);
+        }
+
+        foreach(QuestScriptableObject _quest in curQuests)
+        {
+            if(_quest.idQuestName == _newQuest.idQuestName)
+            {
+                Debug.LogWarning("Quest (" + _newQuest.idQuestName + ") is already in curQuests! Refusing to add to list...");
+                return;
+            }
+        }
+
+        curQuests.Add(_newQuest);
+    }
+
+    public void RemoveQuest(QuestScriptableObject _toRemove)
+    {
+        bool _wasRemoved = false;
+        for(int i = 0; i < curQuests.Count; i++)
+        {
+            if(curQuests[i].idQuestName == _toRemove.idQuestName)
+            {
+                curQuests.RemoveAt(i);
+
+                _wasRemoved = true;
+            }
+        }
+
+        if (!_wasRemoved)
+        {
+            Debug.LogWarning("Quest (" + _toRemove.idQuestName + ") was not found in curQuests!");
+        }
     }
 }
