@@ -13,7 +13,9 @@ public enum PortraitMood
     Scheming,
     Extra1,
     Extra2,
-    Extra3
+    Extra3,
+    None,           //Doesn't display portrait
+    Empty           //Doesn't display portrait and name
 }
 
 [CreateAssetMenu(fileName = "NewDialogue", menuName = "ScriptableObjects/DialogueScriptableObject")]

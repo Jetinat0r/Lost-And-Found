@@ -14,11 +14,12 @@ public class DialogueBox : MonoBehaviour
     private string characterName;
 
     private Queue<string> text = new Queue<string>();
-    private Queue<Sprite> portraits = new Queue<Sprite>();
+    private Queue<PortraitMood> portraitMoods = new Queue<PortraitMood>();
     private Coroutine textDisplayCoroutine = null;
     private bool isTextExhausted = false;
     //storedText is for skipping text
     private string storedText;
+    private PortraitMood curMood;
 
     private readonly char[] illegalChars = {'_'};
 
@@ -43,9 +44,10 @@ public class DialogueBox : MonoBehaviour
             text.Enqueue(_text);
         }
 
+        //TODO: Change
         foreach (PortraitMood _mood in dialogueScriptableObject.moodsForLines)
         {
-            portraits.Enqueue(dialogueScriptableObject.GetPortrait(_mood));
+            portraitMoods.Enqueue(_mood);
         }
 
         nameTextArea.text = characterName;
@@ -53,9 +55,17 @@ public class DialogueBox : MonoBehaviour
         storedText = text.Dequeue();
         timeBetweenChars = _dialogue.timeBetweenChars;
 
+        //Ensures that the thing doesn't try to update stuff while portrait container or name container are not active
+        dialogueManager.UpdateDisplay(PortraitMood.Neutral);
+
+        curMood = portraitMoods.Dequeue();
+
         isTextExhausted = false;
         textDisplayCoroutine = StartCoroutine(AdvanceText(storedText, timeBetweenChars));
-        portraitDisplay.sprite = portraits.Dequeue();
+
+        portraitDisplay.sprite = dialogueScriptableObject.GetPortrait(curMood);
+
+        dialogueManager.UpdateDisplay(curMood);
     }
 
     // Update is called once per frame
@@ -77,9 +87,17 @@ public class DialogueBox : MonoBehaviour
                 {
                     //Start new line of text
                     storedText = text.Dequeue();
+                    curMood = portraitMoods.Dequeue();
+
+                    //Ensures that the thing doesn't try to update stuff while portrait container or name container are not active
+                    dialogueManager.UpdateDisplay(PortraitMood.Neutral);
+
                     isTextExhausted = false;
                     textDisplayCoroutine = StartCoroutine(AdvanceText(storedText, timeBetweenChars));
-                    portraitDisplay.sprite = portraits.Dequeue();
+
+                    portraitDisplay.sprite = dialogueScriptableObject.GetPortrait(curMood);
+
+                    dialogueManager.UpdateDisplay(curMood);
                 }
             }
             else

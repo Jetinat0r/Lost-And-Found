@@ -13,6 +13,12 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private GameObject dialogueBoxContainer;
 
+    //Used to hide portions of the dialogue UI for the "None" and "Empty" moods
+    [SerializeField]
+    private GameObject portraitContainer;
+    [SerializeField]
+    private GameObject nameContainer;
+
 
     [SerializeField]
     private DialogueBox dialogueBox;
@@ -46,5 +52,26 @@ public class DialogueManager : MonoBehaviour
     private void ToggleDialogueContainer(bool _enable)
     {
         dialogueBoxContainer.SetActive(_enable);
+    }
+
+    public void UpdateDisplay(PortraitMood _mood)
+    {
+        switch (_mood)
+        {
+            case (PortraitMood.Empty):
+                portraitContainer.SetActive(false);
+                nameContainer.SetActive(true);
+                break;
+
+            case (PortraitMood.None):
+                portraitContainer.SetActive(false);
+                nameContainer.SetActive(false);
+                break;
+
+            default:
+                portraitContainer.SetActive(true);
+                nameContainer.SetActive(true);
+                break;
+        }
     }
 }
