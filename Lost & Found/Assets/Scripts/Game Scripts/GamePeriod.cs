@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-#region Object Info Structs
+#region Object Info Structs and ScripObjs
 [System.Serializable]
 public struct TimeBlock
 {
@@ -50,21 +50,45 @@ public struct ObjectSceneInfo
     public string nodeId;
     public Vector3 positionInScene;
 }
-[System.Serializable]
-
-public struct PhysicalQuestItemInfo
+[CreateAssetMenu(fileName = "NewPhysicalQuestItemInfo", menuName = "ScriptableObjects/Physical Quest Item Info")]
+public class PhysicalQuestItemInfo : ScriptableObject
 {
+    public List<TimeBlock> spawnTimes;
+    //TODO: Add an "end time" to remove when the curTimeBlock == it
+
     public QuestItemPhysical itemPrefab;
     public ObjectSceneInfo objectSceneInfo;
 }
-[System.Serializable]
-public struct QuestInfo
+[CreateAssetMenu(fileName = "NewQuestInfo", menuName = "ScriptableObjects/Quest Info")]
+public class QuestInfo : ScriptableObject
 {
+    public List<TimeBlock> spawnTimes;
+    //TODO: Add an "end time" to remove when the curTimeBlock == it
+
     public QuestScriptableObject quest;
     public QuestState initialQuestState;
 
     public QuestNpcInfo questNpc;
 }
+//[System.Serializable]
+
+//public struct PhysicalQuestItemInfo
+//{
+//    public List<TimeBlock> spawnTimes;
+
+//    public QuestItemPhysical itemPrefab;
+//    public ObjectSceneInfo objectSceneInfo;
+//}
+//[System.Serializable]
+//public struct QuestInfo
+//{
+//    public List<TimeBlock> spawnTimes;
+
+//    public QuestScriptableObject quest;
+//    public QuestState initialQuestState;
+
+//    public QuestNpcInfo questNpc;
+//}
 [System.Serializable]
 public struct NpcSceneInfo
 {
@@ -204,9 +228,12 @@ public struct QuestNpcInfo
     }
 
 }
-[System.Serializable]
-public struct FillerNpcInfo
+[CreateAssetMenu(fileName = "NewFillerNpcInfo", menuName = "ScriptableObjects/Filler NPC Info")]
+public class FillerNpcInfo : ScriptableObject
 {
+    public List<TimeBlock> spawnTimes;
+    //TODO: Add an "end time" to remove when the curTimeBlock == it
+
     public GameObject npcPrefab;
     public NpcSceneInfo sceneInfo;
 
@@ -216,6 +243,20 @@ public struct FillerNpcInfo
     public DialogueScriptableObject neutralDialogue;
     public DialogueScriptableObject popularDialogue;
 }
+//[System.Serializable]
+//public struct FillerNpcInfo
+//{
+//    public List<TimeBlock> spawnTimes;
+
+//    public GameObject npcPrefab;
+//    public NpcSceneInfo sceneInfo;
+
+//    //These are default dialogues for if the npc in question has no quest associated with them.
+//    //Until I implement popularity, unpopularDialogue is going to be the only one used
+//    public DialogueScriptableObject unpopularDialogue;
+//    public DialogueScriptableObject neutralDialogue;
+//    public DialogueScriptableObject popularDialogue;
+//}
 #endregion
 
 [CreateAssetMenu(fileName = "NewGamePeriod", menuName = "ScriptableObjects/Game Period")]
@@ -229,7 +270,10 @@ public class GamePeriod : ScriptableObject
     public override string ToString()
     {
         string _information = "Day: " + timeBlock.day + "\n"
-            + "Time: " + timeBlock.time;
+            + "Time: " + timeBlock.time + "\n"
+            + "Quest Infos: " + questInfos.Count + "\n"
+            + "Physical Quest Item Infos: " + physicalQuestItems.Count + "\n"
+            + "Filler NPCs: " + fillerNpcs.Count;
 
         return _information;
     }

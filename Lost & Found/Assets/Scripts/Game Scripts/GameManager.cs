@@ -8,7 +8,13 @@ public class GameManager : MonoBehaviour
 
     public TimeBlock curTime;
     public List<GamePeriod> timeSlots;
-    //public List<QuestScriptableObject> curQuests;
+
+    [HideInInspector]
+    public List<QuestInfo> curQuestInfos = new List<QuestInfo>();
+    [HideInInspector]
+    public List<FillerNpcInfo> curFillerNpcInfos = new List<FillerNpcInfo>();
+    [HideInInspector]
+    public List<PhysicalQuestItemInfo> curPhysicalQuestItemInfos = new List<PhysicalQuestItemInfo>();
 
     private void Awake()
     {

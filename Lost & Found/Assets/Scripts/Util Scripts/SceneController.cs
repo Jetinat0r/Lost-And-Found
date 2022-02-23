@@ -84,10 +84,24 @@ public class SceneController : MonoBehaviour
         List<NpcSpawn> _npcs = new List<NpcSpawn>();
 
         //Populates a list with all quest NPCs that can spawn and where
-        foreach (QuestInfo _questInfo in _curPeriod.questInfos)
+        foreach (QuestInfo _questInfo in GameManager.instance.curQuestInfos)
         {
-            //TODO: Move this
-            //_questInfo.quest.curQuestState = _questInfo.initialQuestState;
+            #region Check Time Block
+            bool isRightTime = false;
+            foreach(TimeBlock _timeBlock in _questInfo.spawnTimes)
+            {
+                if (_timeBlock.Equals(GameManager.instance.curTime))
+                {
+                    isRightTime = true;
+                }
+            }
+
+            //If the _questInfo is irrelevant at the current Time Block, don't bother spawning, but still check the rest of the things in curQuestInfos
+            if (!isRightTime)
+            {
+                continue;
+            }
+            #endregion
 
             NpcSpawn _curNpc = null;
 
@@ -137,6 +151,24 @@ public class SceneController : MonoBehaviour
         //Adds non-quest NPCs to the previousely aforementioned list
         foreach(FillerNpcInfo _fillerInfo in _curPeriod.fillerNpcs)
         {
+            #region Check Time Block
+            bool isRightTime = false;
+            foreach (TimeBlock _timeBlock in _fillerInfo.spawnTimes)
+            {
+                if (_timeBlock.Equals(GameManager.instance.curTime))
+                {
+                    isRightTime = true;
+                }
+            }
+
+            //If the _questInfo is irrelevant at the current Time Block, don't bother spawning, but still check the rest of the things in curQuestInfos
+            if (!isRightTime)
+            {
+                continue;
+            }
+            #endregion
+
+
             NpcSpawn _curNpc = null;
 
             foreach(NpcSpawn _npc in _npcs)
@@ -186,7 +218,25 @@ public class SceneController : MonoBehaviour
 
         foreach(PhysicalQuestItemInfo _itemInfo in _curPeriod.physicalQuestItems)
         {
-            if(_itemInfo.objectSceneInfo.nodeId == curNodeId)
+            #region Check Time Block
+            bool isRightTime = false;
+            foreach (TimeBlock _timeBlock in _itemInfo.spawnTimes)
+            {
+                if (_timeBlock.Equals(GameManager.instance.curTime))
+                {
+                    isRightTime = true;
+                }
+            }
+
+            //If the _questInfo is irrelevant at the current Time Block, don't bother spawning, but still check the rest of the things in curQuestInfos
+            if (!isRightTime)
+            {
+                continue;
+            }
+            #endregion
+
+
+            if (_itemInfo.objectSceneInfo.nodeId == curNodeId)
             {
                 QuestItemPhysical _newItem = Instantiate(_itemInfo.itemPrefab, _itemInfo.objectSceneInfo.positionInScene, Quaternion.identity);
                 //TODO: Tell quest items how to behave
