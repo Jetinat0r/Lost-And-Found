@@ -149,7 +149,7 @@ public class SceneController : MonoBehaviour
         }
 
         //Adds non-quest NPCs to the previousely aforementioned list
-        foreach(FillerNpcInfo _fillerInfo in _curPeriod.fillerNpcs)
+        foreach(FillerNpcInfo _fillerInfo in _curPeriod.fillerNpcInfos)
         {
             #region Check Time Block
             bool isRightTime = false;
@@ -216,7 +216,7 @@ public class SceneController : MonoBehaviour
             }
         }
 
-        foreach(PhysicalQuestItemInfo _itemInfo in _curPeriod.physicalQuestItems)
+        foreach(PhysicalQuestItemInfo _itemInfo in _curPeriod.physicalQuestItemInfos)
         {
             #region Check Time Block
             bool isRightTime = false;

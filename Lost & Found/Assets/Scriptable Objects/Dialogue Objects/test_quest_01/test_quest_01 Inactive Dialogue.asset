@@ -12,18 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5d1c5b71c808194e9ff7f7a635472a8, type: 3}
   m_Name: test_quest_01 Inactive Dialogue
   m_EditorClassIdentifier: 
-  npcNeutral: {fileID: 384989332425178773, guid: ab07b1d5d3959f34c9237930aace90bd, type: 3}
-  npcHappy: {fileID: 21300000, guid: d46239e0ee21b354e95725aee77a301b, type: 3}
-  npcSad: {fileID: 0}
-  npcAngry: {fileID: 0}
-  npcThoughtful: {fileID: 0}
-  npcSurprised: {fileID: 0}
-  npcScheming: {fileID: 0}
-  npcExtra1: {fileID: 0}
-  npcExtra2: {fileID: 0}
-  npcExtra3: {fileID: 0}
+  portraits: {fileID: 11400000, guid: 0eaba5c570a1e4d4e9d764b4b884673f, type: 2}
   dialogueText:
   - AAAAAAAAAAAAAAAAAAA IT ACTUALLY WORKS
   - LES GooOOoOOooo
+  - Testing None...
+  - Testing Empty...
+  - Back to normal!
   timeBetweenChars: 0.1
-  moodsForLines: 0100000000000000
+  moodsForLines: 01000000000000000a0000000b00000001000000

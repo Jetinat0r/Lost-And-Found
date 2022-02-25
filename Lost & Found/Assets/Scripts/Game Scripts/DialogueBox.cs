@@ -103,7 +103,10 @@ public class DialogueBox : MonoBehaviour
             else
             {
                 //Skip to end of current line of text
-                StopCoroutine(textDisplayCoroutine);
+                if(textDisplayCoroutine != null)
+                {
+                    StopCoroutine(textDisplayCoroutine);
+                }
                 SkipDialogue(storedText);
             }
         }

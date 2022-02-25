@@ -123,6 +123,11 @@ public class QuestScriptableObject : ScriptableObject
     public void InitializeQuestState()
     {
         curQuestState = initialQuestState;
+
+        if(curQuestState != QuestState.Inactive)
+        {
+            //TODO: Add to questbook
+        }
     }
 
     public void OnInactiveToStart()

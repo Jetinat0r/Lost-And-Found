@@ -1238,6 +1238,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueBoxCanvas: {fileID: 2043620995}
   dialogueBoxContainer: {fileID: 169121002}
+  portraitContainer: {fileID: 251201632}
+  nameContainer: {fileID: 1802995641}
   dialogueBox: {fileID: 169121004}
 --- !u!4 &1450584955
 Transform:
@@ -1678,10 +1680,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curTime:
-    day: 0
-    time: 0
+    day: -1
+    time: -1
   timeSlots:
   - {fileID: 11400000, guid: 47f37e2d19c52bb4a811c0d973636420, type: 2}
+  curQuestInfos: []
+  curFillerNpcInfos: []
+  curPhysicalQuestItemInfos: []
 --- !u!4 &1831627239
 Transform:
   m_ObjectHideFlags: 0
@@ -1924,7 +1929,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 1
       - m_Target: {fileID: 1401914198}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
         m_MethodName: GotoNode
@@ -1936,7 +1941,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: test_scene_01
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
 --- !u!114 &1898653884
 MonoBehaviour:
   m_ObjectHideFlags: 0

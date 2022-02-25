@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-#region Object Info Structs and ScripObjs
+#region Object Info Structs
 [System.Serializable]
 public struct TimeBlock
 {
@@ -49,26 +49,6 @@ public struct ObjectSceneInfo
 {
     public string nodeId;
     public Vector3 positionInScene;
-}
-[CreateAssetMenu(fileName = "NewPhysicalQuestItemInfo", menuName = "ScriptableObjects/Physical Quest Item Info")]
-public class PhysicalQuestItemInfo : ScriptableObject
-{
-    public List<TimeBlock> spawnTimes;
-    //TODO: Add an "end time" to remove when the curTimeBlock == it
-
-    public QuestItemPhysical itemPrefab;
-    public ObjectSceneInfo objectSceneInfo;
-}
-[CreateAssetMenu(fileName = "NewQuestInfo", menuName = "ScriptableObjects/Quest Info")]
-public class QuestInfo : ScriptableObject
-{
-    public List<TimeBlock> spawnTimes;
-    //TODO: Add an "end time" to remove when the curTimeBlock == it
-
-    public QuestScriptableObject quest;
-    public QuestState initialQuestState;
-
-    public QuestNpcInfo questNpc;
 }
 //[System.Serializable]
 
@@ -228,21 +208,6 @@ public struct QuestNpcInfo
     }
 
 }
-[CreateAssetMenu(fileName = "NewFillerNpcInfo", menuName = "ScriptableObjects/Filler NPC Info")]
-public class FillerNpcInfo : ScriptableObject
-{
-    public List<TimeBlock> spawnTimes;
-    //TODO: Add an "end time" to remove when the curTimeBlock == it
-
-    public GameObject npcPrefab;
-    public NpcSceneInfo sceneInfo;
-
-    //These are default dialogues for if the npc in question has no quest associated with them.
-    //Until I implement popularity, unpopularDialogue is going to be the only one used
-    public DialogueScriptableObject unpopularDialogue;
-    public DialogueScriptableObject neutralDialogue;
-    public DialogueScriptableObject popularDialogue;
-}
 //[System.Serializable]
 //public struct FillerNpcInfo
 //{
@@ -263,17 +228,34 @@ public class FillerNpcInfo : ScriptableObject
 public class GamePeriod : ScriptableObject
 {
     public TimeBlock timeBlock;
+
+    [SerializeField]
+    private string displayDate;
+    [SerializeField]
+    private string displayTime;
+
+    //The node that the period will drop you in when the period is loaded
+    public string startingNodeId;
+
     public List<QuestInfo> questInfos;
-    public List<PhysicalQuestItemInfo> physicalQuestItems;
-    public List<FillerNpcInfo> fillerNpcs;
+    public List<PhysicalQuestItemInfo> physicalQuestItemInfos;
+    public List<FillerNpcInfo> fillerNpcInfos;
+
+    public string GetDisplayTime()
+    {
+        return displayDate + "\n"
+            + displayTime;
+    }
 
     public override string ToString()
     {
-        string _information = "Day: " + timeBlock.day + "\n"
+        string _information = "Display Date: " + displayDate + "\n"
+            + "DisplayTime: " + displayTime + "\n"
+            + "Day: " + timeBlock.day + "\n"
             + "Time: " + timeBlock.time + "\n"
             + "Quest Infos: " + questInfos.Count + "\n"
-            + "Physical Quest Item Infos: " + physicalQuestItems.Count + "\n"
-            + "Filler NPCs: " + fillerNpcs.Count;
+            + "Physical Quest Item Infos: " + physicalQuestItemInfos.Count + "\n"
+            + "Filler NPCs: " + fillerNpcInfos.Count;
 
         return _information;
     }

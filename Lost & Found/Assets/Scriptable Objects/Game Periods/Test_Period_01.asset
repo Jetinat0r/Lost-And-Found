@@ -15,45 +15,10 @@ MonoBehaviour:
   timeBlock:
     day: 0
     time: 0
+  displayDate: Test Day 01
+  displayTime: Test Time 1:00 am
+  startingNodeId: test_scene_01
   questInfos:
-  - quest: {fileID: 11400000, guid: 2009e01fb42569f40a63f3c6953fd986, type: 2}
-    initialQuestState: 0
-    questNpc:
-      inactiveNpcPrefab: {fileID: 3350966203038361818, guid: 37e2debadd6ab504fa085af7dbf15251, type: 3}
-      InactiveNpcSceneInfo:
-        priority: 0
-        objectSceneInfo:
-          nodeId: test_scene_01
-          positionInScene: {x: 1.56, y: -1.25, z: 0}
-      startNpcPrefab: {fileID: 3350966203038361818, guid: a6b05033462c3ec40a1c2af22fb65d25, type: 3}
-      StartNpcSceneInfo:
-        priority: 0
-        objectSceneInfo:
-          nodeId: test_scene_02
-          positionInScene: {x: 1.56, y: -1.25, z: 0}
-      inProgressNpcPrefab: {fileID: 0}
-      InProgressNpcSceneInfo:
-        priority: 0
-        objectSceneInfo:
-          nodeId: 
-          positionInScene: {x: 0, y: 0, z: 0}
-      endNpcPrefab: {fileID: 0}
-      EndNpcSceneInfo:
-        priority: 0
-        objectSceneInfo:
-          nodeId: 
-          positionInScene: {x: 0, y: 0, z: 0}
-      completedNpcPrefab: {fileID: 0}
-      CompletedNpcSceneInfo:
-        priority: 0
-        objectSceneInfo:
-          nodeId: 
-          positionInScene: {x: 0, y: 0, z: 0}
-      failedNpcPrefab: {fileID: 0}
-      FailedNpcSceneInfo:
-        priority: 0
-        objectSceneInfo:
-          nodeId: 
-          positionInScene: {x: 0, y: 0, z: 0}
-  physicalQuestItems: []
-  fillerNpcs: []
+  - {fileID: 11400000, guid: 082a2e96284979c418be0b3fdaf6f134, type: 2}
+  physicalQuestItemInfos: []
+  fillerNpcInfos: []
