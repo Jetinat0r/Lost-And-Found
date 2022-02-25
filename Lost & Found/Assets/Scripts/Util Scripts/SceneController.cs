@@ -11,8 +11,9 @@ public class SceneController : MonoBehaviour
     {
         public GameObject npcPrefab;
         public NPC npcScript;
-        public int priority;
+        public DialogueScriptableObject defaultDialogue;
 
+        public int priority;
         public ObjectSceneInfo objectSceneInfo;
     }
 
@@ -128,7 +129,7 @@ public class SceneController : MonoBehaviour
                 if(_curNpc.npcPrefab == null)
                 {
                     Debug.LogWarning("NPC Does not exist!");
-                    return;
+                   continue;
                 }
 
                 _curNpc.npcScript = _curNpc.npcPrefab.GetComponent<NPC>();
@@ -184,11 +185,13 @@ public class SceneController : MonoBehaviour
             if (_curNpc == null)
             {
                 //Adds a new npc to the list
+                _curNpc = new NpcSpawn();
 
                 _curNpc.npcPrefab = _fillerInfo.npcPrefab;
                 _curNpc.npcScript = _fillerInfo.npcPrefab.GetComponent<NPC>();
                 _curNpc.priority = _fillerInfo.sceneInfo.priority;
                 _curNpc.objectSceneInfo = _fillerInfo.sceneInfo.objectSceneInfo;
+                _curNpc.defaultDialogue = _fillerInfo.unpopularDialogue;
 
                 _npcs.Add(_curNpc);
             }
@@ -211,8 +214,15 @@ public class SceneController : MonoBehaviour
             if(_npc.objectSceneInfo.nodeId == curNodeId)
             {
                 GameObject _newNpc = Instantiate(_npc.npcPrefab, _npc.objectSceneInfo.positionInScene, Quaternion.identity);
+                NPC _curNewNpc = _newNpc.GetComponent<NPC>();
                 //TODO: Tell the NPCs that they have LIFE!
                 //      maybe include a new bool to see if they should use quest things? but not yet
+                //Or do nothing
+
+                if(_npc.defaultDialogue != null)
+                {
+                    _curNewNpc.defaultDialogue = _npc.defaultDialogue;
+                }
             }
         }
 
@@ -239,7 +249,8 @@ public class SceneController : MonoBehaviour
             if (_itemInfo.objectSceneInfo.nodeId == curNodeId)
             {
                 QuestItemPhysical _newItem = Instantiate(_itemInfo.itemPrefab, _itemInfo.objectSceneInfo.positionInScene, Quaternion.identity);
-                //TODO: Tell quest items how to behave
+                //Tell quest items how to behave
+                _newItem.DetermineState();
             }
         }
     }

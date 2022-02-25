@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: test_quest_01
   m_EditorClassIdentifier: 
   idQuestName: test_quest_01
-  idQuestItemNames: []
-  initialQuestState: 1
-  curQuestState: 2
+  idQuestItemNames:
+  - test_knife_01
+  initialQuestState: 0
+  curQuestState: 0
   unlockOnComplete: []
   inactiveIdNpcName: test_npc_01
   startIdNpcName: test_npc_02

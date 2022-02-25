@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,10 @@ using UnityEngine.Events;
 
 public class QuestItemPhysical : InteractionTarget
 {
-    private InteractionTarget interactionTarget;
+    //private InteractionTarget interactionTarget;
+
+    [SerializeField]
+    private GameObject itemSprite;
 
     [SerializeField]
     private QuestItemScriptableObject questItemScriptableObject;
@@ -37,12 +41,77 @@ public class QuestItemPhysical : InteractionTarget
     //Called upon load in, quest state change, and interact
     public override void DetermineState()
     {
+        //Determine the item's most prevalent state (stated above)
+        QuestState highestState = QuestState.Inactive;
+        foreach(QuestInfo info in GameManager.instance.curQuestInfos)
+        {
+            foreach(string id in info.quest.idQuestItemNames)
+            {
+                if(id == questItemScriptableObject.idItemName)
+                {
+                    switch (info.quest.curQuestState)
+                    {
+                        case (QuestState.End):
+                        case (QuestState.Completed):
+                        case (QuestState.Failed):
+                            highestState = info.quest.curQuestState;
+                            break;
 
-        //TODO: If state is active, allow interact in InteractionTarget
+                        case (QuestState.InProgress):
+                            if(highestState != QuestState.End && highestState != QuestState.Completed
+                                && highestState != QuestState.Failed)
+                            {
+                                highestState = info.quest.curQuestState;
+                            }
+                            break;
+                    }
+                }
+            }
+        }
+
+
+        //If "InProgress" determine if the player has already picked up the item
+        //If so, make it so that the item dissapears and can't be picked up
+        //(here done by setting highestState to one that acts like that)
+        if(highestState == QuestState.InProgress)
+        {
+            foreach(QuestItemScriptableObject heldItem in PlayerInventory.instance.curHeldItems)
+            {
+                if(heldItem.idItemName == questItemScriptableObject.idItemName)
+                {
+                    highestState = QuestState.Completed;
+                }
+            }
+        }
+        
+        //If state is done, don't show and don't allow interact
+        //If state is active, allow interact in InteractionTarget
+        //If state is inactive, show but don't allow interact
+        switch (highestState)
+        {
+            //Don't display the item; already picked up
+            case (QuestState.End):
+            case (QuestState.Completed):
+            case (QuestState.Failed):
+                itCanInteract = false;
+                itemSprite.SetActive(false);
+                break;
+
+            //Display the item; can be picked up
+            case (QuestState.InProgress):
+                itCanInteract = true;
+                break;
+
+            //Display the item; can't be picked up
+            default:
+                itCanInteract = false;
+                break;
+        }
     }
 
     //TODO: Refactor with lambdas
     //or change entirely
+    //OUTDATED?
     public bool CheckIfQuestActive(List<QuestScriptableObject> curActiveQuests)
     {
         foreach(QuestScriptableObject quest in curActiveQuests)
@@ -54,7 +123,7 @@ public class QuestItemPhysical : InteractionTarget
                     if (itemName == questItemScriptableObject.idItemName)
                     {
                         //TODO: Activate pickup
-                        canPickUp = true;
+                        //canPickUp = true;
 
                         //ChangeItemHighlight(true);
 
@@ -84,8 +153,9 @@ public class QuestItemPhysical : InteractionTarget
         PlayerInventory.instance.PickupItem(questItemScriptableObject);
 
         //TODO: call onTake
-
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        itemSprite.SetActive(false);
+        itCanInteract = false;
     }
 
     public void StartMinigame()
@@ -95,6 +165,7 @@ public class QuestItemPhysical : InteractionTarget
     }
     #endregion
 
+    //OUTDATED
     public void CheckCanInteract()
     {
         if (CheckIfQuestActive(QuestManager.instance.curQuests))

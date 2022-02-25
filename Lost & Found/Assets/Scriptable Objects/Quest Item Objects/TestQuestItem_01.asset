@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc24e50783806044d8544e74a79b5696, type: 3}
   m_Name: TestQuestItem_01
   m_EditorClassIdentifier: 
-  itemName: Test Item 01
-  itemDescription: DEFAULT TEXT
+  idItemName: test_knife_01
+  displayItemName: A Knife!
+  itemDescription: '"What have you got there?"'

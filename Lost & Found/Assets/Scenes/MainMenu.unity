@@ -1284,8 +1284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92c7f2fc3dc3f5d45b469e3af0daef20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curQuests:
-  - {fileID: 11400000, guid: 2009e01fb42569f40a63f3c6953fd986, type: 2}
+  curQuests: []
 --- !u!4 &1622123134
 Transform:
   m_ObjectHideFlags: 0

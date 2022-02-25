@@ -16,7 +16,7 @@ MonoBehaviour:
   - day: 0
     time: 0
   quest: {fileID: 11400000, guid: 2009e01fb42569f40a63f3c6953fd986, type: 2}
-  initialQuestState: 0
+  initialQuestState: 2
   questNpc:
     inactiveNpcPrefab: {fileID: 3350966203038361818, guid: 37e2debadd6ab504fa085af7dbf15251, type: 3}
     InactiveNpcSceneInfo:

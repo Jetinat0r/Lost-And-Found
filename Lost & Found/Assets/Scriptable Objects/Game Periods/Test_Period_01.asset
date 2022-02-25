@@ -20,5 +20,7 @@ MonoBehaviour:
   startingNodeId: test_scene_01
   questInfos:
   - {fileID: 11400000, guid: 082a2e96284979c418be0b3fdaf6f134, type: 2}
-  physicalQuestItemInfos: []
-  fillerNpcInfos: []
+  physicalQuestItemInfos:
+  - {fileID: 11400000, guid: 259cb47635a87fe49b1053d88d3240b8, type: 2}
+  fillerNpcInfos:
+  - {fileID: 11400000, guid: 74820267ca40c3b48b5cf2595db70314, type: 2}

@@ -130,6 +130,7 @@ public class GameManager : MonoBehaviour
             //TODO: Add some checks to ensure the same info isn't added twice anywhere
             info.quest.InitializeQuestState();
             curQuestInfos.Add(info);
+            QuestManager.instance.AddQuest(info.quest);
         }
 
         foreach (FillerNpcInfo info in periodToLoad.fillerNpcInfos)
