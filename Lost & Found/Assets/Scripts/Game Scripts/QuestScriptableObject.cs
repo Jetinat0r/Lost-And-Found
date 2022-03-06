@@ -164,6 +164,7 @@ public class QuestScriptableObject : ScriptableObject
 
     public void OnStateToFailed()
     {
+        //TODO: If(QuestState != Inactive) Then(Notify player) also check if the player has already completed or failed said quest
         curQuestState = QuestState.Failed;
 
         CallEvents(onStateToFailed);

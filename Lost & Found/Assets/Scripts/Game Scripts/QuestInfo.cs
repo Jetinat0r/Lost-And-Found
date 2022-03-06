@@ -9,7 +9,7 @@ public class QuestInfo : ScriptableObject
     //TODO: Add an "end time" to remove when the curTimeBlock == it
 
     public QuestScriptableObject quest;
-    public QuestState initialQuestState;
+    //public QuestState initialQuestState;
 
     public QuestNpcInfo questNpc;
 }

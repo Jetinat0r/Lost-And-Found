@@ -30,9 +30,9 @@ MonoBehaviour:
     be sus.
   reputationPoints: 0
   inactiveDialogue: {fileID: 11400000, guid: 77899ec5e25e93d44bb6ab6e7a09c79d, type: 2}
-  startDialogue: {fileID: 11400000, guid: 77899ec5e25e93d44bb6ab6e7a09c79d, type: 2}
-  inProgressDialogue: {fileID: 0}
-  endDialogue: {fileID: 0}
+  startDialogue: {fileID: 11400000, guid: a4e57eaf83d5be24cb695efb326fa492, type: 2}
+  inProgressDialogue: {fileID: 11400000, guid: d479484b8eccc23489bc2d15c348e212, type: 2}
+  endDialogue: {fileID: 11400000, guid: 325434402a0e3bd48b61114181642d52, type: 2}
   completedDialogue: {fileID: 0}
   failedDialogue: {fileID: 0}
   onInactiveToStart: []

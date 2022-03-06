@@ -157,7 +157,21 @@ public class NPC : InteractionTarget
         //Display Dialogue
         if(_npcQuest != null)
         {
-           DialogueManager.instance.StartDialogue(_npcQuest.GetCurrentDialogue(), displayNpcName);
+            switch (_npcQuest.curQuestState)
+            {
+                case (QuestState.Start):
+                    DialogueManager.instance.StartDialogue(_npcQuest.GetCurrentDialogue(), displayNpcName, _npcQuest.OnStartToInProgress);
+                    break;
+
+                case (QuestState.End):
+                    DialogueManager.instance.StartDialogue(_npcQuest.GetCurrentDialogue(), displayNpcName, _npcQuest.OnEndToCompleted);
+                    break;
+
+                default:
+                    DialogueManager.instance.StartDialogue(_npcQuest.GetCurrentDialogue(), displayNpcName);
+                    break;
+            }
+
         }
         else
         {

@@ -25,10 +25,14 @@ public class PlayerInventory : MonoBehaviour
     {
         curHeldItems.Add(questItem);
 
+        //TODO: Refactor to be smaller
+        //Priority: Low
         foreach (QuestScriptableObject quest in QuestManager.instance.GetActiveQuests())
         {
             if (quest.idQuestItemNames.Contains(questItem.idItemName))
             {
+                bool hasAllItems = true;
+
                 //If this loop does not break, the player has all the necessary items
                 foreach(string itemName in quest.idQuestItemNames)
                 {
@@ -46,11 +50,15 @@ public class PlayerInventory : MonoBehaviour
 
                     if (!hasItem)
                     {
+                        hasAllItems = false;
                         break;
                     }
                 }
 
-                quest.curQuestState = QuestState.End;
+                if (hasAllItems)
+                {
+                    quest.OnInProgressToEnd();
+                }
             }
         }
     }

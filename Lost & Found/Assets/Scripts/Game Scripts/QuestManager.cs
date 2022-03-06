@@ -83,4 +83,52 @@ public class QuestManager : MonoBehaviour
             Debug.LogWarning("Quest (" + _toRemove.idQuestName + ") was not found in curQuests!");
         }
     }
+
+    public void ActivateQuests(List<string> _questIds)
+    {
+        foreach(string _id in _questIds)
+        {
+            bool _wasFound = false;
+
+            foreach(QuestScriptableObject _quest in curQuests)
+            {
+                if(_quest.idQuestName == _id)
+                {
+                    _wasFound = true;
+                    _quest.OnInactiveToStart();
+
+                    break;
+                }
+            }
+
+            if (!_wasFound)
+            {
+                Debug.LogWarning("Quest of ID (" + _id + ") was not found in curQuests!");
+            }
+        }
+    }
+
+    public void FailQuests(List<string> _questIds)
+    {
+        foreach (string _id in _questIds)
+        {
+            bool _wasFound = false;
+
+            foreach (QuestScriptableObject _quest in curQuests)
+            {
+                if (_quest.idQuestName == _id)
+                {
+                    _wasFound = true;
+                    _quest.OnStateToFailed();
+
+                    break;
+                }
+            }
+
+            if (!_wasFound)
+            {
+                Debug.LogWarning("Quest of ID (" + _id + ") was not found in curQuests!");
+            }
+        }
+    }
 }

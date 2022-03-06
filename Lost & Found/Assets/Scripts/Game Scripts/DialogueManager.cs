@@ -23,6 +23,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private DialogueBox dialogueBox;
 
+    public delegate void RunOnComplete();
+    private RunOnComplete runOnComplete;
+
     private void Awake()
     {
         if(instance == null)
@@ -44,9 +47,21 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.SetupDialogueBox(_dialogue, _displayName);
     }
 
+    public void StartDialogue(DialogueScriptableObject _dialogue, string _displayName, RunOnComplete _runOnComplete)
+    {
+        ToggleDialogueContainer(true);
+
+        runOnComplete += _runOnComplete;
+
+        dialogueBox.SetupDialogueBox(_dialogue, _displayName);
+    }
+
     public void EndDialogue()
     {
         ToggleDialogueContainer(false);
+
+        //If runOnComplete != null, Invoke
+        runOnComplete?.Invoke();
     }
 
     private void ToggleDialogueContainer(bool _enable)
