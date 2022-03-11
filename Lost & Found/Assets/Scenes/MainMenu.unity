@@ -1683,6 +1683,7 @@ MonoBehaviour:
     time: -1
   timeSlots:
   - {fileID: 11400000, guid: 47f37e2d19c52bb4a811c0d973636420, type: 2}
+  playerPrefab: {fileID: 6670859051717510830, guid: 6fb8271f1c35f7840aafd0f4a3bc0edf, type: 3}
   curQuestInfos: []
   curFillerNpcInfos: []
   curPhysicalQuestItemInfos: []

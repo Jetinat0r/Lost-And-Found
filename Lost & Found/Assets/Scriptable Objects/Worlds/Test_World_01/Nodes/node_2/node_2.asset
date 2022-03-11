@@ -22,8 +22,8 @@ MonoBehaviour:
   path: Assets/Scriptable Objects/Worlds/Test_World_01/Nodes/node_2
   rect:
     serializedVersion: 2
-    x: 575
-    y: 136
+    x: 567
+    y: 134
     width: 200
     height: 50
   isDragged: 0
@@ -301,15 +301,15 @@ MonoBehaviour:
   - connector: {fileID: 11400000, guid: 29d82f77c13b3b64b8ce2f4fe262a58c, type: 2}
     connectionPoint:
       serializedVersion: 2
-      x: 591
-      y: 150
+      x: 583
+      y: 148
       width: 0
       height: 0
   outgoingConnections:
   - connector: {fileID: 11400000, guid: 81d841ef68defe945ae896b9d9ac400b, type: 2}
     connectionPoint:
       serializedVersion: 2
-      x: 587
-      y: 171
+      x: 579
+      y: 169
       width: 0
       height: 0

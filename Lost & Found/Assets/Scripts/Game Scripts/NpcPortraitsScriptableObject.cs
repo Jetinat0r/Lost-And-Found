@@ -50,6 +50,14 @@ public class NpcPortraitsScriptableObject : ScriptableObject
                 _toReturn = npcScheming;
                 break;
 
+            case (PortraitMood.Empty):
+                _toReturn = npcNeutral;
+                break;
+
+            case (PortraitMood.None):
+                _toReturn = npcNeutral;
+                break;
+
             case (PortraitMood.Extra1):
                 _toReturn = npcExtra1;
                 break;

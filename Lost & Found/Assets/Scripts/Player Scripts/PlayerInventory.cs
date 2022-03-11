@@ -11,13 +11,13 @@ public class PlayerInventory : MonoBehaviour
     private void Awake()
     {
         //Singleton convention, allows access from anything at any time via PlayerInventory.instance
-        if(PlayerInventory.instance == null)
+        if(instance == null)
         {
             instance = this;
         }
         else
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 

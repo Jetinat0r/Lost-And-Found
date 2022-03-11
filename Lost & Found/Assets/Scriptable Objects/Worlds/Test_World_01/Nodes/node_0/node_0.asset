@@ -23,7 +23,7 @@ MonoBehaviour:
   rect:
     serializedVersion: 2
     x: 12
-    y: 143
+    y: 142
     width: 200
     height: 50
   isDragged: 0

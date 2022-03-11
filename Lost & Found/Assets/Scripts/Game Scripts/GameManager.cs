@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     public TimeBlock curTime;
     public List<GamePeriod> timeSlots;
 
+    public GameObject playerPrefab;
+    private GameObject spawnedPlayer;
+
     [HideInInspector]
     public List<QuestInfo> curQuestInfos = new List<QuestInfo>();
     [HideInInspector]
@@ -30,7 +33,7 @@ public class GameManager : MonoBehaviour
     }
 
     //TODO: Move to GameManager or something
-    //Why did i leave this. This IS GameManager
+    //Why did i leave this comment. This IS GameManager
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -146,5 +149,46 @@ public class GameManager : MonoBehaviour
         }
         #endregion
         SceneController.instance.GotoNode(periodToLoad.startingNodeId);
+    }
+
+    public void SpawnPlayer()
+    {
+        if(spawnedPlayer != null)
+        {
+            //Debug.LogWarning("Player already exists!");
+            return;
+        }
+
+        spawnedPlayer = Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
+    }
+
+    public bool HasSpawnedPlayer()
+    {
+        return spawnedPlayer != null;
+    }
+
+    public void MovePlayer(Vector3 _pos)
+    {
+        if(spawnedPlayer != null)
+        {
+            spawnedPlayer.transform.position = _pos;
+        }
+        else
+        {
+            Debug.LogWarning("Player does not exist, and therefore cannot be moved!");
+        }
+    }
+
+    public void DeletePlayer()
+    {
+        if(spawnedPlayer != null)
+        {
+            Destroy(spawnedPlayer);
+            spawnedPlayer = null;
+        }
+        else
+        {
+            Debug.Log("DeletePlayer() called when no player exists!");
+        }
     }
 }

@@ -111,6 +111,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableTag: Interactable
+  animator: {fileID: 6670859052614927037}
+  isBusy: 0
 --- !u!114 &6670859051717510816
 MonoBehaviour:
   m_ObjectHideFlags: 0

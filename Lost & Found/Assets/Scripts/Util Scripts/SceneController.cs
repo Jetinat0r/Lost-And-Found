@@ -24,6 +24,9 @@ public class SceneController : MonoBehaviour
     public WorldNode curWorldNode = null;
     public string curNodeId = "main_menu";
 
+    //Used for transitioning between scenes w/o needing a whole bunch of overloaded functions
+    private string lastConnectionTitle = "";
+
     private void Awake()
     {
         if(instance == null)
@@ -44,6 +47,27 @@ public class SceneController : MonoBehaviour
         if (_sceneName != "" && _goToScene != null)
         {
             SceneManager.LoadScene(_sceneName);
+
+            //MovePlayer();
+
+            sceneObjectLoadRoutine = StartCoroutine(WaitForSceneLoad());
+        }
+        else
+        {
+            Debug.LogWarning("Scene: (" + _sceneName + ") not found!");
+        }
+    }
+
+    public void SetScene(string _sceneName, string _connectionTitle)
+    {
+        Scene _goToScene = SceneManager.GetSceneByName(_sceneName);
+
+        if (_sceneName != "" && _goToScene != null)
+        {
+            SceneManager.LoadScene(_sceneName);
+
+            //MovePlayer(_connectionTitle);
+            lastConnectionTitle = _connectionTitle;
 
             sceneObjectLoadRoutine = StartCoroutine(WaitForSceneLoad());
         }
@@ -75,11 +99,21 @@ public class SceneController : MonoBehaviour
         curWorldNode = curWorldNode.GetConnectedNode(_connectionTitle);
         curNodeId = curWorldNode.title;
 
-        SetScene(curWorldNode.GetSceneTitle(GameManager.instance.GetCurrentPeriod()));
+        SetScene(curWorldNode.GetSceneTitle(GameManager.instance.GetCurrentPeriod()), _connectionTitle);
     }
 
     private void LoadSceneObjects()
     {
+        if(lastConnectionTitle != "")
+        {
+            MovePlayer(lastConnectionTitle);
+            lastConnectionTitle = "";
+        }
+        else
+        {
+            MovePlayer();
+        }
+
         //_curPeriod stores ALL info about what is to be spawned
         GamePeriod _curPeriod = GameManager.instance.GetCurrentPeriod();
         List<NpcSpawn> _npcs = new List<NpcSpawn>();
@@ -252,6 +286,44 @@ public class SceneController : MonoBehaviour
                 //Tell quest items how to behave
                 _newItem.DetermineState();
             }
+        }
+    }
+
+    private void MovePlayer()
+    {
+        SceneInfoContainer sceneInfoContainer = SceneInfoContainer.instance;
+
+        if(sceneInfoContainer != null)
+        {
+            if (!GameManager.instance.HasSpawnedPlayer())
+            {
+                GameManager.instance.SpawnPlayer();
+            }
+
+            GameManager.instance.MovePlayer(sceneInfoContainer.GetConnectionPosition());
+        }
+        else
+        {
+            Debug.LogWarning("No SceneInfoContainer on Scene!");
+        }
+    }
+
+    private void MovePlayer(string _connectionTitle)
+    {
+        SceneInfoContainer sceneInfoContainer = SceneInfoContainer.instance;
+
+        if (sceneInfoContainer != null)
+        {
+            if (!GameManager.instance.HasSpawnedPlayer())
+            {
+                GameManager.instance.SpawnPlayer();
+            }
+
+            GameManager.instance.MovePlayer(sceneInfoContainer.GetConnectionPosition(_connectionTitle));
+        }
+        else
+        {
+            Debug.LogWarning("No SceneInfoContainer on Scene!");
         }
     }
 }

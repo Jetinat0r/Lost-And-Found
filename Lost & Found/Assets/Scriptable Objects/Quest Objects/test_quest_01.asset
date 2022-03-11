@@ -15,14 +15,15 @@ MonoBehaviour:
   idQuestName: test_quest_01
   idQuestItemNames:
   - test_knife_01
-  initialQuestState: 0
-  curQuestState: 0
-  unlockOnComplete: []
+  initialQuestState: 1
+  curQuestState: 1
+  unlockOnComplete:
+  - test_quest_02
   inactiveIdNpcName: test_npc_01
   startIdNpcName: test_npc_02
-  inProgressIdNpcName: 
-  endIdNpcName: 
-  completedIdNpcName: 
+  inProgressIdNpcName: test_npc_01
+  endIdNpcName: test_npc_01
+  completedIdNpcName: test_npc_01
   failedIdNpcName: 
   displayQuestName: Test Quest 01
   displayNpcName: Gregory (sus)
@@ -33,7 +34,7 @@ MonoBehaviour:
   startDialogue: {fileID: 11400000, guid: a4e57eaf83d5be24cb695efb326fa492, type: 2}
   inProgressDialogue: {fileID: 11400000, guid: d479484b8eccc23489bc2d15c348e212, type: 2}
   endDialogue: {fileID: 11400000, guid: 325434402a0e3bd48b61114181642d52, type: 2}
-  completedDialogue: {fileID: 0}
+  completedDialogue: {fileID: 11400000, guid: 0d38936cdbbfa4b42b8658b29433265d, type: 2}
   failedDialogue: {fileID: 0}
   onInactiveToStart: []
   onStartToInProgress: []
