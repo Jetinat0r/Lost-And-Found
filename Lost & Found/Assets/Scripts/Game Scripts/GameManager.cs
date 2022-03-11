@@ -160,6 +160,7 @@ public class GameManager : MonoBehaviour
         }
 
         spawnedPlayer = Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
+        DontDestroyOnLoad(spawnedPlayer);
     }
 
     public bool HasSpawnedPlayer()
