@@ -18,38 +18,44 @@ MonoBehaviour:
   quest: {fileID: 11400000, guid: 2009e01fb42569f40a63f3c6953fd986, type: 2}
   questNpc:
     inactiveNpcPrefab: {fileID: 3350966203038361818, guid: 37e2debadd6ab504fa085af7dbf15251, type: 3}
-    InactiveNpcSceneInfo:
+    inactiveNpcSceneInfo:
       priority: 0
       objectSceneInfo:
         nodeId: test_scene_01
         positionInScene: {x: 1.56, y: -1.25, z: 0}
+    inactiveDefaultNpcDialogue: {fileID: 0}
     startNpcPrefab: {fileID: 3350966203038361818, guid: a6b05033462c3ec40a1c2af22fb65d25, type: 3}
-    StartNpcSceneInfo:
+    startNpcSceneInfo:
       priority: 0
       objectSceneInfo:
         nodeId: test_scene_02
-        positionInScene: {x: -2, y: -1.3, z: 0}
+        positionInScene: {x: 2.56, y: -1.25, z: 0}
+    startDefaultNpcDialogue: {fileID: 11400000, guid: 325434402a0e3bd48b61114181642d52, type: 2}
     inProgressNpcPrefab: {fileID: 3350966203038361818, guid: 37e2debadd6ab504fa085af7dbf15251, type: 3}
-    InProgressNpcSceneInfo:
+    inProgressNpcSceneInfo:
       priority: 0
       objectSceneInfo:
         nodeId: test_scene_01
-        positionInScene: {x: 1.56, y: -1.25, z: 0}
+        positionInScene: {x: 1.56, y: -1.26, z: 0}
+    inProgressDefaultNpcDialogue: {fileID: 0}
     endNpcPrefab: {fileID: 3350966203038361818, guid: 37e2debadd6ab504fa085af7dbf15251, type: 3}
-    EndNpcSceneInfo:
+    endNpcSceneInfo:
       priority: 0
       objectSceneInfo:
         nodeId: test_scene_01
         positionInScene: {x: 1.56, y: -1.25, z: 0}
+    endDefaultNpcDialogue: {fileID: 0}
     completedNpcPrefab: {fileID: 3350966203038361818, guid: 37e2debadd6ab504fa085af7dbf15251, type: 3}
-    CompletedNpcSceneInfo:
+    completedNpcSceneInfo:
       priority: 0
       objectSceneInfo:
         nodeId: test_scene_01
         positionInScene: {x: 1.56, y: -1.25, z: 0}
+    completedDefaultNpcDialogue: {fileID: 0}
     failedNpcPrefab: {fileID: 0}
-    FailedNpcSceneInfo:
+    failedNpcSceneInfo:
       priority: 0
       objectSceneInfo:
         nodeId: 
         positionInScene: {x: 0, y: 0, z: 0}
+    failedDefaultNpcDialogue: {fileID: 0}
