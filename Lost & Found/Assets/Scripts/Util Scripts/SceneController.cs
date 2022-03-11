@@ -169,6 +169,7 @@ public class SceneController : MonoBehaviour
                 _curNpc.npcScript = _curNpc.npcPrefab.GetComponent<NPC>();
                 _curNpc.priority = _questInfo.questNpc.GetPriority(_questInfo.quest.curQuestState);
                 _curNpc.objectSceneInfo = _questInfo.questNpc.GetScene(_questInfo.quest.curQuestState).objectSceneInfo;
+                _curNpc.defaultDialogue = _questInfo.questNpc.GetDefaultDialogue(_questInfo.quest.curQuestState);
 
                 _npcs.Add(_curNpc);
             }
@@ -179,6 +180,7 @@ public class SceneController : MonoBehaviour
                 {
                     _curNpc.priority = _questInfo.questNpc.GetPriority(_questInfo.quest.curQuestState);
                     _curNpc.objectSceneInfo = _questInfo.questNpc.GetScene(_questInfo.quest.curQuestState).objectSceneInfo;
+                    _curNpc.defaultDialogue = _questInfo.questNpc.GetDefaultDialogue(_questInfo.quest.curQuestState);
                 }
             }
         }

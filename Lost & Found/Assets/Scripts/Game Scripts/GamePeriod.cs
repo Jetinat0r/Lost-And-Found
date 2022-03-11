@@ -80,27 +80,33 @@ public struct QuestNpcInfo
 {
     #region NPC States
     public GameObject inactiveNpcPrefab;
-    public NpcSceneInfo InactiveNpcSceneInfo;
+    public NpcSceneInfo inactiveNpcSceneInfo;
+    public DialogueScriptableObject inactiveDefaultNpcDialogue;
     [Space(10)]
 
     public GameObject startNpcPrefab;
-    public NpcSceneInfo StartNpcSceneInfo;
+    public NpcSceneInfo startNpcSceneInfo;
+    public DialogueScriptableObject startDefaultNpcDialogue;
     [Space(10)]
 
     public GameObject inProgressNpcPrefab;
-    public NpcSceneInfo InProgressNpcSceneInfo;
+    public NpcSceneInfo inProgressNpcSceneInfo;
+    public DialogueScriptableObject inProgressDefaultNpcDialogue;
     [Space(10)]
 
     public GameObject endNpcPrefab;
-    public NpcSceneInfo EndNpcSceneInfo;
+    public NpcSceneInfo endNpcSceneInfo;
+    public DialogueScriptableObject endDefaultNpcDialogue;
     [Space(10)]
 
     public GameObject completedNpcPrefab;
-    public NpcSceneInfo CompletedNpcSceneInfo;
+    public NpcSceneInfo completedNpcSceneInfo;
+    public DialogueScriptableObject completedDefaultNpcDialogue;
     [Space(10)]
 
     public GameObject failedNpcPrefab;
-    public NpcSceneInfo FailedNpcSceneInfo;
+    public NpcSceneInfo failedNpcSceneInfo;
+    public DialogueScriptableObject failedDefaultNpcDialogue;
     #endregion
 
     public int GetPriority(QuestState _curState)
@@ -111,27 +117,27 @@ public struct QuestNpcInfo
         switch (_curState)
         {
             case (QuestState.Inactive):
-                _priority = InactiveNpcSceneInfo.priority;
+                _priority = inactiveNpcSceneInfo.priority;
                 break;
 
             case (QuestState.Start):
-                _priority = StartNpcSceneInfo.priority;
+                _priority = startNpcSceneInfo.priority;
                 break;
 
             case (QuestState.InProgress):
-                _priority = InProgressNpcSceneInfo.priority;
+                _priority = inProgressNpcSceneInfo.priority;
                 break;
 
             case (QuestState.End):
-                _priority = EndNpcSceneInfo.priority;
+                _priority = endNpcSceneInfo.priority;
                 break;
 
             case (QuestState.Completed):
-                _priority = CompletedNpcSceneInfo.priority;
+                _priority = completedNpcSceneInfo.priority;
                 break;
 
             case (QuestState.Failed):
-                _priority = FailedNpcSceneInfo.priority;
+                _priority = failedNpcSceneInfo.priority;
                 break;
         }
 
@@ -140,32 +146,32 @@ public struct QuestNpcInfo
 
     public NpcSceneInfo GetScene(QuestState _curState)
     {
-        NpcSceneInfo _activeScene = InactiveNpcSceneInfo;
+        NpcSceneInfo _activeScene = inactiveNpcSceneInfo;
 
         switch (_curState)
         {
             case (QuestState.Inactive):
-                _activeScene = InactiveNpcSceneInfo;
+                _activeScene = inactiveNpcSceneInfo;
                 break;
 
             case (QuestState.Start):
-                _activeScene = StartNpcSceneInfo;
+                _activeScene = startNpcSceneInfo;
                 break;
 
             case (QuestState.InProgress):
-                _activeScene = InProgressNpcSceneInfo;
+                _activeScene = inProgressNpcSceneInfo;
                 break;
 
             case (QuestState.End):
-                _activeScene = EndNpcSceneInfo;
+                _activeScene = endNpcSceneInfo;
                 break;
 
             case (QuestState.Completed):
-                _activeScene = CompletedNpcSceneInfo;
+                _activeScene = completedNpcSceneInfo;
                 break;
 
             case (QuestState.Failed):
-                _activeScene = FailedNpcSceneInfo;
+                _activeScene = failedNpcSceneInfo;
                 break;
         }
 
@@ -207,6 +213,40 @@ public struct QuestNpcInfo
         return _prefab;
     }
 
+    public DialogueScriptableObject GetDefaultDialogue(QuestState _curState)
+    {
+        DialogueScriptableObject _dialogue = inactiveDefaultNpcDialogue;
+
+        //Gets priority based on current quest state
+        switch (_curState)
+        {
+            case (QuestState.Inactive):
+                _dialogue = inactiveDefaultNpcDialogue;
+                break;
+
+            case (QuestState.Start):
+                _dialogue = startDefaultNpcDialogue;
+                break;
+
+            case (QuestState.InProgress):
+                _dialogue = inProgressDefaultNpcDialogue;
+                break;
+
+            case (QuestState.End):
+                _dialogue = endDefaultNpcDialogue;
+                break;
+
+            case (QuestState.Completed):
+                _dialogue = completedDefaultNpcDialogue;
+                break;
+
+            case (QuestState.Failed):
+                _dialogue = failedDefaultNpcDialogue;
+                break;
+        }
+
+        return _dialogue;
+    }
 }
 //[System.Serializable]
 //public struct FillerNpcInfo
