@@ -11,7 +11,11 @@ public class InteractionTarget : MonoBehaviour/*, IInteractable*/
     private GameObject itObjectHighlight;
     [SerializeField]
     public UnityEvent itInteractEvents;
+    [SerializeField]
+    public UnityEvent itPostInteractEvents;
 
+    [Tooltip("Usually true, only set to false if something like a cutscene happens directly after interacting")]
+    public bool itCanMoveAfter = true;
     //itCanInteract is controlled by classes that inherit it
     public bool itCanInteract = true;
 
@@ -35,8 +39,16 @@ public class InteractionTarget : MonoBehaviour/*, IInteractable*/
         itObjectHighlight.SetActive(_isHighlighted);
     }
 
-    public void Interact()
+    public virtual void Interact()
     {
+        //TODO: Stop player movement
+        GameManager.instance.DisablePlayerMovement();
         itInteractEvents?.Invoke();
+    }
+
+    public virtual void EndInteract()
+    {
+        //TODO: Reinstate player movement
+        itPostInteractEvents?.Invoke();
     }
 }

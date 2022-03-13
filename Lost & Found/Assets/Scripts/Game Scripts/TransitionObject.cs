@@ -8,6 +8,13 @@ public class TransitionObject : InteractionTarget
 
     public void AttemptTransition()
     {
-        SceneController.instance.MoveThroughConnection(connectionTitle);
+        //Create a delegate
+        SceneController.RunOnSceneLoad _runOnSceneLoad = null;
+
+        //Assign methods to delegate
+        _runOnSceneLoad += GameManager.instance.EnablePlayerMovement;
+
+        //Attempt transition
+        SceneController.instance.MoveThroughConnection(connectionTitle, _runOnSceneLoad);
     }
 }

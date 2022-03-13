@@ -156,6 +156,12 @@ public class QuestItemPhysical : InteractionTarget
         //Destroy(gameObject);
         itemSprite.SetActive(false);
         itCanInteract = false;
+
+        EndInteract();
+        if (itCanMoveAfter)
+        {
+            GameManager.instance.EnablePlayerMovement();
+        }
     }
 
     public void StartMinigame()

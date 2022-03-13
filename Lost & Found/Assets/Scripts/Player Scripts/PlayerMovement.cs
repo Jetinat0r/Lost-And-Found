@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float movementSpeed = 5f;
+    private bool canMove = true;
     [SerializeField]
     private Rigidbody2D rb;
 
@@ -29,14 +30,27 @@ public class PlayerMovement : MonoBehaviour
     //PUT THE "IF(CAN'T MOVE)" HERE
     private void FixedUpdate()
     {
-        //Movement
-        animator.SetFloat("horizontalSpeed", Mathf.Abs(movementVector.x));
-
-        if(movementVector.x != 0)
+        if (canMove)
         {
-            transform.localScale = new Vector3(movementVector.x, transform.localScale.y, transform.localScale.z);
-        }
+            //Movement
+            animator.SetFloat("horizontalSpeed", Mathf.Abs(movementVector.x));
 
-        rb.MovePosition(rb.position + (movementVector.normalized * movementSpeed * Time.fixedDeltaTime));
+            if (movementVector.x != 0)
+            {
+                transform.localScale = new Vector3(movementVector.x, transform.localScale.y, transform.localScale.z);
+            }
+
+            rb.MovePosition(rb.position + (movementVector.normalized * movementSpeed * Time.fixedDeltaTime));
+        }
+    }
+
+    public void DisableMovement()
+    {
+        canMove = false;
+    }
+
+    public void EnableMovement()
+    {
+        canMove = true;
     }
 }

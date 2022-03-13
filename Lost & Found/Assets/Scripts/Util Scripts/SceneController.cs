@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class SceneController : MonoBehaviour
 {
@@ -26,6 +27,11 @@ public class SceneController : MonoBehaviour
 
     //Used for transitioning between scenes w/o needing a whole bunch of overloaded functions
     private string lastConnectionTitle = "";
+
+    //Used specifically for doors really, because the door has to stop the player, but *maybe*
+    //allow them to move after the transition
+    public delegate void RunOnSceneLoad();
+    private RunOnSceneLoad runOnSceneLoad = null;
 
     private void Awake()
     {
@@ -102,8 +108,19 @@ public class SceneController : MonoBehaviour
         SetScene(curWorldNode.GetSceneTitle(GameManager.instance.GetCurrentPeriod()), _connectionTitle);
     }
 
+    public void MoveThroughConnection(string _connectionTitle, RunOnSceneLoad _runOnSceneLoad)
+    {
+        curWorldNode = curWorldNode.GetConnectedNode(_connectionTitle);
+        curNodeId = curWorldNode.title;
+
+        runOnSceneLoad = _runOnSceneLoad;
+
+        SetScene(curWorldNode.GetSceneTitle(GameManager.instance.GetCurrentPeriod()), _connectionTitle);
+    }
+
     private void LoadSceneObjects()
     {
+        //Moves the player to the correct position in the scene
         if(lastConnectionTitle != "")
         {
             MovePlayer(lastConnectionTitle);
@@ -242,9 +259,7 @@ public class SceneController : MonoBehaviour
             }
         }
 
-        //Populates a list with all quest items that can spawn and where
-        //foreach(QuestItemPhysical)
-
+        //Spawns in each npc
         foreach(NpcSpawn _npc in _npcs)
         {
             if(_npc.objectSceneInfo.nodeId == curNodeId)
@@ -262,7 +277,9 @@ public class SceneController : MonoBehaviour
             }
         }
 
-        foreach(PhysicalQuestItemInfo _itemInfo in _curPeriod.physicalQuestItemInfos)
+        //Populates a list with all quest items that can spawn and where
+        //foreach(QuestItemPhysical)
+        foreach (PhysicalQuestItemInfo _itemInfo in _curPeriod.physicalQuestItemInfos)
         {
             #region Check Time Block
             bool isRightTime = false;
@@ -289,6 +306,9 @@ public class SceneController : MonoBehaviour
                 _newItem.DetermineState();
             }
         }
+
+        //Runs events
+        runOnSceneLoad?.Invoke();
     }
 
     private void MovePlayer()

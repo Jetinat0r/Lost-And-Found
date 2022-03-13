@@ -157,21 +157,30 @@ public class NPC : InteractionTarget
         //Display Dialogue
         if(_npcQuest != null)
         {
+            DialogueManager.RunOnComplete _runOnComplete = null;
             switch (_npcQuest.curQuestState)
             {
                 case (QuestState.Start):
-                    DialogueManager.instance.StartDialogue(_npcQuest.GetCurrentDialogue(), displayNpcName, _npcQuest.OnStartToInProgress);
+                    _runOnComplete += _npcQuest.OnStartToInProgress;
+                    //DialogueManager.instance.StartDialogue(_npcQuest.GetCurrentDialogue(), displayNpcName, _npcQuest.OnStartToInProgress);
                     break;
 
                 case (QuestState.End):
-                    DialogueManager.instance.StartDialogue(_npcQuest.GetCurrentDialogue(), displayNpcName, _npcQuest.OnEndToCompleted);
+                    _runOnComplete += _npcQuest.OnStartToInProgress;
+                    //DialogueManager.instance.StartDialogue(_npcQuest.GetCurrentDialogue(), displayNpcName, _npcQuest.OnEndToCompleted);
                     break;
 
                 default:
-                    DialogueManager.instance.StartDialogue(_npcQuest.GetCurrentDialogue(), displayNpcName);
+                    //DialogueManager.instance.StartDialogue(_npcQuest.GetCurrentDialogue(), displayNpcName);
                     break;
             }
 
+            if (itCanMoveAfter)
+            {
+                _runOnComplete += GameManager.instance.EnablePlayerMovement;
+            }
+
+            DialogueManager.instance.StartDialogue(_npcQuest.GetCurrentDialogue(), displayNpcName, _runOnComplete, itPostInteractEvents);
         }
         else
         {
@@ -183,8 +192,15 @@ public class NPC : InteractionTarget
                 return;
             }
 
-            DialogueManager.instance.StartDialogue(defaultDialogue, displayNpcName);
-
+            //Allows movement after interaction
+            if (itCanMoveAfter)
+            {
+                DialogueManager.instance.StartDialogue(defaultDialogue, displayNpcName, GameManager.instance.EnablePlayerMovement, itPostInteractEvents);
+            }
+            else
+            {
+                DialogueManager.instance.StartDialogue(defaultDialogue, displayNpcName);
+            }
         }
     }
 

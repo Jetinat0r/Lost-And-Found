@@ -192,4 +192,44 @@ public class GameManager : MonoBehaviour
             Debug.Log("DeletePlayer() called when no player exists!");
         }
     }
+
+    public void DisablePlayerMovement()
+    {
+        if(spawnedPlayer != null)
+        {
+            PlayerMovement _playerMovement = spawnedPlayer.GetComponent<PlayerMovement>();
+            if(_playerMovement != null)
+            {
+                _playerMovement.DisableMovement();
+            }
+            else
+            {
+                Debug.LogWarning("No movement script attatched to player!");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("No player exists!");
+        }
+    }
+
+    public void EnablePlayerMovement()
+    {
+        if(spawnedPlayer != null)
+        {
+            PlayerMovement _playerMovement = spawnedPlayer.GetComponent<PlayerMovement>();
+            if (_playerMovement != null)
+            {
+                _playerMovement.EnableMovement();
+            }
+            else
+            {
+                Debug.LogWarning("No movement script attatched to player!");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("No player exists!");
+        }
+    }
 }

@@ -1,10 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
+
+    //Used for starting a dialogue via another dialogue really
+    [System.Serializable]
+    public struct DialogueHolder
+    {
+        public DialogueScriptableObject dialogue;
+        public string displayName;
+        public UnityEvent runEventsOnComplete;
+    }
 
     //For don't destroy on load
     [SerializeField]
@@ -26,6 +36,8 @@ public class DialogueManager : MonoBehaviour
     public delegate void RunOnComplete();
     private RunOnComplete runOnComplete;
 
+    private UnityEvent runEventsOnComplete;
+
     private void Awake()
     {
         if(instance == null)
@@ -40,6 +52,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    #region StartDialogue Overloads
     public void StartDialogue(DialogueScriptableObject _dialogue, string _displayName)
     {
         ToggleDialogueContainer(true);
@@ -51,10 +64,42 @@ public class DialogueManager : MonoBehaviour
     {
         ToggleDialogueContainer(true);
 
-        runOnComplete += _runOnComplete;
+        runOnComplete = _runOnComplete;
 
         dialogueBox.SetupDialogueBox(_dialogue, _displayName);
     }
+
+    public void StartDialogue(DialogueScriptableObject _dialogue, string _displayName, UnityEvent _runEventsOnComplete)
+    {
+        ToggleDialogueContainer(true);
+
+        runEventsOnComplete = _runEventsOnComplete;
+
+        dialogueBox.SetupDialogueBox(_dialogue, _displayName);
+    }
+
+    public void StartDialogue(DialogueScriptableObject _dialogue, string _displayName, RunOnComplete _runOnComplete, UnityEvent _runEventsOnComplete)
+    {
+        ToggleDialogueContainer(true);
+
+        runOnComplete = _runOnComplete;
+        runEventsOnComplete = _runEventsOnComplete;
+
+        dialogueBox.SetupDialogueBox(_dialogue, _displayName);
+    }
+
+    public void StartDialogue(DialogueHolder _dialogueHolder)
+    {
+        ToggleDialogueContainer(true);
+
+        if(_dialogueHolder.runEventsOnComplete != null)
+        {
+            runEventsOnComplete = _dialogueHolder.runEventsOnComplete;
+        }
+
+        dialogueBox.SetupDialogueBox(_dialogueHolder.dialogue, _dialogueHolder.displayName);
+    }
+    #endregion
 
     public void EndDialogue()
     {
@@ -62,6 +107,10 @@ public class DialogueManager : MonoBehaviour
 
         //If runOnComplete != null, Invoke
         runOnComplete?.Invoke();
+        runEventsOnComplete?.Invoke();
+
+        runOnComplete = null;
+        runEventsOnComplete = null;
     }
 
     private void ToggleDialogueContainer(bool _enable)
