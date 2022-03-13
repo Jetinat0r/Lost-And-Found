@@ -46,8 +46,12 @@ public class SceneController : MonoBehaviour
         }
     }
 
-    public void SetScene(string _sceneName)
+    public async void SetScene(string _sceneName)
     {
+        //Start fade transition
+        await FadeTransitionManager.instance.StartTransition();
+
+        //Change the scene
         Scene _goToScene = SceneManager.GetSceneByName(_sceneName);
 
         if (_sceneName != "" && _goToScene != null)
@@ -64,8 +68,12 @@ public class SceneController : MonoBehaviour
         }
     }
 
-    public void SetScene(string _sceneName, string _connectionTitle)
+    public async void SetScene(string _sceneName, string _connectionTitle)
     {
+        //Start fade transition
+        await FadeTransitionManager.instance.StartTransition();
+
+        //Change the scene
         Scene _goToScene = SceneManager.GetSceneByName(_sceneName);
 
         if (_sceneName != "" && _goToScene != null)

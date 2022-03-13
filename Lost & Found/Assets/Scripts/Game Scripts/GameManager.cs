@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
     }
 
     //Loads the next available period, starting with [0]
-    public void ChangeGamePeriod()
+    public void ChangeGamePeriod(bool _isStealthy = false)
     {
         GamePeriod periodToLoad = null;
 
@@ -95,12 +95,12 @@ public class GameManager : MonoBehaviour
             periodToLoad = timeSlots[0];
         }
 
-        LoadPeriod(periodToLoad);
+        LoadPeriod(periodToLoad, _isStealthy);
     }
 
     //Loads the period with the given TimeBlock
     //If the time block is not found, loads the first period
-    public void ChangeGamePeriod(TimeBlock timeBlock)
+    public void ChangeGamePeriod(TimeBlock timeBlock, bool _isStealthy = false)
     {
         GamePeriod periodToLoad = null;
 
@@ -119,12 +119,16 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("No Game Period found with time: (Day: " + timeBlock.day + "; Time: " + timeBlock.time + ")! Loading first Game Period...");
         }
 
-        LoadPeriod(periodToLoad);
+        LoadPeriod(periodToLoad, _isStealthy);
     }
 
-    private void LoadPeriod(GamePeriod periodToLoad)
+    private void LoadPeriod(GamePeriod periodToLoad, bool _isStealthy = false)
     {
         //TODO: Display Time Block on UI to indicate change
+        if (!_isStealthy)
+        {
+            //Display UI, else don't (bc it's stealthy!)
+        }
         curTime = periodToLoad.timeBlock;
 
         #region Load GamePeriod Infos into "cur's"
@@ -148,6 +152,11 @@ public class GameManager : MonoBehaviour
             curPhysicalQuestItemInfos.Add(info);
         }
         #endregion
+
+        if (!_isStealthy)
+        {
+            FadeTransitionManager.instance.SetTransitionText(periodToLoad.GetDisplayTime());
+        }
         SceneController.instance.GotoNode(periodToLoad.startingNodeId);
     }
 
