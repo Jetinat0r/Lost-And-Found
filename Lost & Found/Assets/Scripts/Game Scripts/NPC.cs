@@ -177,7 +177,7 @@ public class NPC : InteractionTarget
 
             if (itCanMoveAfter)
             {
-                _runOnComplete += GameManager.instance.EnablePlayerMovement;
+                _runOnComplete += GameManager.instance.EnablePlayerInput;
             }
 
             DialogueManager.instance.StartDialogue(_npcQuest.GetCurrentDialogue(), displayNpcName, _runOnComplete, itPostInteractEvents);
@@ -195,7 +195,7 @@ public class NPC : InteractionTarget
             //Allows movement after interaction
             if (itCanMoveAfter)
             {
-                DialogueManager.instance.StartDialogue(defaultDialogue, displayNpcName, GameManager.instance.EnablePlayerMovement, itPostInteractEvents);
+                DialogueManager.instance.StartDialogue(defaultDialogue, displayNpcName, GameManager.instance.EnablePlayerInput, itPostInteractEvents);
             }
             else
             {

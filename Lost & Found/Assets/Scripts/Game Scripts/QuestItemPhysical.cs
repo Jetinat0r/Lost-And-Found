@@ -160,7 +160,7 @@ public class QuestItemPhysical : InteractionTarget
         EndInteract();
         if (itCanMoveAfter)
         {
-            GameManager.instance.EnablePlayerMovement();
+            GameManager.instance.EnablePlayerInput();
         }
     }
 

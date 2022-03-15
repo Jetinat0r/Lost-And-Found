@@ -1480,7 +1480,8 @@ MonoBehaviour:
   textField: {fileID: 711221181}
   animator: {fileID: 235246401}
   fadeInTime: 1
-  fadeHoldTime: 1.5
+  fadeHoldTime: 0.25
+  fadeTextHoldTime: 1.25
   fadeOutTime: 1
 --- !u!4 &1195233151
 Transform:

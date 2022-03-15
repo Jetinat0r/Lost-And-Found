@@ -45,6 +45,16 @@ public class PlayerInteract : MonoBehaviour
         targetedObjects[0].SetHighlight(true);
     }
 
+    public void EnableInteract()
+    {
+        isBusy = false;
+    }
+
+    public void DisableInteract()
+    {
+        isBusy = true;
+    }
+
     //Should target the most recent object that you went into range for, probably will have to change later
     private void OnTriggerEnter2D(Collider2D collision)
     {

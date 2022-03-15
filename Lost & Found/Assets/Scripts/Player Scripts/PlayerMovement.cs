@@ -42,6 +42,10 @@ public class PlayerMovement : MonoBehaviour
 
             rb.MovePosition(rb.position + (movementVector.normalized * movementSpeed * Time.fixedDeltaTime));
         }
+        else
+        {
+            animator.SetFloat("horizontalSpeed", 0);
+        }
     }
 
     public void DisableMovement()

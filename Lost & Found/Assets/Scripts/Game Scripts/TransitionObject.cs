@@ -12,7 +12,7 @@ public class TransitionObject : InteractionTarget
         SceneController.RunOnSceneLoad _runOnSceneLoad = null;
 
         //Assign methods to delegate
-        _runOnSceneLoad += GameManager.instance.EnablePlayerMovement;
+        //_runOnSceneLoad += GameManager.instance.EnablePlayerMovement;
 
         //Attempt transition
         SceneController.instance.MoveThroughConnection(connectionTitle, _runOnSceneLoad);

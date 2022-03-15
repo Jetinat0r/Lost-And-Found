@@ -42,7 +42,7 @@ public class InteractionTarget : MonoBehaviour/*, IInteractable*/
     public virtual void Interact()
     {
         //TODO: Stop player movement
-        GameManager.instance.DisablePlayerMovement();
+        GameManager.instance.DisablePlayerInput();
         itInteractEvents?.Invoke();
     }
 

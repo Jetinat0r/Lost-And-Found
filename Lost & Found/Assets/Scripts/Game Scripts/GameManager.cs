@@ -202,14 +202,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void DisablePlayerMovement()
+    public void DisablePlayerInput()
     {
         if(spawnedPlayer != null)
         {
+            PlayerInteract _playerInteract = spawnedPlayer.GetComponent<PlayerInteract>();
             PlayerMovement _playerMovement = spawnedPlayer.GetComponent<PlayerMovement>();
-            if(_playerMovement != null)
+            if (_playerMovement != null)
             {
                 _playerMovement.DisableMovement();
+                _playerInteract.DisableInteract();
             }
             else
             {
@@ -222,14 +224,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void EnablePlayerMovement()
+    public void EnablePlayerInput()
     {
         if(spawnedPlayer != null)
         {
             PlayerMovement _playerMovement = spawnedPlayer.GetComponent<PlayerMovement>();
+            PlayerInteract _playerInteract = spawnedPlayer.GetComponent<PlayerInteract>();
             if (_playerMovement != null)
             {
                 _playerMovement.EnableMovement();
+                _playerInteract.EnableInteract();
             }
             else
             {
