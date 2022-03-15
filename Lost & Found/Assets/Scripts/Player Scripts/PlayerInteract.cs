@@ -10,7 +10,7 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
-    private List<InteractionTarget> targetedObjects = new List<InteractionTarget>();
+    private LinkedList<InteractionTarget> targetedObjects = new LinkedList<InteractionTarget>();
     //isBusy will be used for things like minigames or dialogue, maybe even transferring through doors
     //Should be handled by the thing that hinders player movement
     public bool isBusy = false;
@@ -18,17 +18,49 @@ public class PlayerInteract : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isBusy && Input.GetKeyDown(KeyCode.E) && targetedObjects.Count != 0)
+        if(targetedObjects.Count != 0)
         {
-            //Maybe something w/ lists, and you move the targeted object to the next one in the list?
-            //And when you get to a new object, that shoves its way to the front?
-            //Debug.Log("Interact!" + targetedObject);
-            targetedObjects[0].Interact();
+            RemoveInactiveInteractables();
 
-            animator.Play("Player_Grab");
+            if (!isBusy && Input.GetKeyDown(KeyCode.E))
+            {
+                animator.Play("Player_Grab");
 
-            //TODO: alter for isBusy
-            targetedObjects.RemoveAt(0);
+                //Maybe something w/ lists, and you move the targeted object to the next one in the list?
+                //And when you get to a new object, that shoves its way to the front?
+                //Debug.Log("Interact!" + targetedObject);
+                InteractionTarget _curTarget = targetedObjects.First();
+                _curTarget.SetHighlight(false);
+
+                targetedObjects.RemoveFirst();
+                RemoveInactiveInteractables();
+                HighlightInteractable();
+                targetedObjects.AddLast(_curTarget);
+
+                //RemoveInactiveInteractables();
+
+
+                _curTarget.Interact();
+            }
+        }
+        
+    }
+
+    private bool CheckIsInteractable(InteractionTarget _target)
+    {
+        return _target.itCanInteract;
+    }
+
+    private void RemoveInactiveInteractables()
+    {
+        while (targetedObjects.Count > 0 && (targetedObjects.First() == null || !CheckIsInteractable(targetedObjects.First())))
+        {
+            targetedObjects.RemoveFirst();
+        }
+
+        if (!isBusy)
+        {
+            HighlightInteractable();
         }
     }
 
@@ -42,7 +74,10 @@ public class PlayerInteract : MonoBehaviour
             target.SetHighlight(false);
         }
         //Step 2: highlight element 0 of targeted Objects
-        targetedObjects[0].SetHighlight(true);
+        if(targetedObjects.Count > 0)
+        {
+            targetedObjects.First().SetHighlight(true);
+        }
     }
 
     public void EnableInteract()
@@ -71,7 +106,7 @@ public class PlayerInteract : MonoBehaviour
                 return;
             }
 
-            targetedObjects.Add(newTarget);
+            targetedObjects.AddFirst(newTarget);
 
             HighlightInteractable();
 
@@ -98,6 +133,7 @@ public class PlayerInteract : MonoBehaviour
             {
                 target.SetHighlight(false);
                 targetedObjects.Remove(target);
+                //targetedObjects.Remove(target);
             }
         }
     }

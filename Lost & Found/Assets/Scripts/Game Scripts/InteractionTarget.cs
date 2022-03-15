@@ -21,7 +21,7 @@ public class InteractionTarget : MonoBehaviour/*, IInteractable*/
 
     public virtual void DetermineState()
     {
-        SetInteract(itCanInteract);
+        //SetInteract(itCanInteract);
     }
 
     public void SetInteract(bool _canInteract)
@@ -48,7 +48,6 @@ public class InteractionTarget : MonoBehaviour/*, IInteractable*/
 
     public virtual void EndInteract()
     {
-        //TODO: Reinstate player movement
         itPostInteractEvents?.Invoke();
     }
 }
