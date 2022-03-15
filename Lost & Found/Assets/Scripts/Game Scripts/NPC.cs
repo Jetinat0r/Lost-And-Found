@@ -43,19 +43,19 @@ public class NPC : InteractionTarget
     //Called upon load in, quest state change, and interact
     public override void DetermineState()
     {
-        GamePeriod curPeriod = GameManager.instance.GetCurrentPeriod();
+        //GamePeriod curPeriod = GameManager.instance.GetCurrentPeriod();
 
-        foreach (QuestInfo questInfo in curPeriod.questInfos)
-        {
-            //AKA if this npc was spawned due to a quest
-            //Don't do this, compare the id's of the npcs first
-            if(questInfo.questNpc.GetNpcPrefab(questInfo.quest.curQuestState).GetComponent<NPC>().idNpcName == idNpcName)
-            {
+        //foreach (QuestInfo questInfo in curPeriod.questInfos)
+        //{
+        //    //AKA if this npc was spawned due to a quest
+        //    //Don't do this, compare the id's of the npcs first
+        //    if(questInfo.questNpc.GetNpcPrefab(questInfo.quest.curQuestState).GetComponent<NPC>().idNpcName == idNpcName)
+        //    {
 
-            }
+        //    }
 
 
-        }
+        //}
         //this is where i will look at the state of a quest (the "refactor w/ lambdas thing from QuestItemPhysical")
         //TODO: If state is active, allow interact in InteractionTarget
     }

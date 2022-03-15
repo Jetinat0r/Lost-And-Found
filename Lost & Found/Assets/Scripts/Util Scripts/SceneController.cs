@@ -33,6 +33,9 @@ public class SceneController : MonoBehaviour
     public delegate void RunOnSceneLoad();
     private RunOnSceneLoad runOnSceneLoad = null;
 
+    private List<NPC> spawnedNpcs;
+    private List<QuestItemPhysical> spawnedQuestItems;
+
     private void Awake()
     {
         if(instance == null)
@@ -272,6 +275,7 @@ public class SceneController : MonoBehaviour
             }
         }
 
+        spawnedNpcs = new List<NPC>();
         //Spawns in each npc
         foreach(NpcSpawn _npc in _npcs)
         {
@@ -282,6 +286,7 @@ public class SceneController : MonoBehaviour
                 //TODO: Tell the NPCs that they have LIFE!
                 //      maybe include a new bool to see if they should use quest things? but not yet
                 //Or do nothing
+                spawnedNpcs.Add(_curNewNpc);
 
                 if(_npc.defaultDialogue != null)
                 {
@@ -290,6 +295,7 @@ public class SceneController : MonoBehaviour
             }
         }
 
+        spawnedQuestItems = new List<QuestItemPhysical>();
         //Populates a list with all quest items that can spawn and where
         //foreach(QuestItemPhysical)
         foreach (PhysicalQuestItemInfo _itemInfo in _curPeriod.physicalQuestItemInfos)
@@ -311,17 +317,32 @@ public class SceneController : MonoBehaviour
             }
             #endregion
 
-
             if (_itemInfo.objectSceneInfo.nodeId == curNodeId)
             {
                 QuestItemPhysical _newItem = Instantiate(_itemInfo.itemPrefab, _itemInfo.objectSceneInfo.positionInScene, Quaternion.identity);
                 //Tell quest items how to behave
+                spawnedQuestItems.Add(_newItem);
+
                 _newItem.DetermineState();
             }
         }
 
         //Runs events
         runOnSceneLoad?.Invoke();
+    }
+
+    public void DetermineSpawnedObjectStates()
+    {
+        //Not used
+        //foreach(NPC _spawnedNpc in spawnedNpcs)
+        //{
+        //    _spawnedNpc.DetermineState();
+        //}
+
+        foreach(QuestItemPhysical _spawnedQuestItem in spawnedQuestItems)
+        {
+            _spawnedQuestItem.DetermineState();
+        }
     }
 
     private void MovePlayer()

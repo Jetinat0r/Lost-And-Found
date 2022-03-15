@@ -176,6 +176,8 @@ public class QuestScriptableObject : ScriptableObject
         {
             EventFinder.instance.CallFunction(funcParams);
         }
+
+        SceneController.instance.DetermineSpawnedObjectStates();
     }
 
     public string GetCurNpcId()
