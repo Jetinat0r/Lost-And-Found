@@ -57,4 +57,9 @@ public class WorldObject : ScriptableObject
         Debug.LogWarning("Node (" + _nodeName + ") not found! Returning first node of the world...");
         return nodes[0];
     }
+
+    public WorldNodeConnector GetConnectorFromTitle(string _nodeId, string _connectionTitle)
+    {
+        return GetNode(_nodeId).GetConnectorFromTitle(_connectionTitle);
+    }
 }

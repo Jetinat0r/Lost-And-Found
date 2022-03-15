@@ -447,4 +447,19 @@ public class WorldNode : ScriptableObject
         Debug.LogWarning("No scene found in node " + this.title + " for period: " + "\n" + _period.ToString());
         return sceneList[0].sceneTitle;
     }
+
+    public WorldNodeConnector GetConnectorFromTitle(string _connectionTitle)
+    {
+        for(int i = 0; i < outgoingConnections.Count; i++)
+        {
+            WorldNodeConnector _curConnector = outgoingConnections[i].connector;
+            if (_curConnector.title == _connectionTitle)
+            {
+                return _curConnector;
+            }
+        }
+
+        Debug.LogWarning("Connection (" + _connectionTitle + ") does not go out from node (" + title + "), ERRORS/ISSUES INCOMING!");
+        return outgoingConnections[0].connector;
+    }
 }

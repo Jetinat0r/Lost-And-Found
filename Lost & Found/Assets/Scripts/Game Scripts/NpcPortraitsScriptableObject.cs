@@ -51,11 +51,11 @@ public class NpcPortraitsScriptableObject : ScriptableObject
                 break;
 
             case (PortraitMood.Empty):
-                _toReturn = npcNeutral;
+                _toReturn = null;
                 break;
 
             case (PortraitMood.None):
-                _toReturn = npcNeutral;
+                _toReturn = null;
                 break;
 
             case (PortraitMood.Extra1):

@@ -108,6 +108,11 @@ public class SceneController : MonoBehaviour
         SetScene(curWorldNode.GetSceneTitle(GameManager.instance.GetCurrentPeriod()));
     }
 
+    public WorldNodeConnector GetConnectorFromTitle(string _connectionTitle)
+    {
+        return worldObject.GetConnectorFromTitle(curNodeId, _connectionTitle);
+    } 
+
     public void MoveThroughConnection(string _connectionTitle)
     {
         curWorldNode = curWorldNode.GetConnectedNode(_connectionTitle);

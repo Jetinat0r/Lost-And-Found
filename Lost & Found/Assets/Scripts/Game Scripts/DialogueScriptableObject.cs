@@ -14,8 +14,8 @@ public enum PortraitMood
     Extra1,
     Extra2,
     Extra3,
-    None,           //Doesn't display portrait
-    Empty           //Doesn't display portrait and name
+    Empty,          //Doesn't display portrait
+    None            //Doesn't display portrait and name
 }
 
 [CreateAssetMenu(fileName = "NewDialogue", menuName = "ScriptableObjects/DialogueScriptableObject")]
@@ -42,5 +42,11 @@ public class DialogueScriptableObject : ScriptableObject
     public Sprite GetPortrait(PortraitMood _mood)
     {
         return portraits.GetPortrait(_mood);
+    }
+
+    //Really just made this so that locked doors could work :P
+    public void SetNpcPortraits(NpcPortraitsScriptableObject _portraits)
+    {
+        portraits = _portraits;
     }
 }
