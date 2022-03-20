@@ -14,7 +14,7 @@ public class QuestItemPhysical : InteractionTarget
     [SerializeField]
     private QuestItemScriptableObject questItemScriptableObject;
 
-    private bool canPickUp = false;
+    //private bool canPickUp = false;
 
     public UnityEvent onInteract;
 
@@ -136,7 +136,7 @@ public class QuestItemPhysical : InteractionTarget
         }
 
         //ChangeItemHighlight(false);
-        canPickUp = false;
+        //canPickUp = false;
 
         return false;
     }
