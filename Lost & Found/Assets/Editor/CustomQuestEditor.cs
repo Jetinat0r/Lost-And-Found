@@ -61,7 +61,7 @@ public class CustomQuestEditor : Editor
         inProgressIdNpcName = serializedObject.FindProperty("inProgressIdNpcName");
         endIdNpcName = serializedObject.FindProperty("endIdNpcName");
         completedIdNpcName = serializedObject.FindProperty("completedIdNpcName");
-        failedIdNpcName = serializedObject.FindProperty("endIdNpcName");
+        failedIdNpcName = serializedObject.FindProperty("failedIdNpcName");
         idQuestItemNames = serializedObject.FindProperty("idQuestItemNames");
 
         displayQuestName = serializedObject.FindProperty("displayQuestName");
