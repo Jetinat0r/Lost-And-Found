@@ -14683,7 +14683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0436f0f7bf6072438912a5ab349c039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldObject: {fileID: 11400000, guid: 7b13304ae4fe96d41a5d863fd2e70e56, type: 2}
+  worldObject: {fileID: 11400000, guid: e91815df25a76e04a98a58af0ba6c6b7, type: 2}
   curWorldNode: {fileID: 0}
   curNodeId: main_menu
 --- !u!4 &1401914199
@@ -17445,19 +17445,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: Main Theme
+  - name: Main Theme_Disabled
     clip: {fileID: 8300000, guid: 547a0b0e4b7e4cd47bc5c458dbbd1af7, type: 3}
     volume: 1
     pitch: 1
     loop: 1
     source: {fileID: 0}
-  - name: Level One Loop 1
+  - name: Level One Loop 1_Disabled
     clip: {fileID: 8300000, guid: 082aa84c597ddf6468216834e2c587c9, type: 3}
     volume: 1
     pitch: 1
     loop: 1
     source: {fileID: 0}
-  - name: Quest Complete 1
+  - name: Quest Complete 1_Disabled
     clip: {fileID: 8300000, guid: 3719d6dc7e3950f47a3f4eeaa396c968, type: 3}
     volume: 1
     pitch: 1
@@ -19346,7 +19346,7 @@ MonoBehaviour:
     day: -1
     time: -1
   timeSlots:
-  - {fileID: 11400000, guid: 47f37e2d19c52bb4a811c0d973636420, type: 2}
+  - {fileID: 11400000, guid: 2f0155cdf47b4134a9e54af1ccf6a903, type: 2}
   playerPrefab: {fileID: 6670859051717510830, guid: 6fb8271f1c35f7840aafd0f4a3bc0edf, type: 3}
   curQuestInfos: []
   curFillerNpcInfos: []

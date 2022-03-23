@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
 
     public Sound[] sounds;
 
+
     //Use this for initialization
     private void Awake()
     {
