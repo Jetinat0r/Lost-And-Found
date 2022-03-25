@@ -21,8 +21,22 @@ public class ParallaxObject : MonoBehaviour
 
     public void UpdatePosition(Vector2 _camPos, float _distMultiplier)
     {
-        //Layer is negative to align with how SpriteRenderer handles layers (pos in front of the player, neg behind them)
-        Vector2 _totalNewPos = startPos - ((_camPos - startPos) * -layer * _distMultiplier);
+        if(layer == 0)
+        {
+            return;
+        }
+
+        Vector2 _totalNewPos;
+        if (layer > 0)
+        {
+            //Layer is negative to align with how SpriteRenderer handles layers (pos in front of the player, neg behind them)
+            _totalNewPos = startPos - ((_camPos - startPos) * -layer * _distMultiplier);
+        }
+        else
+        {
+            //Layer is negative to align with how SpriteRenderer handles layers (pos in front of the player, neg behind them)
+            _totalNewPos = startPos - ((_camPos - startPos) * _distMultiplier) / -layer;
+        }
 
         //Ternary operator! if(parralaxX/Y) then {use that}, else {0}
         float _newX = parallaxX ? _totalNewPos.x : 0f;

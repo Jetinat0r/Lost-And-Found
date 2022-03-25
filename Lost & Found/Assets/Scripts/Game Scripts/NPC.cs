@@ -166,7 +166,7 @@ public class NPC : InteractionTarget
                     break;
 
                 case (QuestState.End):
-                    _runOnComplete += _npcQuest.OnStartToInProgress;
+                    _runOnComplete += _npcQuest.OnEndToCompleted;
                     //DialogueManager.instance.StartDialogue(_npcQuest.GetCurrentDialogue(), displayNpcName, _npcQuest.OnEndToCompleted);
                     break;
 
@@ -184,7 +184,7 @@ public class NPC : InteractionTarget
         }
         else
         {
-            Debug.Log("No quest assigned for character id ( " + idNpcName + "), using default dialogue...");
+            Debug.Log("No quest assigned for character id (" + idNpcName + "), using default dialogue...");
 
             if(defaultDialogue == null)
             {

@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b7453d244ea4d841a7029c8afceb34b, type: 3}
+  m_Name: Example_Quest
+  m_EditorClassIdentifier: 
+  idQuestName: example_quest_01
+  idQuestItemNames:
+  - example_item_01
+  initialQuestState: 1
+  curQuestState: 3
+  unlockOnComplete: []
+  inactiveIdNpcName: 
+  startIdNpcName: example_quest_npc_01
+  inProgressIdNpcName: example_quest_npc_01
+  endIdNpcName: example_quest_npc_02
+  completedIdNpcName: example_quest_npc_02
+  failedIdNpcName: 
+  displayQuestName: A Mysterious Note
+  displayNpcName: ???
+  displayQuestDescription: I found a weird note. It told me to do something.
+  reputationPoints: 0
+  inactiveDialogue: {fileID: 0}
+  startDialogue: {fileID: 11400000, guid: 79364beb6bd93d84cb9752df416fa72b, type: 2}
+  inProgressDialogue: {fileID: 11400000, guid: aa6827cee58f27344ac0bddf556ee0e2, type: 2}
+  endDialogue: {fileID: 11400000, guid: e0dbaa9f5046e3048a81f0587f938faa, type: 2}
+  completedDialogue: {fileID: 11400000, guid: 61e8da249d35d3644b18ec809441c1ef, type: 2}
+  failedDialogue: {fileID: 0}
+  onInactiveToStart: []
+  onStartToInProgress: []
+  onInProgressToEnd: []
+  onEndToCompleted: []
+  onStateToFailed: []
