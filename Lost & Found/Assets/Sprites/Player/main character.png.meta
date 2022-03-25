@@ -4,58 +4,58 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -5534716432263066409
-    second: main character_idle1
+    second: blair_idle1
   - first:
       213: 2777205908431809015
-    second: main character_idle2
+    second: blair_idle2
   - first:
       213: -6875350623115546230
-    second: main character_idle3
+    second: blair_idle3
   - first:
       213: 7338076652068405198
-    second: main character_run1
+    second: blair_run1
   - first:
       213: -1090068616658737690
-    second: main character_run2
+    second: blair_run2
   - first:
       213: 3880155433073004454
-    second: main character_run3
+    second: blair_run3
   - first:
       213: -1794476859891872114
-    second: main character_run4
+    second: blair_run4
   - first:
       213: -8069792643928015329
-    second: main character_grab1
+    second: blair_grab1
   - first:
       213: 8124386354764479148
-    second: main character_grab2
+    second: blair_grab2
   - first:
       213: 3725918551145530372
-    second: main character_grab3
+    second: blair_grab3
   - first:
       213: -2135221863835008002
-    second: main character_grab4
+    second: blair_grab4
   - first:
       213: -263875213627151713
-    second: main character_kneel1
+    second: blair_kneel1
   - first:
       213: -462482333839191812
-    second: main character_kneel2
+    second: blair_kneel2
   - first:
       213: -5062835653275042358
-    second: main character_kneel3
+    second: blari_kneel3
   - first:
       213: 5862637732948995344
-    second: main character_kneelgrab1
+    second: blair_kneelgrab1
   - first:
       213: -4440627300151035667
-    second: main character_kneelgrab2
+    second: blari_kneelgrab2
   - first:
       213: 737053325665691125
-    second: main character_kneelgrab3
+    second: blair_kneelgrab3
   - first:
       213: 6653356973189372396
-    second: main character_kneelgrab4
+    second: blair_kneelgrab4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -141,47 +141,11 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: main character_idle1
+      name: blair_idle1
       rect:
         serializedVersion: 2
         x: 0
@@ -202,7 +166,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: main character_idle2
+      name: blair_idle2
       rect:
         serializedVersion: 2
         x: 80
@@ -223,7 +187,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: main character_idle3
+      name: blair_idle3
       rect:
         serializedVersion: 2
         x: 160
@@ -244,7 +208,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: main character_run1
+      name: blair_run1
       rect:
         serializedVersion: 2
         x: 320
@@ -265,7 +229,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: main character_run2
+      name: blair_run2
       rect:
         serializedVersion: 2
         x: 400
@@ -286,7 +250,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: main character_run3
+      name: blair_run3
       rect:
         serializedVersion: 2
         x: 480
@@ -307,7 +271,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: main character_run4
+      name: blair_run4
       rect:
         serializedVersion: 2
         x: 560
@@ -328,7 +292,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: main character_grab1
+      name: blair_grab1
       rect:
         serializedVersion: 2
         x: 720
@@ -349,7 +313,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: main character_grab2
+      name: blair_grab2
       rect:
         serializedVersion: 2
         x: 800
@@ -370,7 +334,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: main character_grab3
+      name: blair_grab3
       rect:
         serializedVersion: 2
         x: 880
@@ -391,7 +355,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: main character_grab4
+      name: blair_grab4
       rect:
         serializedVersion: 2
         x: 960
@@ -412,7 +376,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: main character_kneel1
+      name: blair_kneel1
       rect:
         serializedVersion: 2
         x: 1120
@@ -433,7 +397,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: main character_kneel2
+      name: blair_kneel2
       rect:
         serializedVersion: 2
         x: 1200
@@ -454,7 +418,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: main character_kneel3
+      name: blari_kneel3
       rect:
         serializedVersion: 2
         x: 1280
@@ -475,7 +439,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: main character_kneelgrab1
+      name: blair_kneelgrab1
       rect:
         serializedVersion: 2
         x: 1440
@@ -496,7 +460,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: main character_kneelgrab2
+      name: blari_kneelgrab2
       rect:
         serializedVersion: 2
         x: 1520
@@ -517,7 +481,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: main character_kneelgrab3
+      name: blair_kneelgrab3
       rect:
         serializedVersion: 2
         x: 1600
@@ -538,7 +502,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: main character_kneelgrab4
+      name: blair_kneelgrab4
       rect:
         serializedVersion: 2
         x: 1680
