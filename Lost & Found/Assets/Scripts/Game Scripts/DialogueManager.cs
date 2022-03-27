@@ -38,6 +38,9 @@ public class DialogueManager : MonoBehaviour
 
     private UnityEvent runEventsOnComplete;
 
+    private DialogueScriptableObject nextDialogue = null;
+    private string nextDialogueDisplayName = "";
+
     private void Awake()
     {
         if(instance == null)
@@ -55,41 +58,80 @@ public class DialogueManager : MonoBehaviour
     #region StartDialogue Overloads
     public void StartDialogue(DialogueScriptableObject _dialogue, string _displayName)
     {
+        nextDialogue = null;
+        nextDialogueDisplayName = "";
+
         ToggleDialogueContainer(true);
+
+        if(_dialogue.nextDialogue != null)
+        {
+            nextDialogue = _dialogue.nextDialogue;
+            nextDialogueDisplayName = _dialogue.nextDialogueDisplayName;
+        }
 
         dialogueBox.SetupDialogueBox(_dialogue, _displayName);
     }
 
     public void StartDialogue(DialogueScriptableObject _dialogue, string _displayName, RunOnComplete _runOnComplete)
     {
+        nextDialogue = null;
+        nextDialogueDisplayName = "";
+
         ToggleDialogueContainer(true);
 
         runOnComplete = _runOnComplete;
+
+        if (_dialogue.nextDialogue != null)
+        {
+            nextDialogue = _dialogue.nextDialogue;
+            nextDialogueDisplayName = _dialogue.nextDialogueDisplayName;
+        }
 
         dialogueBox.SetupDialogueBox(_dialogue, _displayName);
     }
 
     public void StartDialogue(DialogueScriptableObject _dialogue, string _displayName, UnityEvent _runEventsOnComplete)
     {
+        nextDialogue = null;
+        nextDialogueDisplayName = "";
+
         ToggleDialogueContainer(true);
 
         runEventsOnComplete = _runEventsOnComplete;
+
+        if (_dialogue.nextDialogue != null)
+        {
+            nextDialogue = _dialogue.nextDialogue;
+            nextDialogueDisplayName = _dialogue.nextDialogueDisplayName;
+        }
 
         dialogueBox.SetupDialogueBox(_dialogue, _displayName);
     }
 
     public void StartDialogue(DialogueScriptableObject _dialogue, string _displayName, RunOnComplete _runOnComplete, UnityEvent _runEventsOnComplete)
     {
+        nextDialogue = null;
+        nextDialogueDisplayName = "";
+
         ToggleDialogueContainer(true);
 
         runOnComplete = _runOnComplete;
         runEventsOnComplete = _runEventsOnComplete;
+
+        if (_dialogue.nextDialogue != null)
+        {
+            nextDialogue = _dialogue.nextDialogue;
+            nextDialogueDisplayName = _dialogue.nextDialogueDisplayName;
+        }
 
         dialogueBox.SetupDialogueBox(_dialogue, _displayName);
     }
 
     public void StartDialogue(DialogueHolder _dialogueHolder)
     {
+        nextDialogue = null;
+        nextDialogueDisplayName = "";
+
         ToggleDialogueContainer(true);
 
         if(_dialogueHolder.runEventsOnComplete != null)
@@ -105,12 +147,19 @@ public class DialogueManager : MonoBehaviour
     {
         ToggleDialogueContainer(false);
 
-        //If runOnComplete != null, Invoke
-        runOnComplete?.Invoke();
-        runEventsOnComplete?.Invoke();
+        if(nextDialogue != null)
+        {
+            StartDialogue(nextDialogue, nextDialogueDisplayName, runOnComplete, runEventsOnComplete);
+        }
+        else
+        {
+            //If runOnComplete != null, Invoke
+            runOnComplete?.Invoke();
+            runEventsOnComplete?.Invoke();
 
-        runOnComplete = null;
-        runEventsOnComplete = null;
+            runOnComplete = null;
+            runEventsOnComplete = null;
+        }
     }
 
     private void ToggleDialogueContainer(bool _enable)
