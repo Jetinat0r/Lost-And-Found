@@ -39,6 +39,9 @@ public class DialogueScriptableObject : ScriptableObject
     public List<PortraitMood> moodsForLines;
 
 
+    public DialogueScriptableObject nextDialogue = null;
+    public string nextDialogueDisplayName;
+
     public Sprite GetPortrait(PortraitMood _mood)
     {
         return portraits.GetPortrait(_mood);

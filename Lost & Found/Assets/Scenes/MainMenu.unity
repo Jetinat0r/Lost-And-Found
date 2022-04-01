@@ -14683,7 +14683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0436f0f7bf6072438912a5ab349c039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldObject: {fileID: 11400000, guid: e91815df25a76e04a98a58af0ba6c6b7, type: 2}
+  worldObject: {fileID: 11400000, guid: bb710c5775fe10a409a7864d723d7e5a, type: 2}
   curWorldNode: {fileID: 0}
   curNodeId: main_menu
 --- !u!4 &1401914199
