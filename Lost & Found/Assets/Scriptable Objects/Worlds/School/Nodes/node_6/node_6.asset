@@ -13,17 +13,21 @@ MonoBehaviour:
   m_Name: node_6
   m_EditorClassIdentifier: 
   title: cafeteria
-  sceneList: []
+  sceneList:
+  - timeBlock:
+      day: 0
+      time: 0
+    sceneTitle: 
   world: {fileID: 11400000, guid: bb710c5775fe10a409a7864d723d7e5a, type: 2}
   path: Assets/Scriptable Objects/Worlds/School/Nodes/node_6
   rect:
     serializedVersion: 2
-    x: 282.00037
-    y: 132.0001
+    x: 370.0003
+    y: 137.00012
     width: 200
     height: 50
   isDragged: 0
-  isSelected: 0
+  isSelected: 1
   hasNewConnection: 0
   style:
     m_Name: 
@@ -297,29 +301,29 @@ MonoBehaviour:
   - connector: {fileID: 11400000, guid: 98865d8873b895e4897031c0f217872c, type: 2}
     connectionPoint:
       serializedVersion: 2
-      x: 429.0006
-      y: 170.00005
+      x: 517.0005
+      y: 175.00009
       width: 0
       height: 0
   - connector: {fileID: 11400000, guid: 174bd933ee2949f4fb009c62ba38c6b3, type: 2}
     connectionPoint:
       serializedVersion: 2
-      x: 309.0006
-      y: 169.99998
+      x: 397.0005
+      y: 175.00003
       width: 0
       height: 0
   outgoingConnections:
   - connector: {fileID: 11400000, guid: 0b8a3cf1c67791b41ae1e61ebfebfba1, type: 2}
     connectionPoint:
       serializedVersion: 2
-      x: 460.0005
-      y: 172.00005
+      x: 548.00037
+      y: 177.00009
       width: 0
       height: 0
   - connector: {fileID: 11400000, guid: f14f1294430ecc843b333a2084f053e0, type: 2}
     connectionPoint:
       serializedVersion: 2
-      x: 329.00073
-      y: 172.99998
+      x: 417.00064
+      y: 178.00006
       width: 0
       height: 0
