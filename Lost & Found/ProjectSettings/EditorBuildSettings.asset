@@ -29,4 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/School/lobby/lobby.unity
     guid: d1c610f6a84f5984ba6e713435c6abcd
+  - enabled: 1
+    path: Assets/Scenes/School/outside/outside.unity
+    guid: d38b8b42fa048eb45935875a0c73f971
+  - enabled: 1
+    path: Assets/Scenes/School/hallway_01/hallway_01.unity
+    guid: dc7771f6bae0a7946a77221c20c09a77
   m_configObjects: {}

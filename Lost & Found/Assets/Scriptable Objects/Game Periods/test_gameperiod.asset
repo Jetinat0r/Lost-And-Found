@@ -17,7 +17,7 @@ MonoBehaviour:
     time: 0
   displayDate: 
   displayTime: 
-  startingNodeId: lobby
+  startingNodeId: outside
   questInfos: []
   physicalQuestItemInfos: []
   fillerNpcInfos: []

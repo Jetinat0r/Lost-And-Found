@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: node_0
   m_EditorClassIdentifier: 
   title: outside
-  sceneList: []
+  sceneList:
+  - timeBlock:
+      day: 0
+      time: 0
+    sceneTitle: outside
   world: {fileID: 11400000, guid: bb710c5775fe10a409a7864d723d7e5a, type: 2}
   path: Assets/Scriptable Objects/Worlds/School/Nodes/node_0
   rect:
