@@ -14683,7 +14683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0436f0f7bf6072438912a5ab349c039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldObject: {fileID: 11400000, guid: e91815df25a76e04a98a58af0ba6c6b7, type: 2}
+  worldObject: {fileID: 11400000, guid: bb710c5775fe10a409a7864d723d7e5a, type: 2}
   curWorldNode: {fileID: 0}
   curNodeId: main_menu
 --- !u!4 &1401914199
@@ -19346,7 +19346,7 @@ MonoBehaviour:
     day: -1
     time: -1
   timeSlots:
-  - {fileID: 11400000, guid: 36652aca809eb7b49a0c75d680aac588, type: 2}
+  - {fileID: 11400000, guid: d6205e288d00a9141994827467b5862e, type: 2}
   playerPrefab: {fileID: 6670859051717510830, guid: 6fb8271f1c35f7840aafd0f4a3bc0edf, type: 3}
   curQuestInfos: []
   curFillerNpcInfos: []

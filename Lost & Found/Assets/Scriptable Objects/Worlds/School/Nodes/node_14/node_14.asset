@@ -13,13 +13,17 @@ MonoBehaviour:
   m_Name: node_14
   m_EditorClassIdentifier: 
   title: lobby
-  sceneList: []
+  sceneList:
+  - timeBlock:
+      day: 0
+      time: 0
+    sceneTitle: lobby
   world: {fileID: 11400000, guid: bb710c5775fe10a409a7864d723d7e5a, type: 2}
   path: Assets/Scriptable Objects/Worlds/School/Nodes/node_14
   rect:
     serializedVersion: 2
-    x: 705.0004
-    y: 232.00015
+    x: 174.00024
+    y: 156.00021
     width: 200
     height: 50
   isDragged: 0
@@ -297,29 +301,29 @@ MonoBehaviour:
   - connector: {fileID: 11400000, guid: 438c30e652e55114d8206dbd3e69515a, type: 2}
     connectionPoint:
       serializedVersion: 2
-      x: 892.0008
-      y: 243.00009
+      x: 361.0007
+      y: 167.00015
       width: 0
       height: 0
   - connector: {fileID: 11400000, guid: 07086ef2c8b958947a489b8d871518ad, type: 2}
     connectionPoint:
       serializedVersion: 2
-      x: 717.00055
-      y: 265.00003
+      x: 186.00037
+      y: 189.00009
       width: 0
       height: 0
   outgoingConnections:
   - connector: {fileID: 11400000, guid: 7b04ebb307c91b54ea995981b05b4837, type: 2}
     connectionPoint:
       serializedVersion: 2
-      x: 892.0008
-      y: 263.00003
+      x: 361.0007
+      y: 187.00009
       width: 0
       height: 0
   - connector: {fileID: 11400000, guid: c56872c8f5b005145bda12a0c2f77bba, type: 2}
     connectionPoint:
       serializedVersion: 2
-      x: 717.0003
-      y: 246.00009
+      x: 186.00012
+      y: 170.00015
       width: 0
       height: 0
