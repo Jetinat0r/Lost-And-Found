@@ -39,6 +39,7 @@ public class WorldNode : ScriptableObject
     [HideInInspector]
     public bool hasNewConnection;
 
+#if (UNITY_EDITOR)
     [HideInInspector]
     public GUIStyle style;
     [HideInInspector]
@@ -47,6 +48,7 @@ public class WorldNode : ScriptableObject
     public GUIStyle connectorStyle;
     [HideInInspector]
     public GUIStyle selectedConnectorStyle;
+#endif
 
     [System.Serializable]
     public class NodeConnection
@@ -69,6 +71,7 @@ public class WorldNode : ScriptableObject
 
     public List<NodeConnection> outgoingConnections;
 
+#if (UNITY_EDITOR)
     #region GUI Functions
     //Called upon Instantiation
     public void SetupNode(WorldObject _world, Vector2 position, float width, float height, GUIStyle nodeStyle, GUIStyle selectedNodeStyle, GUIStyle _connectorStyle, GUIStyle _selectedConnectorStyle, string _path)
@@ -417,7 +420,8 @@ public class WorldNode : ScriptableObject
         Debug.LogWarning("Connector not found in outgoing connections, something went wrong!");
         return;
     }
-#endregion
+    #endregion
+#endif
 
     public WorldNode GetConnectedNode(string _connectionTitle)
     {

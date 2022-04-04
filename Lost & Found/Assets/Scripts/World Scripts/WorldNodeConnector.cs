@@ -43,6 +43,7 @@ public class WorldNodeConnector : ScriptableObject
 
     //private float drawnHeight = 10f;
 
+#if (UNITY_EDITOR)
     public void SetupWorldNodeConnector(WorldNode parentNode, Vector2 mousePosition, GUIStyle connectorStyle, GUIStyle selectedConnectorStyle, string path)
     {
         entranceNode = parentNode;
@@ -405,4 +406,5 @@ public class WorldNodeConnector : ScriptableObject
         genericMenu.AddItem(new GUIContent("Destroy Connection"), false, () => DestroyConnector());
         genericMenu.ShowAsContext();
     }
+#endif
 }
