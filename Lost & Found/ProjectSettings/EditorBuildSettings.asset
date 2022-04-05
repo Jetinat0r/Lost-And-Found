@@ -35,4 +35,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/School/hallway_01/hallway_01.unity
     guid: dc7771f6bae0a7946a77221c20c09a77
+  - enabled: 1
+    path: Assets/Scenes/School/bookstore/bookstore.unity
+    guid: ed99f34889007874aa44933c9a7c40db
+  - enabled: 1
+    path: Assets/Scenes/School/hallway_02/hallway_02.unity
+    guid: 1018c4fe1c3735642ae829aad80d0bc4
   m_configObjects: {}
