@@ -16,7 +16,7 @@ MonoBehaviour:
   idQuestItemNames:
   - example_item_01
   initialQuestState: 1
-  curQuestState: 3
+  curQuestState: 4
   unlockOnComplete: []
   inactiveIdNpcName: 
   startIdNpcName: example_quest_npc_01
@@ -34,7 +34,14 @@ MonoBehaviour:
   endDialogue: {fileID: 11400000, guid: e0dbaa9f5046e3048a81f0587f938faa, type: 2}
   completedDialogue: {fileID: 11400000, guid: 61e8da249d35d3644b18ec809441c1ef, type: 2}
   failedDialogue: {fileID: 0}
-  onInactiveToStart: []
+  onInactiveToStart:
+  - name: 
+    classToCall: 0
+    functionName: 
+    stringParams: []
+    intParams: 
+    floatParams: []
+    boolParams: 
   onStartToInProgress: []
   onInProgressToEnd: []
   onEndToCompleted: []

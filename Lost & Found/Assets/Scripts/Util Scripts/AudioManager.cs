@@ -75,12 +75,14 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
     }
 
-    public void Play(QuestScriptableObject.FunctionParams functionParams)
+    //EventFinder Overload
+    public void Play(EventFunctionParams functionParams)
     {
         Play(functionParams.stringParams[0]);
     }
 
-    public void PlaySong(QuestScriptableObject.FunctionParams functionParams)
+    //EventFinder Overload
+    public void PlaySong(EventFunctionParams functionParams)
     {
         PlaySong(functionParams.stringParams[0]);
     }

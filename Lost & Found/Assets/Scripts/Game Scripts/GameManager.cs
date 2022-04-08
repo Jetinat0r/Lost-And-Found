@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void Test(QuestScriptableObject.FunctionParams functionParams)
+    public void Test(EventFunctionParams functionParams)
     {
         Debug.Log("Test: " + functionParams.name);
     }

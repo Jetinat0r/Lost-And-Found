@@ -18,21 +18,6 @@ public enum QuestState
 [Serializable]
 public class QuestScriptableObject : ScriptableObject
 {
-    [Serializable]
-    public struct FunctionParams
-    {
-        public string name;
-
-        public CallableClasses classToCall;
-
-        public string functionName;
-
-        public string[] stringParams;
-        public int[] intParams;
-        public float[] floatParams;
-        public bool[] boolParams;
-    }
-
     //TODO: Add struct fields so that the quest can move its characters around depending on its state
     //      and a bool to check if the quest should bother using the fields (to not break anything we put down before implementation)
 
@@ -84,11 +69,11 @@ public class QuestScriptableObject : ScriptableObject
     public DialogueScriptableObject failedDialogue;
 
     [Header("Events")]
-    public List<FunctionParams> onInactiveToStart;
-    public List<FunctionParams> onStartToInProgress;
-    public List<FunctionParams> onInProgressToEnd;
-    public List<FunctionParams> onEndToCompleted;
-    public List<FunctionParams> onStateToFailed;
+    public List<EventFunctionParams> onInactiveToStart;
+    public List<EventFunctionParams> onStartToInProgress;
+    public List<EventFunctionParams> onInProgressToEnd;
+    public List<EventFunctionParams> onEndToCompleted;
+    public List<EventFunctionParams> onStateToFailed;
 
     public DialogueScriptableObject GetCurrentDialogue()
     {
@@ -170,9 +155,9 @@ public class QuestScriptableObject : ScriptableObject
         CallEvents(onStateToFailed);
     }
 
-    private void CallEvents(List<FunctionParams> funcParamsList)
+    private void CallEvents(List<EventFunctionParams> funcParamsList)
     {
-        foreach (FunctionParams funcParams in funcParamsList)
+        foreach (EventFunctionParams funcParams in funcParamsList)
         {
             EventFinder.instance.CallFunction(funcParams);
         }
