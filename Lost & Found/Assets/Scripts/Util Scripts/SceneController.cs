@@ -114,6 +114,7 @@ public class SceneController : MonoBehaviour
     //EventFinder Overload
     public void GotoNode(EventFunctionParams functionParams)
     {
+        Debug.Log(functionParams.stringParams);
         GotoNode(functionParams.stringParams[0]);
     }
 

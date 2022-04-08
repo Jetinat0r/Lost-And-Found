@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/School/hallway_02/hallway_02.unity
     guid: 1018c4fe1c3735642ae829aad80d0bc4
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/Car_Cutscene.unity
+    guid: 9d82dfd42f5d3c04499aa73b8ef2f71f
   m_configObjects: {}
