@@ -47,10 +47,10 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void Test(EventFunctionParams functionParams)
-    {
-        Debug.Log("Test: " + functionParams.name);
-    }
+    //public void Test(EventFunctionParams functionParams)
+    //{
+    //    Debug.Log("Test: " + functionParams.name);
+    //}
 
     // funcParams is ALWAYS string[], int[], float[], bool[]
     //public void Test(string[] strings, int[] ints, float[] floats, bool[] bools)
@@ -120,6 +120,12 @@ public class GameManager : MonoBehaviour
         }
 
         LoadPeriod(periodToLoad, _isStealthy);
+    }
+
+    //EventFinder Overload
+    public void ChangeGamePeriod(EventFunctionParams functionParams)
+    {
+        ChangeGamePeriod(functionParams.boolParams[0]);
     }
 
     private void LoadPeriod(GamePeriod periodToLoad, bool _isStealthy = false)

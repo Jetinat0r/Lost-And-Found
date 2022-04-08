@@ -15,9 +15,9 @@ MonoBehaviour:
   timeBlock:
     day: 0
     time: 0
-  displayDate: 
-  displayTime: 
-  startingNodeId: outside
+  displayDate: Day 0
+  displayTime: Time 0
+  startingNodeId: car_cutscene
   questInfos: []
   physicalQuestItemInfos: []
   fillerNpcInfos: []
