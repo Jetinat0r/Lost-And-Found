@@ -78,6 +78,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -532,6 +533,25 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      blair_kneelgrab3: 737053325665691125
+      blair_kneelgrab4: 6653356973189372396
+      blair_run3: 3880155433073004454
+      blari_kneel3: -5062835653275042358
+      blair_grab3: 3725918551145530372
+      blair_idle1: -5534716432263066409
+      blair_kneelgrab1: 5862637732948995344
+      blair_grab1: -8069792643928015329
+      blair_kneel2: -462482333839191812
+      blair_grab4: -2135221863835008002
+      blair_grab2: 8124386354764479148
+      blair_idle3: -6875350623115546230
+      blair_kneel1: -263875213627151713
+      blair_idle2: 2777205908431809015
+      blair_run4: -1794476859891872114
+      blair_run1: 7338076652068405198
+      blair_run2: -1090068616658737690
+      blari_kneelgrab2: -4440627300151035667
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
