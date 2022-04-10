@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public List<PhysicalQuestItemInfo> curPhysicalQuestItemInfos = new List<PhysicalQuestItemInfo>();
 
+    [SerializeField]
+    private Journal journal;
+
     private void Awake()
     {
         if (instance == null)
@@ -40,6 +43,11 @@ public class GameManager : MonoBehaviour
         {
             QuitGame();
         }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            ToggleJournal();
+        }
     }
 
     public void QuitGame()
@@ -47,10 +55,29 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void Test(QuestScriptableObject.FunctionParams functionParams)
+    public void ToggleJournal()
     {
-        Debug.Log("Test: " + functionParams.name);
+        //Don't open the journal if there is no player
+        //TODO: Make it so that when the player doesn't have control they can't open the journal (maybe move call to player?)
+        if(spawnedPlayer == null)
+        {
+            return;
+        }
+
+        if (!journal.isOpen)
+        {
+            journal.OpenJournal();
+        }
+        else
+        {
+            journal.CloseJournal();
+        }
     }
+
+    //public void Test(EventFunctionParams functionParams)
+    //{
+    //    Debug.Log("Test: " + functionParams.name);
+    //}
 
     // funcParams is ALWAYS string[], int[], float[], bool[]
     //public void Test(string[] strings, int[] ints, float[] floats, bool[] bools)
@@ -120,6 +147,12 @@ public class GameManager : MonoBehaviour
         }
 
         LoadPeriod(periodToLoad, _isStealthy);
+    }
+
+    //EventFinder Overload
+    public void ChangeGamePeriod(EventFunctionParams functionParams)
+    {
+        ChangeGamePeriod(functionParams.boolParams[0]);
     }
 
     private void LoadPeriod(GamePeriod periodToLoad, bool _isStealthy = false)

@@ -18,21 +18,6 @@ public enum QuestState
 [Serializable]
 public class QuestScriptableObject : ScriptableObject
 {
-    [Serializable]
-    public struct FunctionParams
-    {
-        public string name;
-
-        public CallableClasses classToCall;
-
-        public string functionName;
-
-        public string[] stringParams;
-        public int[] intParams;
-        public float[] floatParams;
-        public bool[] boolParams;
-    }
-
     //TODO: Add struct fields so that the quest can move its characters around depending on its state
     //      and a bool to check if the quest should bother using the fields (to not break anything we put down before implementation)
 
@@ -71,6 +56,9 @@ public class QuestScriptableObject : ScriptableObject
     //[Tooltip("WARNING - THIS IS GOING TO BE MOVED TO THE ITEM SCRIP OBJ")]
     //public List<string> displayQuestItemDescriptions;
 
+    [Tooltip("Should the quest be displayed in the journal")]
+    public bool isDisplayed = true;
+
     [Tooltip("How many reputation points this quest gains you upon completion")]
     public float reputationPoints;
 
@@ -84,11 +72,11 @@ public class QuestScriptableObject : ScriptableObject
     public DialogueScriptableObject failedDialogue;
 
     [Header("Events")]
-    public List<FunctionParams> onInactiveToStart;
-    public List<FunctionParams> onStartToInProgress;
-    public List<FunctionParams> onInProgressToEnd;
-    public List<FunctionParams> onEndToCompleted;
-    public List<FunctionParams> onStateToFailed;
+    public List<EventFunctionParams> onInactiveToStart;
+    public List<EventFunctionParams> onStartToInProgress;
+    public List<EventFunctionParams> onInProgressToEnd;
+    public List<EventFunctionParams> onEndToCompleted;
+    public List<EventFunctionParams> onStateToFailed;
 
     public DialogueScriptableObject GetCurrentDialogue()
     {
@@ -170,9 +158,9 @@ public class QuestScriptableObject : ScriptableObject
         CallEvents(onStateToFailed);
     }
 
-    private void CallEvents(List<FunctionParams> funcParamsList)
+    private void CallEvents(List<EventFunctionParams> funcParamsList)
     {
-        foreach (FunctionParams funcParams in funcParamsList)
+        foreach (EventFunctionParams funcParams in funcParamsList)
         {
             EventFinder.instance.CallFunction(funcParams);
         }

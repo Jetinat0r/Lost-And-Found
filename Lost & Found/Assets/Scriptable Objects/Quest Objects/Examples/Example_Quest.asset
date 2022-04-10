@@ -16,7 +16,7 @@ MonoBehaviour:
   idQuestItemNames:
   - example_item_01
   initialQuestState: 1
-  curQuestState: 3
+  curQuestState: 4
   unlockOnComplete: []
   inactiveIdNpcName: 
   startIdNpcName: example_quest_npc_01
@@ -37,5 +37,12 @@ MonoBehaviour:
   onInactiveToStart: []
   onStartToInProgress: []
   onInProgressToEnd: []
-  onEndToCompleted: []
+  onEndToCompleted:
+  - name: 
+    classToCall: 0
+    functionName: 
+    stringParams: []
+    intParams: 
+    floatParams: []
+    boolParams: 
   onStateToFailed: []

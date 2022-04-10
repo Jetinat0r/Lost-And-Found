@@ -11,6 +11,21 @@ public enum CallableClasses
     SceneController
 }
 
+[Serializable]
+public class EventFunctionParams
+{
+    public string name;
+
+    public CallableClasses classToCall;
+
+    public string functionName;
+
+    public string[] stringParams;
+    public int[] intParams;
+    public float[] floatParams;
+    public bool[] boolParams;
+}
+
 public class EventFinder : MonoBehaviour
 {
     public static EventFinder instance;
@@ -28,7 +43,7 @@ public class EventFinder : MonoBehaviour
         }
     }
 
-    public QuestScriptableObject obj;
+    //public QuestScriptableObject obj;
     //private void Update()
     //{
     //    if (Input.GetKeyDown(KeyCode.A))
@@ -39,7 +54,7 @@ public class EventFinder : MonoBehaviour
 
     //Get passed strings, ints, floats, bools in that order
     //Take only what you need, meaning extraneous is ok
-    public void CallFunction(QuestScriptableObject.FunctionParams functionParams)
+    public void CallFunction(EventFunctionParams functionParams)
     {
         Type type = null;
         MethodInfo method;
@@ -91,9 +106,9 @@ public class EventFinder : MonoBehaviour
         }
     }
 
-    private MethodInfo MethodGetter(Type type, QuestScriptableObject.FunctionParams functionParams)
+    private MethodInfo MethodGetter(Type type, EventFunctionParams functionParams)
     {
-        Type[] signature = new[] { typeof(QuestScriptableObject.FunctionParams) };
+        Type[] signature = new[] { typeof(EventFunctionParams) };
 
         MethodInfo method = type.GetMethod(functionParams.functionName, signature);
 

@@ -111,6 +111,13 @@ public class SceneController : MonoBehaviour
         SetScene(curWorldNode.GetSceneTitle(GameManager.instance.GetCurrentPeriod()));
     }
 
+    //EventFinder Overload
+    public void GotoNode(EventFunctionParams functionParams)
+    {
+        Debug.Log(functionParams.stringParams);
+        GotoNode(functionParams.stringParams[0]);
+    }
+
     public WorldNodeConnector GetConnectorFromTitle(string _connectionTitle)
     {
         return worldObject.GetConnectorFromTitle(curNodeId, _connectionTitle);
@@ -132,6 +139,12 @@ public class SceneController : MonoBehaviour
         runOnSceneLoad = _runOnSceneLoad;
 
         SetScene(curWorldNode.GetSceneTitle(GameManager.instance.GetCurrentPeriod()), _connectionTitle);
+    }
+
+    //EventFinder Overload (Only for the 1 string argument version)
+    public void MoveThroughConnection(EventFunctionParams functionParams)
+    {
+        MoveThroughConnection(functionParams.stringParams[0]);
     }
 
     private void LoadSceneObjects()

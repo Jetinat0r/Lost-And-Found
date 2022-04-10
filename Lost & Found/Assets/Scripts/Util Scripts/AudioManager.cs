@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
 
     public Sound[] sounds;
+    public Sound curSong;
 
     //Use this for initialization
     private void Awake()
@@ -54,9 +55,36 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
     }
 
-    public void Play(QuestScriptableObject.FunctionParams functionParams)
+    public void PlaySong(string songName)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == songName);
+
+        if(s == null)
+        {
+            Debug.LogWarning("Song: " + songName + " not found!");
+            return;
+        }
+
+        if(curSong != null)
+        {
+            curSong.source.Stop();
+            curSong = null;
+        }
+
+        curSong = s;
+        s.source.Play();
+    }
+
+    //EventFinder Overload
+    public void Play(EventFunctionParams functionParams)
     {
         Play(functionParams.stringParams[0]);
+    }
+
+    //EventFinder Overload
+    public void PlaySong(EventFunctionParams functionParams)
+    {
+        PlaySong(functionParams.stringParams[0]);
     }
 
     public void Stop(string soundName)
