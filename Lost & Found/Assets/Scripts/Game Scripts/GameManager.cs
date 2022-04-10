@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public List<PhysicalQuestItemInfo> curPhysicalQuestItemInfos = new List<PhysicalQuestItemInfo>();
 
+    [SerializeField]
+    private Journal journal;
+
     private void Awake()
     {
         if (instance == null)
@@ -40,11 +43,35 @@ public class GameManager : MonoBehaviour
         {
             QuitGame();
         }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            ToggleJournal();
+        }
     }
 
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void ToggleJournal()
+    {
+        //Don't open the journal if there is no player
+        //TODO: Make it so that when the player doesn't have control they can't open the journal (maybe move call to player?)
+        if(spawnedPlayer == null)
+        {
+            return;
+        }
+
+        if (!journal.isOpen)
+        {
+            journal.OpenJournal();
+        }
+        else
+        {
+            journal.CloseJournal();
+        }
     }
 
     //public void Test(EventFunctionParams functionParams)

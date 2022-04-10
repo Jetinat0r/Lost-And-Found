@@ -56,6 +56,9 @@ public class QuestScriptableObject : ScriptableObject
     //[Tooltip("WARNING - THIS IS GOING TO BE MOVED TO THE ITEM SCRIP OBJ")]
     //public List<string> displayQuestItemDescriptions;
 
+    [Tooltip("Should the quest be displayed in the journal")]
+    public bool isDisplayed = true;
+
     [Tooltip("How many reputation points this quest gains you upon completion")]
     public float reputationPoints;
 

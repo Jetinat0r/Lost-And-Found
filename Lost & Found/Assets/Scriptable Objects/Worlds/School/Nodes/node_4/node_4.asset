@@ -18,8 +18,8 @@ MonoBehaviour:
   path: Assets/Scriptable Objects/Worlds/School/Nodes/node_4
   rect:
     serializedVersion: 2
-    x: 730.0003
-    y: 117.00014
+    x: 591.00024
+    y: 129.00014
     width: 200
     height: 50
   isDragged: 0
