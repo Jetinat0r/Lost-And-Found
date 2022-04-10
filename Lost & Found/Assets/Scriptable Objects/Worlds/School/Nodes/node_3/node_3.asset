@@ -13,17 +13,21 @@ MonoBehaviour:
   m_Name: node_3
   m_EditorClassIdentifier: 
   title: bookstore
-  sceneList: []
+  sceneList:
+  - timeBlock:
+      day: 0
+      time: 0
+    sceneTitle: bookstore
   world: {fileID: 11400000, guid: bb710c5775fe10a409a7864d723d7e5a, type: 2}
   path: Assets/Scriptable Objects/Worlds/School/Nodes/node_3
   rect:
     serializedVersion: 2
-    x: 288.99933
-    y: 125.00009
+    x: 318.99918
+    y: 66.00004
     width: 200
     height: 50
   isDragged: 0
-  isSelected: 0
+  isSelected: 1
   hasNewConnection: 0
   style:
     m_Name: 
@@ -297,15 +301,15 @@ MonoBehaviour:
   - connector: {fileID: 11400000, guid: 105b3a96b98ab444f83d5f6ed20ab5a8, type: 2}
     connectionPoint:
       serializedVersion: 2
-      x: 301.9996
-      y: 164
+      x: 331.99942
+      y: 105.00003
       width: 0
       height: 0
   outgoingConnections:
   - connector: {fileID: 11400000, guid: fce5af0de7abebf4088f4e39c82af9a6, type: 2}
     connectionPoint:
       serializedVersion: 2
-      x: 323.99936
-      y: 163
+      x: 353.99918
+      y: 104.00003
       width: 0
       height: 0

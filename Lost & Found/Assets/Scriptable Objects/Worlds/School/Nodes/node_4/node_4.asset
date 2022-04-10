@@ -13,13 +13,17 @@ MonoBehaviour:
   m_Name: node_4
   m_EditorClassIdentifier: 
   title: main_menu
-  sceneList: []
+  sceneList:
+  - timeBlock:
+      day: 0
+      time: 0
+    sceneTitle: MainMenu
   world: {fileID: 11400000, guid: bb710c5775fe10a409a7864d723d7e5a, type: 2}
   path: Assets/Scriptable Objects/Worlds/School/Nodes/node_4
   rect:
     serializedVersion: 2
-    x: 730.0003
-    y: 117.00014
+    x: 760.0001
+    y: 58.000084
     width: 200
     height: 50
   isDragged: 0

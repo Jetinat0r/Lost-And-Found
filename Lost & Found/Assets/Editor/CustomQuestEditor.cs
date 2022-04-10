@@ -32,6 +32,7 @@ public class CustomQuestEditor : Editor
     SerializedProperty displayNpcName;                  //string
     SerializedProperty displayQuestDescription;         //string
     //SerializedProperty displayQuestItemDescriptions;    //List<string>
+    SerializedProperty isDisplayed;                     //bool
     SerializedProperty reputationPoints;                //float
 
     SerializedProperty initialQuestState;               //QuestState
@@ -68,6 +69,7 @@ public class CustomQuestEditor : Editor
         displayNpcName = serializedObject.FindProperty("displayNpcName");
         displayQuestDescription = serializedObject.FindProperty("displayQuestDescription");
         //displayQuestItemDescriptions = serializedObject.FindProperty("displayQuestItemDescriptions");
+        isDisplayed = serializedObject.FindProperty("isDisplayed");
         reputationPoints = serializedObject.FindProperty("reputationPoints");
 
         initialQuestState = serializedObject.FindProperty("initialQuestState");
@@ -147,6 +149,13 @@ public class CustomQuestEditor : Editor
 
         GUILayout.BeginVertical();
         #region Notebook Display Values
+        #region Is Displayed In Journal
+        GUILayout.Label("Display quest in journal (true/false)");
+        isDisplayed.boolValue = EditorGUILayout.Toggle(isDisplayed.boolValue);
+        #endregion
+
+        GUILayout.Space(10);
+
         #region Quest Name
         GUILayout.Label("Display name of Quest");
         displayQuestName.stringValue = EditorGUILayout.TextField(displayQuestName.stringValue);
