@@ -160,7 +160,7 @@ public class Journal : MonoBehaviour
         foreach(QuestScriptableObject _quest in _questsToDisplay)
         {
             //Make a new obj
-            JournalQuestDisplay _newDisplay = Instantiate(questDisplayPrefab, itemDisplayArea.transform);
+            JournalQuestDisplay _newDisplay = Instantiate(questDisplayPrefab, questDisplayArea.transform);
 
             //Set properties
             _newDisplay.SetData(_quest.displayQuestName, _quest.displayNpcName, _quest.displayQuestDescription);
@@ -241,6 +241,7 @@ public class Journal : MonoBehaviour
 
     public void CloseJournal()
     {
+        isOpen = false;
         journalPanel.SetActive(false);
     }
 }
