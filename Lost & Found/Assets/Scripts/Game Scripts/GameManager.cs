@@ -66,10 +66,12 @@ public class GameManager : MonoBehaviour
 
         if (!journal.isOpen)
         {
+            DisablePlayerInput();
             journal.OpenJournal();
         }
         else
         {
+            EnablePlayerInput();
             journal.CloseJournal();
         }
     }
