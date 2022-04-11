@@ -45,6 +45,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -268,6 +269,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      darci_leanidle3: -7012617985355377147
+      darci_portrait: -4511191338532602930
+      darci_idle3: -5026701957024150349
+      darci_idle1: -3729156441931298832
+      darci_leanidle1: 7927571687856581157
+      darci_leanidle2: 6973373919389355924
+      darci_idle2: 6848953483469297806
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
