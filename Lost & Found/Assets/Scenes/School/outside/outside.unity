@@ -265,7 +265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connections:
   - connectionTitle: default
-    connectionPosition: {x: 10.43, y: -1.96, z: 0}
+    connectionPosition: {x: 10.43, y: -2.9, z: 0}
 --- !u!4 &286921251
 Transform:
   m_ObjectHideFlags: 0
@@ -274,7 +274,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 286921249}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.54711705, z: 0}
+  m_LocalPosition: {x: 0, y: -2.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -404,7 +404,7 @@ GameObject:
   - component: {fileID: 533158750}
   - component: {fileID: 533158749}
   m_Layer: 0
-  m_Name: Square (4)
+  m_Name: down square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -496,7 +496,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 533158748}
   m_LocalRotation: {x: -0, y: -0, z: 0.6152259, w: 0.7883509}
-  m_LocalPosition: {x: -2.24, y: 3.18, z: 0}
+  m_LocalPosition: {x: -4.21, y: -5.52, z: 0}
   m_LocalScale: {x: 1.0637829, y: 10.0965, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -685,7 +685,7 @@ GameObject:
   - component: {fileID: 1123901485}
   - component: {fileID: 1123901484}
   m_Layer: 0
-  m_Name: Square (3)
+  m_Name: up square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -777,7 +777,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1123901483}
   m_LocalRotation: {x: -0, y: -0, z: 0.6152259, w: 0.7883509}
-  m_LocalPosition: {x: -4.2, y: -4.6128826, z: 0}
+  m_LocalPosition: {x: -4.2, y: -5.57, z: 0}
   m_LocalScale: {x: 1.0637829, y: 10.0965, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -808,7 +808,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1240032529}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.43, y: -1.412883, z: -18.39315}
+  m_LocalPosition: {x: 10.43, y: -2.44, z: -18.39315}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -829,7 +829,7 @@ GameObject:
   - component: {fileID: 1295309431}
   - component: {fileID: 1295309430}
   m_Layer: 0
-  m_Name: frontdesk (1)
+  m_Name: outside
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -895,8 +895,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1295309427}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.104, y: 0.9571171, z: 0}
-  m_LocalScale: {x: 0.93941945, y: 0.9829277, z: 0.15754545}
+  m_LocalPosition: {x: 0.104, y: 0.06, z: 0}
+  m_LocalScale: {x: 0.93941945, y: 1.0076545, z: 0.15754545}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
