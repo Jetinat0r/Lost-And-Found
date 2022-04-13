@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a473108b32ef28542a8a2bc4a8ee6c31, type: 3}
-  m_Name: 4_hallyway_02_TO_cafeteria
+  m_Name: 1_main_menu_TO_outside
   m_EditorClassIdentifier: 
-  title: hallway_02_to_cafeteria
+  title: 
   reqItems: []
   isLocked: 0
   lockedText: 
@@ -23,7 +23,7 @@ MonoBehaviour:
     y: 0
     width: 0
     height: 0
-  isSelected: 0
+  isSelected: 1
   style:
     m_Name: 
     m_Normal:
@@ -158,7 +158,7 @@ MonoBehaviour:
     m_FixedHeight: 0
     m_StretchWidth: 1
     m_StretchHeight: 0
-  entranceNode: {fileID: 11400000, guid: 62906181bfd0ad64c9c52478570e98eb, type: 2}
-  destinationNode: {fileID: 11400000, guid: 35cd4e1ca5be842448f9461cefadb45a, type: 2}
-  tempEndPoint: {x: 36.000122, y: -7.5003357}
+  entranceNode: {fileID: 11400000, guid: 87ad40b58f9cca544b46cc5745549f39, type: 2}
+  destinationNode: {fileID: 11400000, guid: 96fb1cb5f1d8e2441bb0adf6728f6a86, type: 2}
+  tempEndPoint: {x: 621.0007, y: 347.49994}
   arrowSize: 16

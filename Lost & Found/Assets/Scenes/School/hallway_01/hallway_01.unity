@@ -380,7 +380,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.4431373, g: 0.43921572, b: 0.43137258, a: 1}
+  m_Color: {r: 0.6117647, g: 0.60784316, b: 0.6039216, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1010,12 +1010,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 339799737475103240, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.8054686
+      objectReference: {fileID: 0}
+    - target: {fileID: 339799737475103240, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.024375
+      objectReference: {fileID: 0}
+    - target: {fileID: 339799737475103240, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.62
+      value: -7.52
       objectReference: {fileID: 0}
     - target: {fileID: 339799737475103240, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.0575938
+      value: -2.12
       objectReference: {fileID: 0}
     - target: {fileID: 339799737475103240, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1145,7 +1153,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.9960785, g: 0.89019614, b: 0.6666667, a: 1}
+  m_Color: {r: 0.73333335, g: 0.5764706, b: 0.34117648, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1163,7 +1171,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760464087}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.44, y: 3.89, z: -1.4938}
+  m_LocalPosition: {x: 7.44, y: 3.84, z: -1.4938}
   m_LocalScale: {x: 45.539646, y: 2.624014, z: 0.82322}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1422,6 +1430,9 @@ MonoBehaviour:
   connections:
   - connectionTitle: lobby_to_hallway_01
     connectionPosition: {x: 26.55, y: -1.96, z: 0}
+  - connectionTitle: hallway_02_to_hallway_01
+    connectionPosition: {x: 26.55, y: -1.96, z: 0}
+  cutscenes: []
 --- !u!4 &2034935750
 Transform:
   m_ObjectHideFlags: 0
