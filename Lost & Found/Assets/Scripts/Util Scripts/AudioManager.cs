@@ -99,4 +99,43 @@ public class AudioManager : MonoBehaviour
 
         s.source.Stop();
     }
+
+    //EventFinder Overload
+    public void StopSound(EventFunctionParams functionParams)
+    {
+        Stop(functionParams.stringParams[0]);
+    }
+
+    public void StopAllSounds()
+    {
+        foreach(Sound s in sounds)
+        {
+            s.source.Stop();
+        }
+    }
+
+    //EventFinder Overload
+    public void StopAllSounds(EventFunctionParams functionParams)
+    {
+        StopAllSounds();
+    }
+
+    public void StopSong()
+    {
+        if (curSong != null)
+        {
+            curSong.source.Stop();
+            curSong = null;
+        }
+        else
+        {
+            Debug.LogWarning("Can't stop song as there's no song currently playing!");
+        }
+    }
+
+    //EventFinder Overload
+    public void StopSong(EventFunctionParams functionParams)
+    {
+        StopSong();
+    }
 }
