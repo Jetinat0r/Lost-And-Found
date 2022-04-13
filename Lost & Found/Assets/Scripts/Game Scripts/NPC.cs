@@ -14,13 +14,14 @@ public class NPC : InteractionTarget
 
     public bool canTalkTo = true;
 
-    [SerializeField]
-    private GameObject itemGraphics;
+    //[SerializeField]
+    //private GameObject itemGraphics;
 
     //TODO: Change to a pooling system?
-    [SerializeField]
-    private GameObject dialogueBoxPrefab;
+    //[SerializeField]
+    //private GameObject dialogueBoxPrefab;
 
+    [Tooltip("Does not need to be filled out")]
     public DialogueScriptableObject defaultDialogue;
 
     private void Start()
@@ -195,7 +196,7 @@ public class NPC : InteractionTarget
             //Allows movement after interaction
             if (itCanMoveAfter)
             {
-                DialogueManager.instance.StartDialogue(defaultDialogue, displayNpcName, GameManager.instance.EnablePlayerInput, itPostInteractEvents);
+                DialogueManager.instance.StartDialogue(defaultDialogue, displayNpcName, GameManager.instance.EnablePlayerInput, itPostInteractEvents, itPostInteractFunctionEvents);
             }
             else
             {
