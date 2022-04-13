@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     public List<FillerNpcInfo> curFillerNpcInfos = new List<FillerNpcInfo>();
     [HideInInspector]
     public List<PhysicalQuestItemInfo> curPhysicalQuestItemInfos = new List<PhysicalQuestItemInfo>();
+    [HideInInspector]
+    public List<QuestItemScriptableObject> curFloatingItems = new List<QuestItemScriptableObject>();
 
     [SerializeField]
     private Journal journal;
@@ -186,6 +188,11 @@ public class GameManager : MonoBehaviour
             //TODO: Add some checks to ensure the same info isn't added twice anywhere
             curPhysicalQuestItemInfos.Add(info);
         }
+
+        foreach (QuestItemScriptableObject item in periodToLoad.floatingObjects)
+        {
+            curFloatingItems.Add(item);
+        }
         #endregion
 
         if (!_isStealthy)
@@ -259,6 +266,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //EventFinder Override
+    public void DisablePlayerInput(EventFunctionParams functionParams)
+    {
+        DisablePlayerInput();
+    }
+
     public void EnablePlayerInput()
     {
         if(spawnedPlayer != null)
@@ -279,5 +292,123 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogWarning("No player exists!");
         }
+    }
+
+    //EventFinder Override
+    public void EnablePlayerInput(EventFunctionParams functionParams)
+    {
+        EnablePlayerInput();
+    }
+
+    public void ActivateQuests(List<string> _questIds)
+    {
+        foreach(QuestInfo _questInfo in curQuestInfos)
+        {
+            if(_questInfo.quest.curQuestState == QuestState.Inactive)
+            {
+                foreach(string _id in _questIds)
+                {
+                    if(_id == _questInfo.quest.idQuestName)
+                    {
+                        _questInfo.quest.OnInactiveToStart();
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    public void ActivateQuests(string _questId)
+    {
+        foreach (QuestInfo _questInfo in curQuestInfos)
+        {
+            if (_questInfo.quest.curQuestState == QuestState.Inactive)
+            {
+                if (_questId == _questInfo.quest.idQuestName)
+                {
+                    _questInfo.quest.OnInactiveToStart();
+                    break;
+                }
+            }
+        }
+    }
+
+    //EventFinder Overload
+    public void ActivateQuests(EventFunctionParams functionParams)
+    {
+        List<string> _questIds = new List<string>(functionParams.stringParams);
+        ActivateQuests(_questIds);
+    }
+
+    public void AddItemsToInventory(List<string> _itemIds)
+    {
+        if (HasSpawnedPlayer())
+        {
+            foreach (string _id in _itemIds)
+            {
+                bool hasFound = false;
+
+                foreach (QuestItemScriptableObject _gmItem in curFloatingItems)
+                {
+                    if (_id == _gmItem.idItemName)
+                    {
+                        PlayerInventory.instance.PickupItem(_gmItem);
+                        break;
+                    }
+                }
+
+                if (!hasFound)
+                {
+                    Debug.LogWarning("Item (" + _id + ") not found in GameManager's floating items!");
+                }
+            }
+        }
+    }
+
+    public void AddItemsToInventory(string _itemId)
+    {
+        if (HasSpawnedPlayer())
+        {
+            bool hasFound = false;
+
+            foreach (QuestItemScriptableObject _gmItem in curFloatingItems)
+            {
+                if (_itemId == _gmItem.idItemName)
+                {
+                    PlayerInventory.instance.PickupItem(_gmItem);
+                    break;
+                }
+            }
+
+            if (!hasFound)
+            {
+                Debug.LogWarning("Item (" + _itemId + ") not found in GameManager's floating items!");
+            }
+        }
+    }
+
+    //EventFinder Override
+    public void AddItemsToInventory(EventFunctionParams functionParams)
+    {
+        List<string> _itemIds = new List<string>(functionParams.stringParams);
+        AddItemsToInventory(_itemIds);
+    }
+
+    public void StartCutscene(string cutsceneTitle)
+    {
+        if(SceneInfoContainer.instance != null)
+        {
+            SceneInfoContainer.instance.StartCutscene(cutsceneTitle);
+        }
+        else
+        {
+            Debug.LogWarning("Can't start cutscene (" + cutsceneTitle + ") because there is no SceneInfoContainer in the scene!");
+        }
+    }
+
+    //EventFinder Override
+    public void StartCutscene(EventFunctionParams functionParams)
+    {
+        StartCutscene(functionParams.stringParams[0]);
     }
 }

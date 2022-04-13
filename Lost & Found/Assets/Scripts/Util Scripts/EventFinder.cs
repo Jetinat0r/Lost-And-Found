@@ -8,7 +8,9 @@ public enum CallableClasses
 {
     GameManager,
     AudioManager,
-    SceneController
+    SceneController,
+    PlayerInventory,
+    SceneInfoContainer
 }
 
 [Serializable]
@@ -93,6 +95,30 @@ public class EventFinder : MonoBehaviour
                 {
                     object[] sentParams = new object[] { functionParams };
                     method.Invoke(SceneController.instance, sentParams);
+                }
+
+                break;
+
+            case (CallableClasses.PlayerInventory):
+                type = typeof(PlayerInventory);
+                method = MethodGetter(type, functionParams);
+
+                if (method != null)
+                {
+                    object[] sentParams = new object[] { functionParams };
+                    method.Invoke(PlayerInventory.instance, sentParams);
+                }
+
+                break;
+
+            case (CallableClasses.SceneInfoContainer):
+                type = typeof(SceneInfoContainer);
+                method = MethodGetter(type, functionParams);
+
+                if (method != null)
+                {
+                    object[] sentParams = new object[] { functionParams };
+                    method.Invoke(SceneInfoContainer.instance, sentParams);
                 }
 
                 break;

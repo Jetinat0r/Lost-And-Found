@@ -123,8 +123,6 @@ public class QuestScriptableObject : ScriptableObject
         curQuestState = QuestState.Start;
 
         CallEvents(onInactiveToStart);
-
-        //TODO: add to questbook
     }
 
     public void OnStartToInProgress()
@@ -146,6 +144,8 @@ public class QuestScriptableObject : ScriptableObject
     public void OnEndToCompleted()
     {
         curQuestState = QuestState.Completed;
+
+        GameManager.instance.ActivateQuests(unlockOnComplete);
 
         CallEvents(onEndToCompleted);
     }
