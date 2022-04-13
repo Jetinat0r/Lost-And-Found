@@ -50,7 +50,7 @@ public class TransitionObject : InteractionTarget
                 _dialogue.SetNpcPortraits(ScriptableObject.CreateInstance("NpcPortraitsScriptableObject") as NpcPortraitsScriptableObject);
 
                 //Play Dialogue (and tell it to re-enable player movement)
-                DialogueManager.instance.StartDialogue(_dialogue, "", GameManager.instance.EnablePlayerInput, itPostInteractEvents);
+                DialogueManager.instance.StartDialogue(_dialogue, "", GameManager.instance.EnablePlayerInput, itPostInteractEvents, itPostInteractFunctionEvents);
 
                 return;
             }
@@ -64,7 +64,7 @@ public class TransitionObject : InteractionTarget
         //_runOnSceneLoad += GameManager.instance.EnablePlayerMovement;
 
         //Attempt transition
-        SceneController.instance.MoveThroughConnection(connectionTitle, _runOnSceneLoad);
+        SceneController.instance.MoveThroughConnection(connectionTitle, _runOnSceneLoad, itPostInteractFunctionEvents);
         #endregion
     }
 }

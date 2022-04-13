@@ -12,7 +12,11 @@ public class InteractionTarget : MonoBehaviour/*, IInteractable*/
     [SerializeField]
     public UnityEvent itInteractEvents;
     [SerializeField]
+    public List<EventFunctionParams> itInteractFunctionEvents = new List<EventFunctionParams>();
+    [SerializeField]
     public UnityEvent itPostInteractEvents;
+    [SerializeField]
+    public List<EventFunctionParams> itPostInteractFunctionEvents = new List<EventFunctionParams>();
 
     [Tooltip("Usually true, only set to false if something like a cutscene happens directly after interacting")]
     public bool itCanMoveAfter = true;
@@ -44,10 +48,18 @@ public class InteractionTarget : MonoBehaviour/*, IInteractable*/
         //TODO: Stop player movement
         GameManager.instance.DisablePlayerInput();
         itInteractEvents?.Invoke();
+        foreach (EventFunctionParams func in itInteractFunctionEvents)
+        {
+            EventFinder.instance.CallFunction(func);
+        }
     }
 
     public virtual void EndInteract()
     {
         itPostInteractEvents?.Invoke();
+        foreach (EventFunctionParams func in itPostInteractFunctionEvents)
+        {
+            EventFinder.instance.CallFunction(func);
+        }     
     }
 }
