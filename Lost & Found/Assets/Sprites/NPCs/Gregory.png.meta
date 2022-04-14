@@ -140,7 +140,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: quest_character_1_spriteSheet_0
+      name: gregory_p
       rect:
         serializedVersion: 2
         x: 0
@@ -161,7 +161,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: quest_character_1_idle_1
+      name: Gregory_idle1
       rect:
         serializedVersion: 2
         x: 160
@@ -182,7 +182,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: quest_character_1_idle_2
+      name: Gregory_idle2
       rect:
         serializedVersion: 2
         x: 240
@@ -203,7 +203,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: quest_character_1_idle_3
+      name: Gregory_idle3
       rect:
         serializedVersion: 2
         x: 320
@@ -234,10 +234,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      quest_character_1_spriteSheet_0: 7652852092519290807
-      quest_character_1_idle_1: -27306297689570786
-      quest_character_1_idle_3: 6241402777077859995
-      quest_character_1_idle_2: -4857426513051927425
+      gregory_p: 7652852092519290807
+      Gregory_idle2: -4857426513051927425
+      Gregory_idle1: -27306297689570786
+      Gregory_idle3: 6241402777077859995
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
