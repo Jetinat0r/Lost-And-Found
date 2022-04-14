@@ -19892,6 +19892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd787b9bd141d484cb1f3ef8338381b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundFadeTime: 1
   sounds:
   - name: Main Theme
     clip: {fileID: 8300000, guid: 547a0b0e4b7e4cd47bc5c458dbbd1af7, type: 3}
@@ -19899,18 +19900,24 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+    startVolume: 0
+    isFading: 0
   - name: Level One Loop 1
     clip: {fileID: 8300000, guid: 082aa84c597ddf6468216834e2c587c9, type: 3}
     volume: 1
     pitch: 1
     loop: 1
     source: {fileID: 0}
+    startVolume: 0
+    isFading: 0
   - name: Quest Complete 1
     clip: {fileID: 8300000, guid: 3719d6dc7e3950f47a3f4eeaa396c968, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
+    startVolume: 0
+    isFading: 0
   curSong:
     name: 
     clip: {fileID: 0}
@@ -19918,6 +19925,8 @@ MonoBehaviour:
     pitch: 0
     loop: 0
     source: {fileID: 0}
+    startVolume: 0
+    isFading: 0
 --- !u!4 &1669756913
 Transform:
   m_ObjectHideFlags: 0
@@ -21841,11 +21850,12 @@ MonoBehaviour:
     day: -1
     time: -1
   timeSlots:
-  - {fileID: 11400000, guid: d6205e288d00a9141994827467b5862e, type: 2}
+  - {fileID: 11400000, guid: 8d906ef0d1d9a46b7aa426a795e1da3c, type: 2}
   playerPrefab: {fileID: 6670859051717510830, guid: 6fb8271f1c35f7840aafd0f4a3bc0edf, type: 3}
   curQuestInfos: []
   curFillerNpcInfos: []
   curPhysicalQuestItemInfos: []
+  curFloatingItems: []
   journal: {fileID: 419650710}
 --- !u!4 &1831627239
 Transform:
