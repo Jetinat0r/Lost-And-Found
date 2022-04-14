@@ -184,7 +184,6 @@ public class AudioManager : MonoBehaviour
 
     public void StopSong(bool fadeOut = true)
     {
-        Debug.Log("Stopping nothing?");
         //Debug.Log(curSong.name);
         //Debug.Log(curSong == null);
         if (curSong != null)

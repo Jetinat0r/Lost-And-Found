@@ -110,6 +110,29 @@ public class QuestScriptableObject : ScriptableObject
     {
         curQuestState = initialQuestState;
 
+        switch (curQuestState)
+        {
+            case (QuestState.Start):
+                OnInactiveToStart();
+                break;
+
+            case (QuestState.InProgress):
+                OnStartToInProgress();
+                break;
+
+            case (QuestState.End):
+                OnInProgressToEnd();
+                break;
+
+            case (QuestState.Completed):
+                OnEndToCompleted();
+                break;
+
+            case (QuestState.Failed):
+                OnStateToFailed();
+                break;
+        }
+
         if(curQuestState != QuestState.Inactive)
         {
             //TODO: Add to questbook

@@ -34,8 +34,8 @@ public class SceneController : MonoBehaviour
     private RunOnSceneLoad runOnSceneLoad = null;
     private List<EventFunctionParams> runEventFunctionsOnSceneLoad = null;
 
-    private List<NPC> spawnedNpcs;
-    private List<QuestItemPhysical> spawnedQuestItems;
+    private List<NPC> spawnedNpcs = new List<NPC>();
+    private List<QuestItemPhysical> spawnedQuestItems = new List<QuestItemPhysical>();
 
     private void Awake()
     {

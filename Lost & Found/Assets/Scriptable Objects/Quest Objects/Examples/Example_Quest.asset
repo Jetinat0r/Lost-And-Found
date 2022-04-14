@@ -16,7 +16,7 @@ MonoBehaviour:
   idQuestItemNames:
   - example_item_01
   initialQuestState: 1
-  curQuestState: 4
+  curQuestState: 1
   unlockOnComplete: []
   inactiveIdNpcName: 
   startIdNpcName: example_quest_npc_01
@@ -27,6 +27,7 @@ MonoBehaviour:
   displayQuestName: A Mysterious Note
   displayNpcName: ???
   displayQuestDescription: I found a weird note. It told me to do something.
+  isDisplayed: 1
   reputationPoints: 0
   inactiveDialogue: {fileID: 0}
   startDialogue: {fileID: 11400000, guid: 79364beb6bd93d84cb9752df416fa72b, type: 2}
@@ -34,15 +35,16 @@ MonoBehaviour:
   endDialogue: {fileID: 11400000, guid: e0dbaa9f5046e3048a81f0587f938faa, type: 2}
   completedDialogue: {fileID: 11400000, guid: 61e8da249d35d3644b18ec809441c1ef, type: 2}
   failedDialogue: {fileID: 0}
-  onInactiveToStart: []
-  onStartToInProgress: []
-  onInProgressToEnd: []
-  onEndToCompleted:
-  - name: 
-    classToCall: 0
-    functionName: 
-    stringParams: []
+  onInactiveToStart:
+  - name: Play day 1 loop
+    classToCall: 1
+    functionName: PlaySong
+    stringParams:
+    - Level One Loop 1
     intParams: 
     floatParams: []
-    boolParams: 
+    boolParams: 01
+  onStartToInProgress: []
+  onInProgressToEnd: []
+  onEndToCompleted: []
   onStateToFailed: []
