@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Day 1.1
   m_EditorClassIdentifier: 
   timeBlock:
-    day: 1
-    time: 1
+    day: 0
+    time: 0
   displayDate: Day 01
   displayTime: 9:00am
   startingNodeId: hallway_01

@@ -1559,6 +1559,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kent NPC
       objectReference: {fileID: 0}
+    - target: {fileID: 8108156077650074047, guid: 634ec42e363c845758e739a84b22acb1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 634ec42e363c845758e739a84b22acb1, type: 3}
 --- !u!1001 &2479046254314459197
@@ -1615,6 +1619,10 @@ PrefabInstance:
     - target: {fileID: 1966785857075478249, guid: 7f7b4f9082ba746fb9512bf282130eff, type: 3}
       propertyPath: m_Name
       value: Broderick NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966785857075478249, guid: 7f7b4f9082ba746fb9512bf282130eff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1966785857826174470, guid: 7f7b4f9082ba746fb9512bf282130eff, type: 3}
       propertyPath: m_IsActive
@@ -1689,6 +1697,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gregory NPC
       objectReference: {fileID: 0}
+    - target: {fileID: 3802160613487974330, guid: 52af5880cace74f74b7568ec84dd548d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52af5880cace74f74b7568ec84dd548d, type: 3}
 --- !u!1001 &7035646905250063272
@@ -1748,7 +1760,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7035646903797310815, guid: b46fa94c3cdc54b7fb0863afd8d442bf, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b46fa94c3cdc54b7fb0863afd8d442bf, type: 3}
@@ -1765,7 +1777,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1467087925857635638, guid: 3ea2aac37ef994cd0a45c770441e1ed7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1467087925857635640, guid: 3ea2aac37ef994cd0a45c770441e1ed7, type: 3}
       propertyPath: m_RootOrder

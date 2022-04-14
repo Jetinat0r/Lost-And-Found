@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9bf2e6cd7040c147864076c8371c039, type: 3}
   m_Name: Gregory_info
   m_EditorClassIdentifier: 
-  spawnTimes: []
-  npcPrefab: {fileID: 0}
+  spawnTimes:
+  - day: 0
+    time: 0
+  npcPrefab: {fileID: 3802160613487974330, guid: 52af5880cace74f74b7568ec84dd548d, type: 3}
   sceneInfo:
     priority: 0
     objectSceneInfo:
