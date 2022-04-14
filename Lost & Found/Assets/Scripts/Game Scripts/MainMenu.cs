@@ -9,8 +9,8 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         //TODO: not this
-        AudioManager.instance.Stop("Main Theme");
-        AudioManager.instance.Play("Level One Loop 1");
+        //AudioManager.instance.Stop("Main Theme");
+        //AudioManager.instance.Play("Level One Loop 1");
 
 
         GameManager.instance.ChangeGamePeriod();

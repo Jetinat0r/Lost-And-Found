@@ -9,7 +9,10 @@ public class AudioManager : MonoBehaviour
 
     public float soundFadeTime = 1f;
 
+    public string songOnStart;
+
     public Sound[] sounds;
+    [HideInInspector]
     public Sound curSong;
 
     //Use this for initialization
@@ -44,7 +47,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        Play("Main Theme");
+        PlaySong(songOnStart);
     }
 
     public void Play(string soundName)

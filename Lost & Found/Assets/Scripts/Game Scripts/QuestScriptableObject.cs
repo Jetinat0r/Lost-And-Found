@@ -96,8 +96,6 @@ public class QuestScriptableObject : ScriptableObject
                 //TODO: Not this
                 curQuestState = QuestState.Completed;
                 //runOnComplete?.Invoke();
-                //TODO: remove
-                AudioManager.instance.Play("Quest Complete 1");
 
                 return endDialogue;
             case (QuestState.Completed):
