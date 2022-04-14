@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9bf2e6cd7040c147864076c8371c039, type: 3}
-  m_Name: Charlie_info
+  m_Name: Amara_info
   m_EditorClassIdentifier: 
   spawnTimes:
-  - day: 0
-    time: 0
-  npcPrefab: {fileID: 3350966203038361818, guid: af5bb3182f77cf2419ea988a20d84a41, type: 3}
+  - day: 1
+    time: 1
+  npcPrefab: {fileID: 2742017805472613119, guid: b46fa94c3cdc54b7fb0863afd8d442bf, type: 3}
   sceneInfo:
     priority: 0
     objectSceneInfo:
       nodeId: hallway_01
-      positionInScene: {x: 19.88, y: -2.37, z: -7.218167}
-  unpopularDialogue: {fileID: 11400000, guid: ffb4d338c32c64979ab923ae6b93d5c4, type: 2}
+      positionInScene: {x: 13.78, y: -1.87, z: 0.1037309}
+  unpopularDialogue: {fileID: 11400000, guid: 95badeed4b6a4465dadbd0c4c65b127a, type: 2}
   neutralDialogue: {fileID: 0}
   popularDialogue: {fileID: 0}

@@ -21,6 +21,5 @@ MonoBehaviour:
   questInfos: []
   physicalQuestItemInfos: []
   fillerNpcInfos:
-  - {fileID: 11400000, guid: 1845a5fe8d6619244973797838088682, type: 2}
-  - {fileID: 11400000, guid: cc75f4d021d034c5e8a4b3063efab80b, type: 2}
+  - {fileID: 11400000, guid: 08222e9aa5b584d95885bc46aaa09d0d, type: 2}
   floatingObjects: []
