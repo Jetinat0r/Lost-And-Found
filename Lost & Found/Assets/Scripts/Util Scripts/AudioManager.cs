@@ -12,8 +12,8 @@ public class AudioManager : MonoBehaviour
     public string songOnStart;
 
     public Sound[] sounds;
-    [HideInInspector]
-    public Sound curSong;
+    [System.NonSerialized]
+    public Sound curSong = null;
 
     //Use this for initialization
     private void Awake()
@@ -30,9 +30,8 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-
         //Sound Player Setup
-        foreach(Sound s in sounds)
+        foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
@@ -43,6 +42,8 @@ public class AudioManager : MonoBehaviour
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
+
+        curSong = null;
     }
 
     private void Start()
@@ -94,7 +95,10 @@ public class AudioManager : MonoBehaviour
         curSong = s;
         if (curSong.isFading)
         {
-            curSong.source.Stop();
+            if (curSong.source.isPlaying)
+            {
+                curSong.source.Stop();
+            }
             curSong.isFading = false;
             curSong.volume = s.startVolume;
         }
@@ -122,7 +126,10 @@ public class AudioManager : MonoBehaviour
             yield return null;
         }
 
-        s.source.Stop();
+        if (s.source.isPlaying)
+        {
+            s.source.Stop();
+        }
         s.isFading = false;
         s.volume = s.startVolume;
     }
@@ -164,6 +171,7 @@ public class AudioManager : MonoBehaviour
             else
             {
                 s.source.Stop();
+                curSong = null;
             }
         }
     }
@@ -176,8 +184,12 @@ public class AudioManager : MonoBehaviour
 
     public void StopSong(bool fadeOut = true)
     {
+        Debug.Log("Stopping nothing?");
+        //Debug.Log(curSong.name);
+        //Debug.Log(curSong == null);
         if (curSong != null)
         {
+            //Debug.Log(curSong.name);
             if (fadeOut)
             {
                 StartCoroutine(FadeSound(curSong));
