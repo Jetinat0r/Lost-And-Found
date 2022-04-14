@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portraits: {fileID: 11400000, guid: 00b2b77a3abef92428fc8900f8b0a607, type: 2}
   dialogueText:
-  - This is the first line of dialogue.
-  - And this is the second!
+  - ...
+  - Sorry, do I know you?
   timeBetweenChars: 0.1
-  moodsForLines: 0000000003000000
-  nextDialogue: {fileID: 11400000, guid: fe77f1644f22c4c4b930f19c5141be4a, type: 2}
+  moodsForLines: 0000000000000000
+  nextDialogue: {fileID: 0}
   nextDialogueDisplayName: Pow

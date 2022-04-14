@@ -17,9 +17,10 @@ MonoBehaviour:
     time: 1
   displayDate: Day 01
   displayTime: 9:00am
-  startingNodeId: car_cutscene
+  startingNodeId: hallway_01
   questInfos: []
   physicalQuestItemInfos: []
   fillerNpcInfos:
-  - {fileID: 11400000, guid: b3d27a6c0a4934961a915a433035d918, type: 2}
+  - {fileID: 11400000, guid: 1845a5fe8d6619244973797838088682, type: 2}
+  - {fileID: 11400000, guid: cc75f4d021d034c5e8a4b3063efab80b, type: 2}
   floatingObjects: []

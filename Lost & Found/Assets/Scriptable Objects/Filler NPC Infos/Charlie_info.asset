@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9bf2e6cd7040c147864076c8371c039, type: 3}
-  m_Name: Example_Filler_NPC
+  m_Name: Charlie_info
   m_EditorClassIdentifier: 
   spawnTimes:
-  - day: 1
-    time: 1
-  npcPrefab: {fileID: 4932148795363392631, guid: 632e6fada52a3fd40ae9de1f65893757, type: 3}
+  - day: 0
+    time: 0
+  npcPrefab: {fileID: 3350966203038361818, guid: af5bb3182f77cf2419ea988a20d84a41, type: 3}
   sceneInfo:
     priority: 0
     objectSceneInfo:
       nodeId: hallway_01
-      positionInScene: {x: 14.4, y: -2.04, z: -7.218167}
-  unpopularDialogue: {fileID: 11400000, guid: 30c3f945ef708d74abc4ff6a5756e536, type: 2}
+      positionInScene: {x: 19.88, y: -2.37, z: -7.218167}
+  unpopularDialogue: {fileID: 0}
   neutralDialogue: {fileID: 0}
   popularDialogue: {fileID: 0}
