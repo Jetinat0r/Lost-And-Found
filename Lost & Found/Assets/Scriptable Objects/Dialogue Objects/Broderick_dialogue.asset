@@ -16,7 +16,7 @@ MonoBehaviour:
   dialogueText:
   - Do you have a basketball I can play with? I like basketball.
   - Me like ball. Me play with ball.
-  timeBetweenChars: 0.1
+  timeBetweenChars: 0.15
   moodsForLines: 0000000000000000
   nextDialogue: {fileID: 0}
   nextDialogueDisplayName: 

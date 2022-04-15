@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Charlie_info
   m_EditorClassIdentifier: 
   spawnTimes:
-  - day: 1
-    time: 1
+  - day: 0
+    time: 0
   npcPrefab: {fileID: 1467087925857635638, guid: 3ea2aac37ef994cd0a45c770441e1ed7, type: 3}
   sceneInfo:
     priority: 0
