@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 548c3fad9f0110440add467733f669f5, type: 3}
+  m_Name: invis_token_info
+  m_EditorClassIdentifier: 
+  spawnTimes:
+  - day: 0
+    time: 0
+  quest: {fileID: 11400000, guid: 7b7c308fc7cbe41b7a2b2e161f0b018f, type: 2}
+  questNpc:
+    inactiveNpcPrefab: {fileID: 0}
+    inactiveNpcSceneInfo:
+      priority: 0
+      objectSceneInfo:
+        nodeId: 
+        positionInScene: {x: 0, y: 0, z: 0}
+    inactiveDefaultNpcDialogue: {fileID: 0}
+    startNpcPrefab: {fileID: 8802657519956960689, guid: ffca7839c5749498182809f6c7b882d4, type: 3}
+    startNpcSceneInfo:
+      priority: 0
+      objectSceneInfo:
+        nodeId: lobby
+        positionInScene: {x: 6.25, y: -0.65, z: 0}
+    startDefaultNpcDialogue: {fileID: 11400000, guid: fd910b1ae80cf45719519f3351ab9d03, type: 2}
+    inProgressNpcPrefab: {fileID: 8802657519956960689, guid: ffca7839c5749498182809f6c7b882d4, type: 3}
+    inProgressNpcSceneInfo:
+      priority: 0
+      objectSceneInfo:
+        nodeId: lobby
+        positionInScene: {x: 6.25, y: -0.65, z: 0}
+    inProgressDefaultNpcDialogue: {fileID: 11400000, guid: fd910b1ae80cf45719519f3351ab9d03, type: 2}
+    endNpcPrefab: {fileID: 6670943736444000526, guid: e156940da3a5e4d3a8ef3ee69ad57128, type: 3}
+    endNpcSceneInfo:
+      priority: 0
+      objectSceneInfo:
+        nodeId: hallyway_02
+        positionInScene: {x: -11.38, y: -2.59, z: 0}
+    endDefaultNpcDialogue: {fileID: 11400000, guid: 4b2fd73b7276140b698b339d97bccd09, type: 2}
+    completedNpcPrefab: {fileID: 6670943736444000526, guid: e156940da3a5e4d3a8ef3ee69ad57128, type: 3}
+    completedNpcSceneInfo:
+      priority: 0
+      objectSceneInfo:
+        nodeId: hallyway_02
+        positionInScene: {x: -11.38, y: -2.59, z: 0}
+    completedDefaultNpcDialogue: {fileID: 11400000, guid: 9eabeac61cccc4d49a3d14251d3a1e4a, type: 2}
+    failedNpcPrefab: {fileID: 0}
+    failedNpcSceneInfo:
+      priority: 0
+      objectSceneInfo:
+        nodeId: 
+        positionInScene: {x: 0, y: 0, z: 0}
+    failedDefaultNpcDialogue: {fileID: 0}

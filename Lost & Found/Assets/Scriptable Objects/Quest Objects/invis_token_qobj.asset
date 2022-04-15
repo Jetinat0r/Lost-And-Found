@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b7453d244ea4d841a7029c8afceb34b, type: 3}
+  m_Name: invis_token_qobj
+  m_EditorClassIdentifier: 
+  idQuestName: Talk To Everyone
+  idQuestItemNames:
+  - invis_token
+  initialQuestState: 1
+  curQuestState: 4
+  unlockOnComplete:
+  - go_to_class_1
+  inactiveIdNpcName: 
+  startIdNpcName: Calliope_npc
+  inProgressIdNpcName: Calliope_npc
+  endIdNpcName: Sebastian_npc
+  completedIdNpcName: Sebastian_npc
+  failedIdNpcName: 
+  displayQuestName: Meet all of your new schoolmates
+  displayNpcName: ???
+  displayQuestDescription: Use 'E' to talk to everyone you find in the halls.
+  isDisplayed: 1
+  reputationPoints: 0
+  inactiveDialogue: {fileID: 0}
+  startDialogue: {fileID: 11400000, guid: fd910b1ae80cf45719519f3351ab9d03, type: 2}
+  inProgressDialogue: {fileID: 11400000, guid: 1e36f085c7885416dbb9d015bfb4c02d, type: 2}
+  endDialogue: {fileID: 11400000, guid: 4b2fd73b7276140b698b339d97bccd09, type: 2}
+  completedDialogue: {fileID: 11400000, guid: 9eabeac61cccc4d49a3d14251d3a1e4a, type: 2}
+  failedDialogue: {fileID: 0}
+  onInactiveToStart: []
+  onStartToInProgress: []
+  onInProgressToEnd: []
+  onEndToCompleted: []
+  onStateToFailed: []
