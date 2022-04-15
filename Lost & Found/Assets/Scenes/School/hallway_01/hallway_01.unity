@@ -1115,6 +1115,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: DEFAULT_TRANSITION_OBJECT (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4223823127285210272, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
+      propertyPath: m_Size.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4223823127285210272, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.55
+      objectReference: {fileID: 0}
     - target: {fileID: 8330024858803261796, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: connectionTitle
       value: hallway_01_to_hallway_02

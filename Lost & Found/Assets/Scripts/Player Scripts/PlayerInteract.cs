@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class PlayerInteract : MonoBehaviour
 {
@@ -14,6 +15,11 @@ public class PlayerInteract : MonoBehaviour
     //isBusy will be used for things like minigames or dialogue, maybe even transferring through doors
     //Should be handled by the thing that hinders player movement
     public bool isBusy = false;
+
+    private void Awake()
+    {
+        SceneManager.sceneLoaded += ClearInteractables;
+    }
 
     // Update is called once per frame
     void Update()
@@ -136,5 +142,15 @@ public class PlayerInteract : MonoBehaviour
                 //targetedObjects.Remove(target);
             }
         }
+    }
+
+    public void ClearInteractables()
+    {
+        targetedObjects.Clear();
+    }
+
+    public void ClearInteractables(Scene scene, LoadSceneMode sceneMode)
+    {
+        ClearInteractables();
     }
 }

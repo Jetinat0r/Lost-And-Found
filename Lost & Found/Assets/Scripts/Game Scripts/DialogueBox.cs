@@ -32,8 +32,31 @@ public class DialogueBox : MonoBehaviour
     [SerializeField]
     private float timeBetweenChars = 0.1f;
 
-    //TODO: Allow for multiple boxes of dialogue to be written out
-    //A more recent me: may be done already? or its talking abt multiple dialogueScripObjs
+    [SerializeField]
+    private Sound[] ditSounds;
+
+    private Sound curSound = null;
+
+    private void Awake()
+    {
+        if(ditSounds.Length == 0)
+        {
+            Debug.LogWarning("No sounds found in DialogueBox, will cause errors!");
+        }
+
+        foreach (Sound s in ditSounds)
+        {
+            s.source = gameObject.AddComponent<AudioSource>();
+            s.source.clip = s.clip;
+
+            s.startVolume = s.volume;
+
+            s.source.volume = s.volume;
+            s.source.pitch = s.pitch;
+            s.source.loop = s.loop;
+        }
+    }
+
     public void SetupDialogueBox(DialogueScriptableObject _dialogue, string _characterName)
     {
         dialogueScriptableObject = _dialogue;
@@ -182,6 +205,8 @@ public class DialogueBox : MonoBehaviour
 
             i++;
 
+            PlayDitSound();
+
             if (specialTimeOut == -1)
             {
                 yield return new WaitForSeconds(_timeBetweenChars);
@@ -208,6 +233,8 @@ public class DialogueBox : MonoBehaviour
             }
         }
 
+        PlayDitSound();
+
         isTextExhausted = true;
         dialogueTextArea.text = newText;
     }
@@ -220,4 +247,16 @@ public class DialogueBox : MonoBehaviour
     //        yield return new WaitForSeconds(typingSpeed);
     //    }
     //}
+
+    private void PlayDitSound()
+    {
+        if(curSound != null && curSound.source.isPlaying)
+        {
+            curSound.source.Stop();
+            curSound = null;
+        }
+
+        curSound = ditSounds[Random.Range(0, ditSounds.Length)];
+        curSound.source.Play();
+    }
 }

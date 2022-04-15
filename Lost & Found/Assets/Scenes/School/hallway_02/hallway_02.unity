@@ -678,6 +678,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: DEFAULT_TRANSITION_OBJECT (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4223823127285210272, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
+      propertyPath: m_Size.x
+      value: 1.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 4223823127285210272, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.59
+      objectReference: {fileID: 0}
     - target: {fileID: 8330024858803261796, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: connectionTitle
       value: hallway_02_to_girl_locker_room
@@ -1544,6 +1552,10 @@ PrefabInstance:
     - target: {fileID: 6670943736444000526, guid: e156940da3a5e4d3a8ef3ee69ad57128, type: 3}
       propertyPath: m_Name
       value: Sebastian NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670943736444000526, guid: e156940da3a5e4d3a8ef3ee69ad57128, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e156940da3a5e4d3a8ef3ee69ad57128, type: 3}

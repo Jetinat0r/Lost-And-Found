@@ -62,9 +62,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  itInteractFunctionEvents:
+  - name: Play Open Door Sound
+    classToCall: 1
+    functionName: Play
+    stringParams:
+    - Open Door
+    intParams: 
+    floatParams: []
+    boolParams: 
   itPostInteractEvents:
     m_PersistentCalls:
       m_Calls: []
+  itPostInteractFunctionEvents: []
   itCanMoveAfter: 1
   itCanInteract: 1
   connectionTitle: DEFAULT_CONNECTION_TITLE
