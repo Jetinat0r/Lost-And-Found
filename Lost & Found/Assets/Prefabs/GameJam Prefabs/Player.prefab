@@ -24,8 +24,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045167529333893687}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: -10}
+  m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -62,7 +62,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7367089, y: 1}
+    m_SensorSize: {x: 1.8113976, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -101,7 +101,7 @@ Transform:
   m_GameObject: {fileID: 6670859051717510830}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.9850662, y: -2.11, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6670859052614927038}
@@ -210,6 +210,7 @@ GameObject:
   - component: {fileID: 6670859052614927038}
   - component: {fileID: 6670859052614927036}
   - component: {fileID: 6670859052614927037}
+  - component: {fileID: 211125791586870370}
   m_Layer: 0
   m_Name: Player Graphics
   m_TagString: Untagged
@@ -304,6 +305,188 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &211125791586870370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6670859052614927039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bcf2b63e38a7ef44bd53305927f4495, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupSounds:
+  - name: Pickup Sound 1
+    clip: {fileID: 8300000, guid: b5b08d0eb496ada409c10a0822f8389d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    startVolume: 0
+    isFading: 0
+  walkSounds:
+  - name: Walk Sound 1
+    clip: {fileID: 8300000, guid: ab408e797acb5f3438c590d2507409d3, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    startVolume: 0
+    isFading: 0
+  - name: Walk Sound 2
+    clip: {fileID: 8300000, guid: 59e71d58a7b41c847b4d21a62d2ae712, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    startVolume: 0
+    isFading: 0
+  - name: Walk Sound 3
+    clip: {fileID: 8300000, guid: a0fc6f7f4ed1cd241baef8a46b98738e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    startVolume: 0
+    isFading: 0
+  - name: Walk Sound 4
+    clip: {fileID: 8300000, guid: 06b4bfb894b99584e99478e0b1c30fd4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    startVolume: 0
+    isFading: 0
+  - name: Walk Sound 5
+    clip: {fileID: 8300000, guid: 1a9d5fdf11697c44a8cb6ebf67d498bd, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    startVolume: 0
+    isFading: 0
+  - name: Walk Sound 6
+    clip: {fileID: 8300000, guid: 55e8d24f05e08744c84389286f9bd6a0, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    startVolume: 0
+    isFading: 0
+  - name: Walk Sound 7
+    clip: {fileID: 8300000, guid: e013a2a35e00be8438a360a7d117486a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    startVolume: 0
+    isFading: 0
+  - name: Walk Sound 8
+    clip: {fileID: 8300000, guid: 6fef1bc898b897749af634e2b44e8d27, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    startVolume: 0
+    isFading: 0
+  - name: Walk Sound 9
+    clip: {fileID: 8300000, guid: 09907212558a6ca4a946acd0112931b1, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    startVolume: 0
+    isFading: 0
+  - name: Walk Sound 10
+    clip: {fileID: 8300000, guid: 852e3a35876af5b46adeed815013b9fb, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    startVolume: 0
+    isFading: 0
+  - name: Walk Sound 11
+    clip: {fileID: 8300000, guid: 29aead1e3a358824b9f980720f1031aa, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    startVolume: 0
+    isFading: 0
+  - name: Walk Sound 12
+    clip: {fileID: 8300000, guid: 52d5b6b1513a0e44ea0c26cf72089e6e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    startVolume: 0
+    isFading: 0
+  - name: Walk Sound 13
+    clip: {fileID: 8300000, guid: e8486f66758d13743b6aeb4f4b965caf, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    startVolume: 0
+    isFading: 0
+  - name: Walk Sound 14
+    clip: {fileID: 8300000, guid: 542b1c040b866594a94bd7f720c03fe0, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    startVolume: 0
+    isFading: 0
+  - name: Walk Sound 15
+    clip: {fileID: 8300000, guid: 7d307116d2023ba4f8874d3aedc9b3c1, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    startVolume: 0
+    isFading: 0
+  - name: Walk Sound 16
+    clip: {fileID: 8300000, guid: 95d1ef60a1e6c934e833a5cd07d5918c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    startVolume: 0
+    isFading: 0
+  - name: Walk Sound 17
+    clip: {fileID: 8300000, guid: 2024526254f0d984782c70250ff27e32, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    startVolume: 0
+    isFading: 0
+  - name: Walk Sound 18
+    clip: {fileID: 8300000, guid: c874a884690c4fc4fb2aa94226c9d49d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    startVolume: 0
+    isFading: 0
+  - name: Walk Sound 19
+    clip: {fileID: 8300000, guid: 661980743a361934e91b1fcacc8ac47e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    startVolume: 0
+    isFading: 0
+  - name: Walk Sound 20
+    clip: {fileID: 8300000, guid: 7f4bd23efde668842adefedd20f699de, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    startVolume: 0
+    isFading: 0
 --- !u!1 &8718177721661399166
 GameObject:
   m_ObjectHideFlags: 0

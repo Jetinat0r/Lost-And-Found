@@ -2299,6 +2299,15 @@ MonoBehaviour:
   nameTextArea: {fileID: 1873846283}
   portraitDisplay: {fileID: 2016039924}
   timeBetweenChars: 0.1
+  ditSounds:
+  - name: Dit Sound 1
+    clip: {fileID: 8300000, guid: 75e2b60e8de8e17489bdedf61c530e42, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    startVolume: 0
+    isFading: 0
 --- !u!1 &169546499
 GameObject:
   m_ObjectHideFlags: 3
@@ -10836,7 +10845,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 905740811}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.9850662, y: -2.11, z: -10}
+  m_LocalPosition: {x: -0.9850662, y: -0.109999895, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19913,6 +19922,22 @@ MonoBehaviour:
     isFading: 0
   - name: Quest Complete 1
     clip: {fileID: 8300000, guid: 3719d6dc7e3950f47a3f4eeaa396c968, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    startVolume: 0
+    isFading: 0
+  - name: Open Door
+    clip: {fileID: 8300000, guid: 27c76a81bb76b9f46b5a8497ee2d4ce9, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    startVolume: 0
+    isFading: 0
+  - name: Item Pickup
+    clip: {fileID: 8300000, guid: b5b08d0eb496ada409c10a0822f8389d, type: 3}
     volume: 1
     pitch: 1
     loop: 0
