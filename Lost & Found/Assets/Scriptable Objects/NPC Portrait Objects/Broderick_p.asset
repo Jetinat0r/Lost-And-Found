@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5d62561aa074ab428fea1b080851eb4, type: 3}
   m_Name: Broderick_p
   m_EditorClassIdentifier: 
-  npcNeutral: {fileID: -494776828678385827, guid: 3ce27152b108840e683ae7d3e7d1459f, type: 3}
+  npcNeutral: {fileID: 944310318, guid: baf78f53749924695871c29c0036a4bf, type: 3}
   npcHappy: {fileID: 0}
   npcSad: {fileID: 0}
   npcAngry: {fileID: 0}

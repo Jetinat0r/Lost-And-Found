@@ -379,7 +379,7 @@ MonoBehaviour:
   - connectionTitle: outside_to_lobby
     connectionPosition: {x: 10.43, y: -1.96, z: 0}
   - connectionTitle: hallway_01_to_lobby
-    connectionPosition: {x: -4.44, y: -1.96, z: 0}
+    connectionPosition: {x: -3.14, y: -1.96, z: 0}
   cutscenes: []
 --- !u!4 &324817901
 Transform:
@@ -603,7 +603,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1098130030076654666, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: m_Name
-      value: DEFAULT_TRANSITION_OBJECT (1)
+      value: to outside
       objectReference: {fileID: 0}
     - target: {fileID: 8330024858803261796, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: connectionTitle
@@ -1176,7 +1176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1098130030076654666, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: m_Name
-      value: DEFAULT_TRANSITION_OBJECT
+      value: to hallway 01
       objectReference: {fileID: 0}
     - target: {fileID: 8330024858803261796, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: connectionTitle

@@ -136,11 +136,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 339799737475103240, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27.32
+      value: 28.72
       objectReference: {fileID: 0}
     - target: {fileID: 339799737475103240, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5833428
+      value: -2.24
       objectReference: {fileID: 0}
     - target: {fileID: 339799737475103240, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -176,7 +176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1098130030076654666, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: m_Name
-      value: DEFAULT_TRANSITION_OBJECT
+      value: to the lobby
       objectReference: {fileID: 0}
     - target: {fileID: 8330024858803261796, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: connectionTitle
@@ -398,7 +398,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 243602010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.97, y: -4.87, z: -1.4938}
+  m_LocalPosition: {x: 6.97, y: -4.8, z: -1.4938}
   m_LocalScale: {x: 47.705864, y: 0.82322, z: 0.82322}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -756,11 +756,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 339799737475103240, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23.68
+      value: 24.4
       objectReference: {fileID: 0}
     - target: {fileID: 339799737475103240, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.72
+      value: -2.06
       objectReference: {fileID: 0}
     - target: {fileID: 339799737475103240, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -796,7 +796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1098130030076654666, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: m_Name
-      value: DEFAULT_TRANSITION_OBJECT (1)
+      value: to the library
       objectReference: {fileID: 0}
     - target: {fileID: 8330024858803261796, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: connectionTitle
@@ -973,7 +973,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: c94ced61e2123cb4b8adbc6caf888f2e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1065,7 +1065,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 339799737475103240, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.8054686
+      value: 1.5780761
       objectReference: {fileID: 0}
     - target: {fileID: 339799737475103240, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: m_LocalScale.y
@@ -1073,7 +1073,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 339799737475103240, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.52
+      value: -13.6
       objectReference: {fileID: 0}
     - target: {fileID: 339799737475103240, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1113,7 +1113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1098130030076654666, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: m_Name
-      value: DEFAULT_TRANSITION_OBJECT (2)
+      value: to hallway 02
       objectReference: {fileID: 0}
     - target: {fileID: 8330024858803261796, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: connectionTitle
@@ -1485,7 +1485,7 @@ MonoBehaviour:
   - connectionTitle: lobby_to_hallway_01
     connectionPosition: {x: 28.05, y: -1.96, z: 0}
   - connectionTitle: hallway_02_to_hallway_01
-    connectionPosition: {x: -8.45, y: -1.96, z: 0}
+    connectionPosition: {x: -14.35, y: -1.96, z: 0}
   - connectionTitle: bookstore_to_hallway_01
     connectionPosition: {x: 24.05, y: -1.96, z: 0}
   cutscenes: []
@@ -1521,7 +1521,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8108156077650074033, guid: 634ec42e363c845758e739a84b22acb1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.86
+      value: -12.65
       objectReference: {fileID: 0}
     - target: {fileID: 8108156077650074033, guid: 634ec42e363c845758e739a84b22acb1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1565,7 +1565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8108156077650074047, guid: 634ec42e363c845758e739a84b22acb1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 634ec42e363c845758e739a84b22acb1, type: 3}

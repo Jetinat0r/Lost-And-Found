@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5d62561aa074ab428fea1b080851eb4, type: 3}
   m_Name: Chris_p
   m_EditorClassIdentifier: 
-  npcNeutral: {fileID: -4395815306629568681, guid: 3c892ed6b5ed24810b2f35edcef9f34c, type: 3}
+  npcNeutral: {fileID: 21300000, guid: 7718439f5c29f478682841ec1f161774, type: 3}
   npcHappy: {fileID: 0}
   npcSad: {fileID: 0}
   npcAngry: {fileID: 0}

@@ -30,4 +30,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1b3b7430096eb443a9fa24aebf50b24f, type: 2}
   - {fileID: 11400000, guid: bb6f23aefa56040d8af50f78c7db51b3, type: 2}
   - {fileID: 11400000, guid: 8a8030a580080425790c2886d6628540, type: 2}
+  - {fileID: 11400000, guid: 7bb6498df568a4cb7b731f0a03ab5c22, type: 2}
   floatingObjects: []

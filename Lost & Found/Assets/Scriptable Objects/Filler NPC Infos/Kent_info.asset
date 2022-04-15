@@ -20,7 +20,7 @@ MonoBehaviour:
     priority: 0
     objectSceneInfo:
       nodeId: hallway_01
-      positionInScene: {x: -13.86, y: -1.94, z: 0.1037309}
+      positionInScene: {x: -12.71, y: -1.94, z: 0.1037309}
   unpopularDialogue: {fileID: 11400000, guid: e29181eb54efa41a8a5c994a2aba0c78, type: 2}
   neutralDialogue: {fileID: 0}
   popularDialogue: {fileID: 0}

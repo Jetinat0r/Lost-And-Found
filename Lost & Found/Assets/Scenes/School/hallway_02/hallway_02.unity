@@ -440,7 +440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 339799737475103240, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.8054686
+      value: 1.5430077
       objectReference: {fileID: 0}
     - target: {fileID: 339799737475103240, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: m_LocalScale.y
@@ -448,7 +448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 339799737475103240, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23.65
+      value: 27.95
       objectReference: {fileID: 0}
     - target: {fileID: 339799737475103240, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -488,7 +488,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1098130030076654666, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: m_Name
-      value: DEFAULT_TRANSITION_OBJECT (2)
+      value: to hallway 02
       objectReference: {fileID: 0}
     - target: {fileID: 4223823127285210272, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: m_Size.x
@@ -676,7 +676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1098130030076654666, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: m_Name
-      value: DEFAULT_TRANSITION_OBJECT (1)
+      value: to girls locker room
       objectReference: {fileID: 0}
     - target: {fileID: 8330024858803261796, guid: 6a582c7d276a46d4882bbee4d56c3f8f, type: 3}
       propertyPath: connectionTitle
@@ -1074,7 +1074,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 41d21d354bea38546ba1a95498802262, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1294,7 +1294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connections:
   - connectionTitle: hallway_01_to_hallway_02
-    connectionPosition: {x: 20.83, y: -1.96, z: 0}
+    connectionPosition: {x: 27.03, y: -1.96, z: 0}
   - connectionTitle: girl_locker_room_to_hallway_02
     connectionPosition: {x: -5.07, y: -1.96, z: 0}
   - connectionTitle: cafeteria_to_hallway_02
@@ -1425,6 +1425,67 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &201730979134995591
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7164966236413352465, guid: 64cc415a8a14c421eb023aee1f5edf7a, type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164966236413352465, guid: 64cc415a8a14c421eb023aee1f5edf7a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164966236413352465, guid: 64cc415a8a14c421eb023aee1f5edf7a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164966236413352465, guid: 64cc415a8a14c421eb023aee1f5edf7a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.10373089
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164966236413352465, guid: 64cc415a8a14c421eb023aee1f5edf7a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164966236413352465, guid: 64cc415a8a14c421eb023aee1f5edf7a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164966236413352465, guid: 64cc415a8a14c421eb023aee1f5edf7a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164966236413352465, guid: 64cc415a8a14c421eb023aee1f5edf7a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164966236413352465, guid: 64cc415a8a14c421eb023aee1f5edf7a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164966236413352465, guid: 64cc415a8a14c421eb023aee1f5edf7a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164966236413352465, guid: 64cc415a8a14c421eb023aee1f5edf7a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164966236413352479, guid: 64cc415a8a14c421eb023aee1f5edf7a, type: 3}
+      propertyPath: m_Name
+      value: Keiko NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164966236413352479, guid: 64cc415a8a14c421eb023aee1f5edf7a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 64cc415a8a14c421eb023aee1f5edf7a, type: 3}
 --- !u!1001 &3847844215677190949
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1438,7 +1499,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6108546271920418823, guid: 4af90d4a6541e4683afdf39581464d60, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 24.6
+      value: 24.45
       objectReference: {fileID: 0}
     - target: {fileID: 6108546271920418823, guid: 4af90d4a6541e4683afdf39581464d60, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1544,6 +1605,10 @@ PrefabInstance:
     - target: {fileID: 6670943736444000526, guid: e156940da3a5e4d3a8ef3ee69ad57128, type: 3}
       propertyPath: m_Name
       value: Sebastian NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670943736444000526, guid: e156940da3a5e4d3a8ef3ee69ad57128, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e156940da3a5e4d3a8ef3ee69ad57128, type: 3}

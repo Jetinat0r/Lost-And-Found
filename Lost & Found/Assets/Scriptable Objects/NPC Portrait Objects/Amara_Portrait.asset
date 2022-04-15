@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5d62561aa074ab428fea1b080851eb4, type: 3}
   m_Name: Amara_Portrait
   m_EditorClassIdentifier: 
-  npcNeutral: {fileID: 3209097084519791179, guid: a3a2a547e817e40e5b25864a022c7e52, type: 3}
+  npcNeutral: {fileID: -1436753626, guid: baf78f53749924695871c29c0036a4bf, type: 3}
   npcHappy: {fileID: 0}
   npcSad: {fileID: 0}
   npcAngry: {fileID: 0}
