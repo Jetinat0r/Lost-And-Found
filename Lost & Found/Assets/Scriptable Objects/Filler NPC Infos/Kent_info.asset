@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9bf2e6cd7040c147864076c8371c039, type: 3}
+  m_Name: Kent_info
+  m_EditorClassIdentifier: 
+  spawnTimes:
+  - day: 0
+    time: 0
+  npcPrefab: {fileID: 8108156077650074047, guid: 634ec42e363c845758e739a84b22acb1, type: 3}
+  sceneInfo:
+    priority: 0
+    objectSceneInfo:
+      nodeId: hallway_01
+      positionInScene: {x: -13.86, y: -1.94, z: 0.1037309}
+  unpopularDialogue: {fileID: 11400000, guid: e29181eb54efa41a8a5c994a2aba0c78, type: 2}
+  neutralDialogue: {fileID: 0}
+  popularDialogue: {fileID: 0}

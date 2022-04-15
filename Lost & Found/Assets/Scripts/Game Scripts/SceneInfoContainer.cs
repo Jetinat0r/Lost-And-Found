@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 //Used to hold extraneous info about the current scene that would be assigned during design
 public class SceneInfoContainer : MonoBehaviour
@@ -27,9 +28,18 @@ public class SceneInfoContainer : MonoBehaviour
         public Vector3 connectionPosition;
     }
 
+    [System.Serializable]
+    public struct CutsceneInfo
+    {
+        public string cutsceneTitle;
+        public PlayableDirector timeline;
+    }
+
     //Pretty much used for doors
     [SerializeField]
     private List<ConnectionInfo> connections;
+    [SerializeField]
+    private List<CutsceneInfo> cutscenes;
 
     //Gives spawn positions of doors essentially
     public Vector3 GetConnectionPosition(string _connectionTitle)
@@ -62,5 +72,19 @@ public class SceneInfoContainer : MonoBehaviour
         }
 
         return connections[0].connectionPosition;
+    }
+
+    public void StartCutscene(string _cutsceneTitle)
+    {
+        foreach(CutsceneInfo cutsceneInfo in cutscenes)
+        {
+            if(cutsceneInfo.cutsceneTitle == _cutsceneTitle)
+            {
+                cutsceneInfo.timeline.Play();
+                return;
+            }
+        }
+
+        Debug.Log("Cutscene of title (" + _cutsceneTitle + ") not found in SceneInfoContainer!");
     }
 }

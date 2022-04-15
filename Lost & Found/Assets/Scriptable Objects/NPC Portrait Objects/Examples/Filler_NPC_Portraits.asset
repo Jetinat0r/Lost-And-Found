@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5d62561aa074ab428fea1b080851eb4, type: 3}
   m_Name: Filler_NPC_Portraits
   m_EditorClassIdentifier: 
-  npcNeutral: {fileID: 21300000, guid: d46239e0ee21b354e95725aee77a301b, type: 3}
-  npcHappy: {fileID: 3297158784065329989, guid: 5ede6647aadf84f47b27e950c1b2c28b, type: 3}
+  npcNeutral: {fileID: 3209097084519791179, guid: a3a2a547e817e40e5b25864a022c7e52, type: 3}
+  npcHappy: {fileID: 0}
   npcSad: {fileID: 0}
-  npcAngry: {fileID: -27306297689570786, guid: 724897f954e786549b21ff235641a41e, type: 3}
+  npcAngry: {fileID: 0}
   npcThoughtful: {fileID: 0}
   npcSurprised: {fileID: 0}
   npcScheming: {fileID: 0}

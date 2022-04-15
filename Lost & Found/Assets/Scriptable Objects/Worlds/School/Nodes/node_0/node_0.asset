@@ -15,15 +15,15 @@ MonoBehaviour:
   title: outside
   sceneList:
   - timeBlock:
-      day: 0
-      time: 0
+      day: 1
+      time: 1
     sceneTitle: outside
   world: {fileID: 11400000, guid: bb710c5775fe10a409a7864d723d7e5a, type: 2}
   path: Assets/Scriptable Objects/Worlds/School/Nodes/node_0
   rect:
     serializedVersion: 2
-    x: 653.99976
-    y: 170.00029
+    x: 995.99994
+    y: 356.0003
     width: 200
     height: 50
   isDragged: 0
@@ -301,15 +301,22 @@ MonoBehaviour:
   - connector: {fileID: 11400000, guid: 7b04ebb307c91b54ea995981b05b4837, type: 2}
     connectionPoint:
       serializedVersion: 2
-      x: 664.0005
-      y: 204.00008
+      x: 1006.00073
+      y: 390.00006
+      width: 0
+      height: 0
+  - connector: {fileID: 11400000, guid: cbd500cccb5e841b0964fb646b0c9d7a, type: 2}
+    connectionPoint:
+      serializedVersion: 2
+      x: 1126.0005
+      y: 380.49994
       width: 0
       height: 0
   outgoingConnections:
   - connector: {fileID: 11400000, guid: 438c30e652e55114d8206dbd3e69515a, type: 2}
     connectionPoint:
       serializedVersion: 2
-      x: 667.0005
-      y: 183.0001
+      x: 1009.00073
+      y: 369.00012
       width: 0
       height: 0

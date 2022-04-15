@@ -18,4 +18,8 @@ public class Sound
     [HideInInspector]
     public AudioSource source;
 
+    [HideInInspector]
+    public float startVolume;
+    [HideInInspector]
+    public bool isFading;
 }

@@ -23,6 +23,14 @@ public class PlayerInventory : MonoBehaviour
 
     public void PickupItem(QuestItemScriptableObject questItem)
     {
+        foreach(QuestItemScriptableObject item in curHeldItems)
+        {
+            if(item == questItem)
+            {
+                Debug.LogWarning("Attempting to add item to inventory that is already in inventory! Returning...");
+                return;
+            }
+        }
         curHeldItems.Add(questItem);
 
         //TODO: Refactor to be smaller
@@ -61,5 +69,30 @@ public class PlayerInventory : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void RemoveItem(QuestItemScriptableObject item)
+    {
+        curHeldItems.Remove(item);
+    }
+
+    public void RemoveItem(string itemId)
+    {
+        foreach(QuestItemScriptableObject item in curHeldItems)
+        {
+            if(item.idItemName == itemId)
+            {
+                curHeldItems.Remove(item);
+                return;
+            }
+        }
+
+        Debug.LogWarning("Attempted to remove item from inventory that wasn't there!");
+    }
+
+    //EventFinder Overload
+    public void RemoveItem(EventFunctionParams functionParams)
+    {
+        RemoveItem(functionParams.stringParams[0]);
     }
 }

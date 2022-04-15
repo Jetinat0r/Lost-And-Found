@@ -16,7 +16,7 @@ public class QuestItemPhysical : InteractionTarget
 
     //private bool canPickUp = false;
 
-    public UnityEvent onInteract;
+    //public UnityEvent onInteract;
 
     //[SerializeField]
     //private GameObject itemGraphics;

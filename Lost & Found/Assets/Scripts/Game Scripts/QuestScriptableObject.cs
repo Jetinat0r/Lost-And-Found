@@ -96,8 +96,6 @@ public class QuestScriptableObject : ScriptableObject
                 //TODO: Not this
                 curQuestState = QuestState.Completed;
                 //runOnComplete?.Invoke();
-                //TODO: remove
-                AudioManager.instance.Play("Quest Complete 1");
 
                 return endDialogue;
             case (QuestState.Completed):
@@ -112,6 +110,29 @@ public class QuestScriptableObject : ScriptableObject
     {
         curQuestState = initialQuestState;
 
+        switch (curQuestState)
+        {
+            case (QuestState.Start):
+                OnInactiveToStart();
+                break;
+
+            case (QuestState.InProgress):
+                OnStartToInProgress();
+                break;
+
+            case (QuestState.End):
+                OnInProgressToEnd();
+                break;
+
+            case (QuestState.Completed):
+                OnEndToCompleted();
+                break;
+
+            case (QuestState.Failed):
+                OnStateToFailed();
+                break;
+        }
+
         if(curQuestState != QuestState.Inactive)
         {
             //TODO: Add to questbook
@@ -123,8 +144,6 @@ public class QuestScriptableObject : ScriptableObject
         curQuestState = QuestState.Start;
 
         CallEvents(onInactiveToStart);
-
-        //TODO: add to questbook
     }
 
     public void OnStartToInProgress()
@@ -146,6 +165,8 @@ public class QuestScriptableObject : ScriptableObject
     public void OnEndToCompleted()
     {
         curQuestState = QuestState.Completed;
+
+        GameManager.instance.ActivateQuests(unlockOnComplete);
 
         CallEvents(onEndToCompleted);
     }

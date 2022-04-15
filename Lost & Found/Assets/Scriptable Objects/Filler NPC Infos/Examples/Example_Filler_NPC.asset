@@ -19,8 +19,8 @@ MonoBehaviour:
   sceneInfo:
     priority: 0
     objectSceneInfo:
-      nodeId: example_node_01
-      positionInScene: {x: -2.51, y: -1.66, z: 0}
+      nodeId: hallway_01
+      positionInScene: {x: 14.4, y: -2.04, z: -7.218167}
   unpopularDialogue: {fileID: 11400000, guid: 30c3f945ef708d74abc4ff6a5756e536, type: 2}
   neutralDialogue: {fileID: 0}
   popularDialogue: {fileID: 0}

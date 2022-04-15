@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9bf2e6cd7040c147864076c8371c039, type: 3}
+  m_Name: Milton_info
+  m_EditorClassIdentifier: 
+  spawnTimes:
+  - day: 0
+    time: 0
+  npcPrefab: {fileID: 4594985155375413795, guid: 5f3823fa411b4416182e888e3d650ae5, type: 3}
+  sceneInfo:
+    priority: 0
+    objectSceneInfo:
+      nodeId: hallyway_02
+      positionInScene: {x: 16.74, y: -1.87, z: 0.1037309}
+  unpopularDialogue: {fileID: 11400000, guid: 51395858f8fb04bbd89ce02a5dbf8904, type: 2}
+  neutralDialogue: {fileID: 0}
+  popularDialogue: {fileID: 0}

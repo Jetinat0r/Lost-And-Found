@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f13e00aa30222224ca5e401cbd0db3ca, type: 3}
+  m_Name: Day 1.1
+  m_EditorClassIdentifier: 
+  timeBlock:
+    day: 0
+    time: 0
+  displayDate: Day 01
+  displayTime: 9:00am
+  startingNodeId: hallyway_02
+  questInfos: []
+  physicalQuestItemInfos: []
+  fillerNpcInfos:
+  - {fileID: 11400000, guid: 08222e9aa5b584d95885bc46aaa09d0d, type: 2}
+  - {fileID: 11400000, guid: cc75f4d021d034c5e8a4b3063efab80b, type: 2}
+  - {fileID: 11400000, guid: 865a1572df6cd4c9e8e16104e0a723b7, type: 2}
+  - {fileID: 11400000, guid: bcd5e8530d8ec49449a5cb3f752c9022, type: 2}
+  - {fileID: 11400000, guid: b2026623258814fbd8988348d33c5452, type: 2}
+  - {fileID: 11400000, guid: a9a69d912eb3445d99bc07c22ec01e99, type: 2}
+  - {fileID: 11400000, guid: 1b3b7430096eb443a9fa24aebf50b24f, type: 2}
+  - {fileID: 11400000, guid: bb6f23aefa56040d8af50f78c7db51b3, type: 2}
+  - {fileID: 11400000, guid: 8a8030a580080425790c2886d6628540, type: 2}
+  floatingObjects: []

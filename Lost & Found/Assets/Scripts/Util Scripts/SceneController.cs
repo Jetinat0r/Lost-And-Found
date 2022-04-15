@@ -32,9 +32,10 @@ public class SceneController : MonoBehaviour
     //allow them to move after the transition
     public delegate void RunOnSceneLoad();
     private RunOnSceneLoad runOnSceneLoad = null;
+    private List<EventFunctionParams> runEventFunctionsOnSceneLoad = null;
 
-    private List<NPC> spawnedNpcs;
-    private List<QuestItemPhysical> spawnedQuestItems;
+    private List<NPC> spawnedNpcs = new List<NPC>();
+    private List<QuestItemPhysical> spawnedQuestItems = new List<QuestItemPhysical>();
 
     private void Awake()
     {
@@ -47,6 +48,11 @@ public class SceneController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        SceneManager.sceneLoaded += LoadSceneObjects;
     }
 
     public async void SetScene(string _sceneName)
@@ -63,7 +69,7 @@ public class SceneController : MonoBehaviour
 
             //MovePlayer();
 
-            sceneObjectLoadRoutine = StartCoroutine(WaitForSceneLoad());
+            //sceneObjectLoadRoutine = StartCoroutine(WaitForSceneLoad());
         }
         else
         {
@@ -86,7 +92,7 @@ public class SceneController : MonoBehaviour
             //MovePlayer(_connectionTitle);
             lastConnectionTitle = _connectionTitle;
 
-            sceneObjectLoadRoutine = StartCoroutine(WaitForSceneLoad());
+            //sceneObjectLoadRoutine = StartCoroutine(WaitForSceneLoad());
         }
         else
         {
@@ -94,12 +100,12 @@ public class SceneController : MonoBehaviour
         }
     }
 
-    private IEnumerator WaitForSceneLoad()
-    {
-        yield return null;
+    //private IEnumerator WaitForSceneLoad()
+    //{
+    //    yield return null;
 
-        LoadSceneObjects();
-    }
+    //    LoadSceneObjects();
+    //}
 
     //This is for finding a node through the world w/o requiring an initial node
     //Will be used for moving to and from main_menu mainly
@@ -123,20 +129,21 @@ public class SceneController : MonoBehaviour
         return worldObject.GetConnectorFromTitle(curNodeId, _connectionTitle);
     } 
 
-    public void MoveThroughConnection(string _connectionTitle)
-    {
-        curWorldNode = curWorldNode.GetConnectedNode(_connectionTitle);
-        curNodeId = curWorldNode.title;
+    //public void MoveThroughConnection(string _connectionTitle)
+    //{
+    //    curWorldNode = curWorldNode.GetConnectedNode(_connectionTitle);
+    //    curNodeId = curWorldNode.title;
 
-        SetScene(curWorldNode.GetSceneTitle(GameManager.instance.GetCurrentPeriod()), _connectionTitle);
-    }
+    //    SetScene(curWorldNode.GetSceneTitle(GameManager.instance.GetCurrentPeriod()), _connectionTitle);
+    //}
 
-    public void MoveThroughConnection(string _connectionTitle, RunOnSceneLoad _runOnSceneLoad)
+    public void MoveThroughConnection(string _connectionTitle, RunOnSceneLoad _runOnSceneLoad = null, List<EventFunctionParams> _functionParams = null)
     {
         curWorldNode = curWorldNode.GetConnectedNode(_connectionTitle);
         curNodeId = curWorldNode.title;
 
         runOnSceneLoad = _runOnSceneLoad;
+        runEventFunctionsOnSceneLoad = _functionParams;
 
         SetScene(curWorldNode.GetSceneTitle(GameManager.instance.GetCurrentPeriod()), _connectionTitle);
     }
@@ -147,7 +154,7 @@ public class SceneController : MonoBehaviour
         MoveThroughConnection(functionParams.stringParams[0]);
     }
 
-    private void LoadSceneObjects()
+    private void LoadSceneObjects(Scene scene, LoadSceneMode sceneMode)
     {
         //Moves the player to the correct position in the scene
         if(lastConnectionTitle != "")
@@ -342,6 +349,13 @@ public class SceneController : MonoBehaviour
 
         //Runs events
         runOnSceneLoad?.Invoke();
+        if(runEventFunctionsOnSceneLoad != null)
+        {
+            foreach (EventFunctionParams func in runEventFunctionsOnSceneLoad)
+            {
+                EventFinder.instance.CallFunction(func);
+            }
+        }
     }
 
     public void DetermineSpawnedObjectStates()
