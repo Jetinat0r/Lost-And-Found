@@ -15,7 +15,7 @@ MonoBehaviour:
   portraits: {fileID: 11400000, guid: e3686bdcb43fc4855933a50d8ebe17d1, type: 2}
   dialogueText:
   - ...Can I help you?
-  timeBetweenChars: 0.1
+  timeBetweenChars: 0.05
   moodsForLines: 00000000
   nextDialogue: {fileID: 0}
   nextDialogueDisplayName: 

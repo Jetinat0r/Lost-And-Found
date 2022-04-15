@@ -17,7 +17,7 @@ MonoBehaviour:
     time: 0
   displayDate: Day 01
   displayTime: 9:00am
-  startingNodeId: hallway_01
+  startingNodeId: hallyway_02
   questInfos: []
   physicalQuestItemInfos: []
   fillerNpcInfos:
@@ -26,4 +26,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 865a1572df6cd4c9e8e16104e0a723b7, type: 2}
   - {fileID: 11400000, guid: bcd5e8530d8ec49449a5cb3f752c9022, type: 2}
   - {fileID: 11400000, guid: b2026623258814fbd8988348d33c5452, type: 2}
+  - {fileID: 11400000, guid: a9a69d912eb3445d99bc07c22ec01e99, type: 2}
+  - {fileID: 11400000, guid: 1b3b7430096eb443a9fa24aebf50b24f, type: 2}
+  - {fileID: 11400000, guid: bb6f23aefa56040d8af50f78c7db51b3, type: 2}
+  - {fileID: 11400000, guid: 8a8030a580080425790c2886d6628540, type: 2}
   floatingObjects: []

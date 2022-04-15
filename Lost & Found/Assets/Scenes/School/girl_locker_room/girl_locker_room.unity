@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connections:
   - connectionTitle: hallway_02_to_girl_locker_room
-    connectionPosition: {x: 26.55, y: -1.96, z: 0}
+    connectionPosition: {x: 10.34, y: -1.57, z: 0}
   - connectionTitle: gym_to_girl_locker_room
     connectionPosition: {x: 26.55, y: -1.96, z: 0}
   cutscenes: []
@@ -1207,7 +1207,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.041212797, y: 1.6}
+  m_Size: {x: 0.06, y: 1.6}
   m_EdgeRadius: 0
 --- !u!61 &2026145658
 BoxCollider2D:
@@ -1222,7 +1222,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.25, y: 0}
+  m_Offset: {x: 2.29, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1233,5 +1233,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.0001, y: 1.6}
+  m_Size: {x: 0.1, y: 1.6}
   m_EdgeRadius: 0

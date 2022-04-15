@@ -48,6 +48,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Cutscenes/Darcy_Blair_Outside.unity
     guid: ea1f391a0c2be483a801bb38373654d1
   - enabled: 1
-    path: Assets/Scenes/School/girl_locker_room/girls_locker_room.unity
+    path: Assets/Scenes/School/girl_locker_room/girl_locker_room.unity
     guid: d435c9520057a4700a868783cefc3863
   m_configObjects: {}

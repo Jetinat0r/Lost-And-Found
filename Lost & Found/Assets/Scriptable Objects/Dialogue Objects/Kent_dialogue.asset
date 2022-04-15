@@ -16,7 +16,7 @@ MonoBehaviour:
   dialogueText:
   - You're new, huh? Yea I can tell.
   - Where's your varsity jacket? Weirdo.
-  timeBetweenChars: 0.1
+  timeBetweenChars: 0.05
   moodsForLines: 0000000000000000
   nextDialogue: {fileID: 0}
   nextDialogueDisplayName: 
