@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5d1c5b71c808194e9ff7f7a635472a8, type: 3}
-  m_Name: invis_token_qobj Start Dialogue
+  m_Name: pin_item InProgress Dialogue
   m_EditorClassIdentifier: 
-  portraits: {fileID: 11400000, guid: 542c5d089eb42478f919d63e6c86a980, type: 2}
+  portraits: {fileID: 11400000, guid: 2f006ef902506401395d1c52343c399e, type: 2}
   dialogueText:
-  - You should say hi to everyone!
-  timeBetweenChars: 0.1
+  - I said, go get the pin.
+  timeBetweenChars: 0.08
   moodsForLines: 00000000
   nextDialogue: {fileID: 0}
   nextDialogueDisplayName: 

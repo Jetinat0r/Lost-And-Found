@@ -138,7 +138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &32321020
 Transform:
   m_ObjectHideFlags: 0
@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 32321019}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.33, y: -1.96, z: -7.445774}
+  m_LocalPosition: {x: 9.6, y: -2.46, z: -7.445774}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -167,7 +167,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1199850316665029175, guid: 7d80b5bf0751a427ebe33ddbf7bc2865, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1199850316665029177, guid: 7d80b5bf0751a427ebe33ddbf7bc2865, type: 3}
       propertyPath: m_RootOrder
@@ -518,7 +518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connections:
   - connectionTitle: halllway_01_to_cafeteria
-    connectionPosition: {x: 21.33, y: -1.96, z: 0}
+    connectionPosition: {x: 9.6, y: -2.46, z: 0}
   cutscenes: []
 --- !u!4 &881174400
 Transform:

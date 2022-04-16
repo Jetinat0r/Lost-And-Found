@@ -15,12 +15,12 @@ MonoBehaviour:
   spawnTimes:
   - day: 0
     time: 4
-  npcPrefab: {fileID: 1467087925857635638, guid: 3ea2aac37ef994cd0a45c770441e1ed7, type: 3}
+  npcPrefab: {fileID: 2563043547524405492, guid: e9fe7f8966a5d4e0d822307bab956db8, type: 3}
   sceneInfo:
     priority: 0
     objectSceneInfo:
       nodeId: classroom_02
-      positionInScene: {x: 4.44, y: -0.99, z: 0.1037309}
+      positionInScene: {x: -6.44, y: -1.71, z: 0.1037309}
   unpopularDialogue: {fileID: 11400000, guid: 80ae41c224fd14aa080df63db3bfac5f, type: 2}
   neutralDialogue: {fileID: 0}
   popularDialogue: {fileID: 0}

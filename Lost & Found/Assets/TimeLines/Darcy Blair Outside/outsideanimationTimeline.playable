@@ -234,6 +234,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde0d25a170598d46a0b9dc16b4527a5, type: 3}
   m_Name: ActivationPlayableAsset
   m_EditorClassIdentifier: 
+--- !u!114 &-5747760203081947350
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd2b5ecaeeb8429409f3e6631104498e, type: 3}
+  m_Name: EventPlayableClip
+  m_EditorClassIdentifier: 
+  template:
+    functionToCall:
+      name: Change to Day 1.5.1
+      classToCall: 0
+      functionName: ChangeGamePeriod
+      stringParams: []
+      intParams: 
+      floatParams: []
+      boolParams: 01
+    hasPlayedYet: 0
 --- !u!114 &-5693037903076649708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -364,7 +386,7 @@ MonoBehaviour:
     m_Start: 61
     m_ClipIn: 0
     m_Asset: {fileID: -1755319569796821410}
-    m_Duration: 5
+    m_Duration: 18.683333333333337
     m_TimeScale: 1
     m_ParentTrack: {fileID: -3387688617037917537}
     m_EaseInDuration: 0
@@ -689,6 +711,98 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde0d25a170598d46a0b9dc16b4527a5, type: 3}
   m_Name: ActivationPlayableAsset
   m_EditorClassIdentifier: 
+--- !u!114 &-919353019238860305
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3dff7e56b9c1b438596255ee8d246b, type: 3}
+  m_Name: Event Playable Track
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips:
+  - m_Version: 1
+    m_Start: 64.83333333333333
+    m_ClipIn: 0
+    m_Asset: {fileID: -5747760203081947350}
+    m_Duration: 31.66666666666667
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -919353019238860305}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EventPlayableClip
+  m_Markers:
+    m_Objects: []
 --- !u!114 &-803693338389091321
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -810,6 +924,7 @@ MonoBehaviour:
   - {fileID: 4458290106362389658}
   - {fileID: 5983846090738432218}
   - {fileID: -3387688617037917537}
+  - {fileID: -919353019238860305}
   m_FixedDuration: 0
   m_EditorSettings:
     m_Framerate: 60

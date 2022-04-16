@@ -21956,6 +21956,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1f05998b746c3406799fef64919b6793, type: 2}
   - {fileID: 11400000, guid: c9defea920dd04b499aa107521d8c4cf, type: 2}
   - {fileID: 11400000, guid: 5a3fec3f74b254ae4bdf23ed8e7526d3, type: 2}
+  - {fileID: 11400000, guid: 6bb46cdbb55be40e09b7bcc3e5595076, type: 2}
   playerPrefab: {fileID: 6670859051717510830, guid: 6fb8271f1c35f7840aafd0f4a3bc0edf, type: 3}
   curQuestInfos: []
   curFillerNpcInfos: []

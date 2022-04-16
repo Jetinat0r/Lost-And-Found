@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: go_to_cafeteria_obj
   m_EditorClassIdentifier: 
   idQuestName: go_to_cafeteria
-  idQuestItemNames:
-  - invis_cafeteria_quest_item
+  idQuestItemNames: []
   initialQuestState: 1
   curQuestState: 4
   unlockOnComplete: []

@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f63d1b045eb55a84b8038232bce263f3, type: 3}
   m_Name: enter_cafeteria_info
   m_EditorClassIdentifier: 
-  spawnTimes:
-  - day: 0
-    time: 2
+  spawnTimes: []
   itemPrefab: {fileID: 7821498447949652349, guid: 23b18f8e5e95c4492972335dd4b367b2, type: 3}
   objectSceneInfo:
-    nodeId: hallway_01
-    positionInScene: {x: -9.39, y: -2.56, z: 0}
+    nodeId: 
+    positionInScene: {x: 0, y: 0, z: 0}

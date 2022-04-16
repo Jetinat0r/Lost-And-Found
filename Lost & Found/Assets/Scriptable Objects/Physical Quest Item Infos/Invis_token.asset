@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f63d1b045eb55a84b8038232bce263f3, type: 3}
   m_Name: Invis_token
   m_EditorClassIdentifier: 
-  spawnTimes:
-  - day: 0
-    time: 0
+  spawnTimes: []
   itemPrefab: {fileID: 5228909102576748306, guid: 64ca8164da4ad46be8927343d1879bd8, type: 3}
   objectSceneInfo:
-    nodeId: hallyway_02
-    positionInScene: {x: -11.46, y: -2.61, z: -2.066403}
+    nodeId: 
+    positionInScene: {x: 0, y: 0, z: 0}

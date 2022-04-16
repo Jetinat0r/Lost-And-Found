@@ -36,21 +36,21 @@ MonoBehaviour:
       priority: 0
       objectSceneInfo:
         nodeId: outside
-        positionInScene: {x: -9.85, y: -2.78, z: 0}
+        positionInScene: {x: -1.46, y: -2.86, z: 0.1037309}
     inProgressDefaultNpcDialogue: {fileID: 11400000, guid: 01fcc3504b7654e909d8637116ea3bf5, type: 2}
     endNpcPrefab: {fileID: 3481450471611240776, guid: f5eb4860afa5e4b9daa229f0eaec9276, type: 3}
     endNpcSceneInfo:
       priority: 0
       objectSceneInfo:
         nodeId: outside
-        positionInScene: {x: -9.85, y: -1.87, z: 0.1037309}
+        positionInScene: {x: -1.46, y: -2.86, z: 0.1037309}
     endDefaultNpcDialogue: {fileID: 11400000, guid: 01fcc3504b7654e909d8637116ea3bf5, type: 2}
     completedNpcPrefab: {fileID: 3481450471611240776, guid: f5eb4860afa5e4b9daa229f0eaec9276, type: 3}
     completedNpcSceneInfo:
       priority: 0
       objectSceneInfo:
         nodeId: outside
-        positionInScene: {x: -9.85, y: -1.87, z: 0.1037309}
+        positionInScene: {x: -1.46, y: -2.86, z: 0.1037309}
     completedDefaultNpcDialogue: {fileID: 11400000, guid: 01fcc3504b7654e909d8637116ea3bf5, type: 2}
     failedNpcPrefab: {fileID: 0}
     failedNpcSceneInfo:
