@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d1c5b71c808194e9ff7f7a635472a8, type: 3}
+  m_Name: Darcy_outside_dialogue
+  m_EditorClassIdentifier: 
+  portraits: {fileID: 11400000, guid: 2f006ef902506401395d1c52343c399e, type: 2}
+  dialogueText:
+  - "Do me a little favor, and I\u2019ll repay you well."
+  - "There\u2019s this girl. She should be in the gym right now. First practice of
+    the season."
+  - She has a pin she wears on her blazer in the GIRLS LOCKER ROOM.
+  - 'Go get it, bring it here. '
+  timeBetweenChars: 0.08
+  moodsForLines: 00000000000000000000000000000000
+  nextDialogue: {fileID: 0}
+  nextDialogueDisplayName: 

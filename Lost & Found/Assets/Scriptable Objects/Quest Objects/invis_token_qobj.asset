@@ -46,5 +46,5 @@ MonoBehaviour:
     stringParams: []
     intParams: 
     floatParams: []
-    boolParams: 00
+    boolParams: 01
   onStateToFailed: []

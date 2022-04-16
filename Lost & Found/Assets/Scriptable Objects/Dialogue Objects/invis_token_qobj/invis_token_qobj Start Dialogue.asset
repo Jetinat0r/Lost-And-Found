@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: invis_token_qobj Start Dialogue
   m_EditorClassIdentifier: 
   portraits: {fileID: 11400000, guid: 542c5d089eb42478f919d63e6c86a980, type: 2}
-  dialogueText: []
+  dialogueText:
+  - You should say hi to everyone!
   timeBetweenChars: 0.1
-  moodsForLines: 
+  moodsForLines: 00000000
   nextDialogue: {fileID: 0}
   nextDialogueDisplayName: 
