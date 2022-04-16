@@ -13,13 +13,17 @@ MonoBehaviour:
   m_Name: node_8
   m_EditorClassIdentifier: 
   title: classroom_02
-  sceneList: []
+  sceneList:
+  - timeBlock:
+      day: 0
+      time: 0
+    sceneTitle: classroom_02
   world: {fileID: 11400000, guid: bb710c5775fe10a409a7864d723d7e5a, type: 2}
   path: Assets/Scriptable Objects/Worlds/School/Nodes/node_8
   rect:
     serializedVersion: 2
-    x: -341.00043
-    y: 490.00003
+    x: -324
+    y: 462.0001
     width: 200
     height: 50
   isDragged: 0
@@ -297,15 +301,15 @@ MonoBehaviour:
   - connector: {fileID: 11400000, guid: 28c69bca4019ec140a994ef76784b0d2, type: 2}
     connectionPoint:
       serializedVersion: 2
-      x: -158.00128
-      y: 499.00003
+      x: -141.00085
+      y: 471.0001
       width: 0
       height: 0
   outgoingConnections:
   - connector: {fileID: 11400000, guid: 5712965746ba68b4380a8446751edb11, type: 2}
     connectionPoint:
       serializedVersion: 2
-      x: -177.00128
-      y: 499.00003
+      x: -160.00085
+      y: 471.0001
       width: 0
       height: 0

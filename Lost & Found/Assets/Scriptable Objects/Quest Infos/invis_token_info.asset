@@ -37,7 +37,7 @@ MonoBehaviour:
       objectSceneInfo:
         nodeId: lobby
         positionInScene: {x: 6.25, y: -0.65, z: 0}
-    inProgressDefaultNpcDialogue: {fileID: 11400000, guid: fd910b1ae80cf45719519f3351ab9d03, type: 2}
+    inProgressDefaultNpcDialogue: {fileID: 11400000, guid: 1e36f085c7885416dbb9d015bfb4c02d, type: 2}
     endNpcPrefab: {fileID: 6670943736444000526, guid: e156940da3a5e4d3a8ef3ee69ad57128, type: 3}
     endNpcSceneInfo:
       priority: 0

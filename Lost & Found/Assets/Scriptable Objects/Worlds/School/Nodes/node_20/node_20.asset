@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c3b648eff8503145a06ec1c6e22ba2f, type: 3}
-  m_Name: node_3
+  m_Name: node_20
   m_EditorClassIdentifier: 
-  title: bookstore
+  title: in_class
   sceneList:
   - timeBlock:
       day: 0
       time: 0
-    sceneTitle: bookstore
+    sceneTitle: in_class
   world: {fileID: 11400000, guid: bb710c5775fe10a409a7864d723d7e5a, type: 2}
-  path: Assets/Scriptable Objects/Worlds/School/Nodes/node_3
+  path: Assets/Scriptable Objects/Worlds/School/Nodes/node_20
   rect:
     serializedVersion: 2
-    x: -103.0011
-    y: 261.00018
+    x: 362.00012
+    y: 539.4998
     width: 200
     height: 50
   isDragged: 0
@@ -297,19 +297,5 @@ MonoBehaviour:
     m_FixedHeight: 0
     m_StretchWidth: 1
     m_StretchHeight: 0
-  incomingConnections:
-  - connector: {fileID: 11400000, guid: 105b3a96b98ab444f83d5f6ed20ab5a8, type: 2}
-    connectionPoint:
-      serializedVersion: 2
-      x: -90.000854
-      y: 300.00018
-      width: 0
-      height: 0
-  outgoingConnections:
-  - connector: {fileID: 11400000, guid: fce5af0de7abebf4088f4e39c82af9a6, type: 2}
-    connectionPoint:
-      serializedVersion: 2
-      x: -68.00098
-      y: 299.00015
-      width: 0
-      height: 0
+  incomingConnections: []
+  outgoingConnections: []

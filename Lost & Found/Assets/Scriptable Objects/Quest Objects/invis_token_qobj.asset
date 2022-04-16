@@ -16,7 +16,7 @@ MonoBehaviour:
   idQuestItemNames:
   - invis_token
   initialQuestState: 1
-  curQuestState: 4
+  curQuestState: 1
   unlockOnComplete:
   - go_to_class_1
   inactiveIdNpcName: 
@@ -39,5 +39,12 @@ MonoBehaviour:
   onInactiveToStart: []
   onStartToInProgress: []
   onInProgressToEnd: []
-  onEndToCompleted: []
+  onEndToCompleted:
+  - name: Change to Day 1.2
+    classToCall: 0
+    functionName: ChangeGamePeriod
+    stringParams: []
+    intParams: 
+    floatParams: []
+    boolParams: 01
   onStateToFailed: []

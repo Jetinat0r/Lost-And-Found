@@ -50,4 +50,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/School/girl_locker_room/girl_locker_room.unity
     guid: d435c9520057a4700a868783cefc3863
+  - enabled: 1
+    path: Assets/Scenes/School/classroom_02/classroom_02.unity
+    guid: f0737dc7e343440d295ae1564eb9d420
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/in_class.unity
+    guid: acf6996482d8b4c7faf1f01034dd0923
   m_configObjects: {}
