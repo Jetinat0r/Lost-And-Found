@@ -22,8 +22,8 @@ MonoBehaviour:
   path: Assets/Scriptable Objects/Worlds/School/Nodes/node_20
   rect:
     serializedVersion: 2
-    x: 362.00012
-    y: 539.4998
+    x: 114.00012
+    y: 501.4998
     width: 200
     height: 50
   isDragged: 0
