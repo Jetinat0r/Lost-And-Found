@@ -38,5 +38,13 @@ MonoBehaviour:
   onInactiveToStart: []
   onStartToInProgress: []
   onInProgressToEnd: []
-  onEndToCompleted: []
+  onEndToCompleted:
+  - name: Change to End of Day 1
+    classToCall: 2
+    functionName: GotoNode
+    stringParams:
+    - end_of_day_01
+    intParams: 
+    floatParams: []
+    boolParams: 
   onStateToFailed: []

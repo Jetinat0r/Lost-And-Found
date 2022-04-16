@@ -15,8 +15,8 @@ MonoBehaviour:
   timeBlock:
     day: 0
     time: 4
-  displayDate: Day 01
-  displayTime: 3pm
+  displayDate: Day 1
+  displayTime: 3:00 pm
   startingNodeId: classroom_02
   questInfos:
   - {fileID: 11400000, guid: 0b961d09d12a04ec9b3c85065f725a27, type: 2}

@@ -17,7 +17,7 @@ MonoBehaviour:
     time: 0
   displayDate: Day 01
   displayTime: 9:00am
-  startingNodeId: lobby
+  startingNodeId: outside
   questInfos:
   - {fileID: 11400000, guid: 19ff81dfc3f37487b828f3849180856f, type: 2}
   physicalQuestItemInfos: []
@@ -33,4 +33,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8a8030a580080425790c2886d6628540, type: 2}
   - {fileID: 11400000, guid: 7bb6498df568a4cb7b731f0a03ab5c22, type: 2}
   - {fileID: 11400000, guid: 23988b888362c44f6bb0697ff93460e8, type: 2}
+  - {fileID: 11400000, guid: a39df3df284af4274b92d6877ae1a4f3, type: 2}
   floatingObjects: []
