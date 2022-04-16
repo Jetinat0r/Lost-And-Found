@@ -13,12 +13,10 @@ MonoBehaviour:
   m_Name: invis_token_qobj
   m_EditorClassIdentifier: 
   idQuestName: Talk To Everyone
-  idQuestItemNames:
-  - invis_token
+  idQuestItemNames: []
   initialQuestState: 1
   curQuestState: 4
-  unlockOnComplete:
-  - go_to_class_1
+  unlockOnComplete: []
   inactiveIdNpcName: 
   startIdNpcName: Calliope_npc
   inProgressIdNpcName: Calliope_npc
@@ -46,5 +44,5 @@ MonoBehaviour:
     stringParams: []
     intParams: 
     floatParams: []
-    boolParams: 00
+    boolParams: 01
   onStateToFailed: []

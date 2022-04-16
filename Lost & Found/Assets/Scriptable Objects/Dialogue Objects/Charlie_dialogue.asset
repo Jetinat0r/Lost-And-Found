@@ -15,7 +15,7 @@ MonoBehaviour:
   portraits: {fileID: 11400000, guid: 73843e711d00441b7bbf8d5c2c9917cb, type: 2}
   dialogueText:
   - "Don\u2019t talk to me\u2026new freak."
-  timeBetweenChars: 0.1
+  timeBetweenChars: 0.08
   moodsForLines: 00000000
   nextDialogue: {fileID: 0}
   nextDialogueDisplayName: 

@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 548c3fad9f0110440add467733f669f5, type: 3}
+  m_Name: go_outside_info
+  m_EditorClassIdentifier: 
+  spawnTimes:
+  - day: 0
+    time: 4
+  quest: {fileID: 11400000, guid: 2972bf41bb5494fe5b90704949f54d40, type: 2}
+  questNpc:
+    inactiveNpcPrefab: {fileID: 0}
+    inactiveNpcSceneInfo:
+      priority: 0
+      objectSceneInfo:
+        nodeId: 
+        positionInScene: {x: 0, y: 0, z: 0}
+    inactiveDefaultNpcDialogue: {fileID: 0}
+    startNpcPrefab: {fileID: 1467087925857635638, guid: 3ea2aac37ef994cd0a45c770441e1ed7, type: 3}
+    startNpcSceneInfo:
+      priority: 0
+      objectSceneInfo:
+        nodeId: classroom_02
+        positionInScene: {x: 4.44, y: -0.99, z: 0.1037309}
+    startDefaultNpcDialogue: {fileID: 11400000, guid: 80ae41c224fd14aa080df63db3bfac5f, type: 2}
+    inProgressNpcPrefab: {fileID: 3481450471611240776, guid: f5eb4860afa5e4b9daa229f0eaec9276, type: 3}
+    inProgressNpcSceneInfo:
+      priority: 0
+      objectSceneInfo:
+        nodeId: outside
+        positionInScene: {x: -1.46, y: -2.86, z: 0.1037309}
+    inProgressDefaultNpcDialogue: {fileID: 11400000, guid: 01fcc3504b7654e909d8637116ea3bf5, type: 2}
+    endNpcPrefab: {fileID: 3481450471611240776, guid: f5eb4860afa5e4b9daa229f0eaec9276, type: 3}
+    endNpcSceneInfo:
+      priority: 0
+      objectSceneInfo:
+        nodeId: outside
+        positionInScene: {x: -1.46, y: -2.86, z: 0.1037309}
+    endDefaultNpcDialogue: {fileID: 11400000, guid: 01fcc3504b7654e909d8637116ea3bf5, type: 2}
+    completedNpcPrefab: {fileID: 3481450471611240776, guid: f5eb4860afa5e4b9daa229f0eaec9276, type: 3}
+    completedNpcSceneInfo:
+      priority: 0
+      objectSceneInfo:
+        nodeId: outside
+        positionInScene: {x: -1.46, y: -2.86, z: 0.1037309}
+    completedDefaultNpcDialogue: {fileID: 11400000, guid: 01fcc3504b7654e909d8637116ea3bf5, type: 2}
+    failedNpcPrefab: {fileID: 0}
+    failedNpcSceneInfo:
+      priority: 0
+      objectSceneInfo:
+        nodeId: 
+        positionInScene: {x: 0, y: 0, z: 0}
+    failedDefaultNpcDialogue: {fileID: 0}

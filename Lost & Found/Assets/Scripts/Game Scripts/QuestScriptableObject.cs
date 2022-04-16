@@ -88,9 +88,18 @@ public class QuestScriptableObject : ScriptableObject
             case (QuestState.Start):
                 //TODO: Not this
                 curQuestState = QuestState.InProgress;
+                if (CheckRequiredItems())
+                {
+                    OnInProgressToEnd();
+                }
 
                 return startDialogue;
             case (QuestState.InProgress):
+                if (CheckRequiredItems())
+                {
+                    OnInProgressToEnd();
+                }
+
                 return inProgressDialogue;
             case (QuestState.End):
                 //TODO: Not this
@@ -118,6 +127,11 @@ public class QuestScriptableObject : ScriptableObject
 
             case (QuestState.InProgress):
                 OnStartToInProgress();
+
+                if (CheckRequiredItems())
+                {
+                    OnInProgressToEnd();
+                }
                 break;
 
             case (QuestState.End):
@@ -151,6 +165,11 @@ public class QuestScriptableObject : ScriptableObject
         curQuestState = QuestState.InProgress;
 
         CallEvents(onStartToInProgress);
+
+        if (CheckRequiredItems())
+        {
+            OnInProgressToEnd();
+        }
     }
 
     public void OnInProgressToEnd()
@@ -221,5 +240,21 @@ public class QuestScriptableObject : ScriptableObject
         }
 
         return _id;
+    }
+
+    public bool CheckRequiredItems()
+    {
+        foreach(string _itemId in idQuestItemNames)
+        {
+            if (GameManager.instance.HasSpawnedPlayer())
+            {
+                if (!PlayerInventory.instance.CheckItem(_itemId))
+                {
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 }
