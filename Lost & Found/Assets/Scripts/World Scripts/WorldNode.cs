@@ -18,7 +18,7 @@ public class WorldNode : ScriptableObject
 
     #region User Variables
     public string title = "new_world_node";
-    public List<NodeSceneReference> sceneList = new List<NodeSceneReference>();
+    public List<NodeSceneReference> sceneList;
     #endregion
 
     //NOTE: Many public variables with [HideInInspector] above them are supposed to be private, but needed to be public so that they could be modified
@@ -83,6 +83,8 @@ public class WorldNode : ScriptableObject
         connectorStyle = _connectorStyle;
         selectedConnectorStyle = _selectedConnectorStyle;
         path = _path;
+
+        sceneList = new List<NodeSceneReference>();
 
         incomingConnections = new List<NodeConnection>();
         outgoingConnections = new List<NodeConnection>();
