@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b7453d244ea4d841a7029c8afceb34b, type: 3}
+  m_Name: go_to_cafeteria_obj
+  m_EditorClassIdentifier: 
+  idQuestName: go_to_cafeteria
+  idQuestItemNames:
+  - invis_cafeteria_quest_item
+  initialQuestState: 1
+  curQuestState: 4
+  unlockOnComplete: []
+  inactiveIdNpcName: 
+  startIdNpcName: Chris_npc
+  inProgressIdNpcName: Chris_npc
+  endIdNpcName: Drew_npc
+  completedIdNpcName: Drew_npc
+  failedIdNpcName: 
+  displayQuestName: Go To the Cafeteria
+  displayNpcName: Chris
+  displayQuestDescription: Go to the cafeteria and have lunch
+  isDisplayed: 1
+  reputationPoints: 0
+  inactiveDialogue: {fileID: 0}
+  startDialogue: {fileID: 11400000, guid: 62f7e8a5bc7784b379d86c6619233d5e, type: 2}
+  inProgressDialogue: {fileID: 11400000, guid: 1e091b0e716a2412c8ed93027b9746fe, type: 2}
+  endDialogue: {fileID: 11400000, guid: 20fd83feeaf9645a89045865cdf6cc64, type: 2}
+  completedDialogue: {fileID: 11400000, guid: 20fd83feeaf9645a89045865cdf6cc64, type: 2}
+  failedDialogue: {fileID: 0}
+  onInactiveToStart: []
+  onStartToInProgress: []
+  onInProgressToEnd: []
+  onEndToCompleted:
+  - name: Change to Bully Cutscene
+    classToCall: 2
+    functionName: GotoNode
+    stringParams:
+    - BullyCafeteria
+    intParams: 
+    floatParams: []
+    boolParams: 
+  onStateToFailed: []

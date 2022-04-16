@@ -16,14 +16,14 @@ MonoBehaviour:
   sceneList:
   - timeBlock:
       day: 0
-      time: 0
+      time: 2
     sceneTitle: classroom_02
   world: {fileID: 11400000, guid: bb710c5775fe10a409a7864d723d7e5a, type: 2}
   path: Assets/Scriptable Objects/Worlds/School/Nodes/node_8
   rect:
     serializedVersion: 2
-    x: -399.99997
-    y: 427.00006
+    x: -230.99988
+    y: 375.00006
     width: 200
     height: 50
   isDragged: 0
@@ -301,15 +301,22 @@ MonoBehaviour:
   - connector: {fileID: 11400000, guid: 28c69bca4019ec140a994ef76784b0d2, type: 2}
     connectionPoint:
       serializedVersion: 2
-      x: -217.00082
-      y: 436.00006
+      x: -48.000732
+      y: 384.00006
+      width: 0
+      height: 0
+  - connector: {fileID: 11400000, guid: 4a13de5b2b59e4b8f957eec2cbc40780, type: 2}
+    connectionPoint:
+      serializedVersion: 2
+      x: -109.999756
+      y: 397.00027
       width: 0
       height: 0
   outgoingConnections:
   - connector: {fileID: 11400000, guid: 5712965746ba68b4380a8446751edb11, type: 2}
     connectionPoint:
       serializedVersion: 2
-      x: -236.00082
-      y: 436.00006
+      x: -67.00073
+      y: 384.00006
       width: 0
       height: 0

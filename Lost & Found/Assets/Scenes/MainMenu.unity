@@ -21948,12 +21948,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curTime:
-    day: -1
+    day: 0
     time: -1
   timeSlots:
   - {fileID: 11400000, guid: 8d906ef0d1d9a46b7aa426a795e1da3c, type: 2}
   - {fileID: 11400000, guid: 64192349672714f1e8ff3bde53d5ea55, type: 2}
   - {fileID: 11400000, guid: 1f05998b746c3406799fef64919b6793, type: 2}
+  - {fileID: 11400000, guid: c9defea920dd04b499aa107521d8c4cf, type: 2}
+  - {fileID: 11400000, guid: 5a3fec3f74b254ae4bdf23ed8e7526d3, type: 2}
   playerPrefab: {fileID: 6670859051717510830, guid: 6fb8271f1c35f7840aafd0f4a3bc0edf, type: 3}
   curQuestInfos: []
   curFillerNpcInfos: []

@@ -22,12 +22,12 @@ MonoBehaviour:
   path: Assets/Scriptable Objects/Worlds/School/Nodes/node_20
   rect:
     serializedVersion: 2
-    x: 114.00012
-    y: 501.4998
+    x: -118.99988
+    y: 445.49973
     width: 200
     height: 50
   isDragged: 0
-  isSelected: 1
+  isSelected: 0
   hasNewConnection: 0
   style:
     m_Name: 
@@ -298,4 +298,11 @@ MonoBehaviour:
     m_StretchWidth: 1
     m_StretchHeight: 0
   incomingConnections: []
-  outgoingConnections: []
+  outgoingConnections:
+  - connector: {fileID: 11400000, guid: 4a13de5b2b59e4b8f957eec2cbc40780, type: 2}
+    connectionPoint:
+      serializedVersion: 2
+      x: -71.999756
+      y: 465.00034
+      width: 0
+      height: 0

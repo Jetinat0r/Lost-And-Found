@@ -56,4 +56,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cutscenes/in_class.unity
     guid: acf6996482d8b4c7faf1f01034dd0923
+  - enabled: 1
+    path: Assets/Scenes/School/cafeteria/cafeteria.unity
+    guid: cb33dc70c9b5347f5bc2048249bc9a9b
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/in_class_2.unity
+    guid: 2c10b77659c184e68a65f9e593fee6b5
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/BullyCafeteria.unity
+    guid: abdc63c53242644b9ab236bdeca1689c
   m_configObjects: {}

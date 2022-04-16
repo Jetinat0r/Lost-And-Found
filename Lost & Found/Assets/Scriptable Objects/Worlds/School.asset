@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: School
   m_EditorClassIdentifier: 
   title: school_01
-  nodeCount: 21
+  nodeCount: 23
   nodes:
   - {fileID: 11400000, guid: 96fb1cb5f1d8e2441bb0adf6728f6a86, type: 2}
   - {fileID: 11400000, guid: c4a5c20a2ad23dd438527011002a0e1c, type: 2}
@@ -33,5 +33,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 49b2f91758af9f7498bf37e7dd445aae, type: 2}
   - {fileID: 11400000, guid: 80fc30518664c482c93a667e1b0a5a19, type: 2}
   - {fileID: 11400000, guid: a9fc54276950043ba9d6a42294f4d750, type: 2}
+  - {fileID: 11400000, guid: 50709a4d08b5444ada71fc00400b26fc, type: 2}
+  - {fileID: 11400000, guid: a3cb8e25ba7a84eb3bd3d525e48f6b29, type: 2}
   scale: 1
-  offset: {x: -585.00024, y: 156.00005}
+  offset: {x: -417.00015, y: 104.00003}

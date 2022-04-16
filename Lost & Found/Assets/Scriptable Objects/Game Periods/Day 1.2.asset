@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBlock:
     day: 0
-    time: 0
+    time: 1
   displayDate: Day 01
   displayTime: 10:00am
   startingNodeId: in_class
