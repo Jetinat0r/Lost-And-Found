@@ -62,6 +62,16 @@ public class DialogueBox : MonoBehaviour
         dialogueScriptableObject = _dialogue;
         characterName = _characterName;
 
+        if(dialogueScriptableObject.dialogueText.Count == 0)
+        {
+            Debug.LogWarning("No dialogue in dialogue object (" + dialogueScriptableObject.ToString() + "), will probably cause errors!");
+        }
+
+        if(dialogueScriptableObject.dialogueText.Count != dialogueScriptableObject.moodsForLines.Count)
+        {
+            Debug.LogWarning("Number of moods in dialogue (" + dialogueScriptableObject.ToString() + ") does not match number of lines of dialogue, errors inbound!"); ;
+        }
+
         foreach(string _text in dialogueScriptableObject.dialogueText)
         {
             text.Enqueue(_text);
