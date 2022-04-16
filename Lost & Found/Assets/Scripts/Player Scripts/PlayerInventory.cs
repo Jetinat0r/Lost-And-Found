@@ -95,4 +95,17 @@ public class PlayerInventory : MonoBehaviour
     {
         RemoveItem(functionParams.stringParams[0]);
     }
+
+    public bool CheckItem(string _itemId)
+    {
+        foreach(QuestItemScriptableObject item in curHeldItems)
+        {
+            if(_itemId == item.idItemName)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
