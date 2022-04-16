@@ -963,13 +963,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   template:
     functionToCall:
-      name: Go to Day 1.3
+      name: Change to Day 1.3
       classToCall: 0
       functionName: ChangeGamePeriod
       stringParams: []
       intParams: 
       floatParams: []
-      boolParams: 01
+      boolParams: 00
     hasPlayedYet: 0
 --- !u!114 &8678422733207503946
 MonoBehaviour:

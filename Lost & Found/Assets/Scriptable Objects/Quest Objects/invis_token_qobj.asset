@@ -16,7 +16,7 @@ MonoBehaviour:
   idQuestItemNames:
   - invis_token
   initialQuestState: 1
-  curQuestState: 1
+  curQuestState: 4
   unlockOnComplete:
   - go_to_class_1
   inactiveIdNpcName: 
@@ -46,5 +46,5 @@ MonoBehaviour:
     stringParams: []
     intParams: 
     floatParams: []
-    boolParams: 01
+    boolParams: 00
   onStateToFailed: []

@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portraits: {fileID: 11400000, guid: 5c95e442771144eb5b7d629635b3d73a, type: 2}
   dialogueText:
-  - Nice Skirt.
+  - 'Nice skirt. '
+  - You should really get to class though.
   timeBetweenChars: 0.1
-  moodsForLines: 00000000
+  moodsForLines: 0000000000000000
   nextDialogue: {fileID: 0}
   nextDialogueDisplayName: 
