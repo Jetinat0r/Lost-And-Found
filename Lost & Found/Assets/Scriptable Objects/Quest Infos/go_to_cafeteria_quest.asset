@@ -43,14 +43,14 @@ MonoBehaviour:
       priority: 0
       objectSceneInfo:
         nodeId: cafeteria
-        positionInScene: {x: 6.22, y: -1.69, z: 0}
+        positionInScene: {x: -0.08, y: -1.69, z: 0}
     endDefaultNpcDialogue: {fileID: 11400000, guid: 20fd83feeaf9645a89045865cdf6cc64, type: 2}
     completedNpcPrefab: {fileID: 1199850316665029175, guid: 7d80b5bf0751a427ebe33ddbf7bc2865, type: 3}
     completedNpcSceneInfo:
       priority: 0
       objectSceneInfo:
         nodeId: cafeteria
-        positionInScene: {x: 6.22, y: -1.69, z: 0}
+        positionInScene: {x: -0.08, y: -1.69, z: 0}
     completedDefaultNpcDialogue: {fileID: 11400000, guid: 20fd83feeaf9645a89045865cdf6cc64, type: 2}
     failedNpcPrefab: {fileID: 0}
     failedNpcSceneInfo:

@@ -160,5 +160,5 @@ MonoBehaviour:
     m_StretchHeight: 0
   entranceNode: {fileID: 11400000, guid: 96fb1cb5f1d8e2441bb0adf6728f6a86, type: 2}
   destinationNode: {fileID: 11400000, guid: ff0e9809d3dd3c549aeb684d1d198bd7, type: 2}
-  tempEndPoint: {x: 198.00009, y: -13.500305}
+  tempEndPoint: {x: 41.999977, y: -8.000337}
   arrowSize: 16

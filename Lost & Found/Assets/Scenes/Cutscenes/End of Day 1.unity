@@ -637,7 +637,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '   Incomplete'
+  m_text: '   Incomplete.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1ed475f9a2f21a8459d8440178ac7c43, type: 2}
   m_sharedMaterial: {fileID: 4800264629721008345, guid: 1ed475f9a2f21a8459d8440178ac7c43, type: 2}

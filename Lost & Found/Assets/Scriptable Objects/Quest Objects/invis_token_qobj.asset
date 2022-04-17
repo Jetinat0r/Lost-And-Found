@@ -15,7 +15,7 @@ MonoBehaviour:
   idQuestName: Talk To Everyone
   idQuestItemNames: []
   initialQuestState: 1
-  curQuestState: 1
+  curQuestState: 2
   unlockOnComplete: []
   inactiveIdNpcName: 
   startIdNpcName: Calliope_npc
@@ -24,7 +24,7 @@ MonoBehaviour:
   completedIdNpcName: Sebastian_npc
   failedIdNpcName: 
   displayQuestName: Meet all of your new schoolmates
-  displayNpcName: ???
+  displayNpcName: Calliope
   displayQuestDescription: Use 'E' to talk to everyone you find in the halls.
   isDisplayed: 1
   reputationPoints: 0
@@ -36,22 +36,7 @@ MonoBehaviour:
   failedDialogue: {fileID: 0}
   onInactiveToStart: []
   onStartToInProgress: []
-  onInProgressToEnd:
-  - name: Stop Main Theme
-    classToCall: 1
-    functionName: StopSong
-    stringParams: []
-    intParams: 
-    floatParams: []
-    boolParams: 01
-  - name: Play Day 1 Theme
-    classToCall: 1
-    functionName: Play
-    stringParams:
-    - Day 1 Theme
-    intParams: 
-    floatParams: []
-    boolParams: 
+  onInProgressToEnd: []
   onEndToCompleted:
   - name: Change to Day 1.2
     classToCall: 0

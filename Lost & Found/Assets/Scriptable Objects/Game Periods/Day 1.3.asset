@@ -26,4 +26,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8a089bf108b9b458b8db94a018cffa37, type: 2}
   - {fileID: 11400000, guid: f350e194ca80549778810db0ec1aa773, type: 2}
   - {fileID: 11400000, guid: 6eaf2a129a4b5496c850f283ba7abeea, type: 2}
-  floatingObjects: []
+  floatingObjects:
+  - {fileID: 11400000, guid: 82dab063ededf498080f3d479fe4b7ef, type: 2}

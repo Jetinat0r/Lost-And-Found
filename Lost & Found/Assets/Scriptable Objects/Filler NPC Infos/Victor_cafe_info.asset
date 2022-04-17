@@ -20,7 +20,7 @@ MonoBehaviour:
     priority: 0
     objectSceneInfo:
       nodeId: cafeteria
-      positionInScene: {x: 2.31, y: -2.04, z: 0.1037309}
+      positionInScene: {x: 2.7, y: -2.04, z: 0.1037309}
   unpopularDialogue: {fileID: 11400000, guid: 6cecc0a6c77fe4b03ad03ff5e39cebb7, type: 2}
   neutralDialogue: {fileID: 0}
   popularDialogue: {fileID: 0}

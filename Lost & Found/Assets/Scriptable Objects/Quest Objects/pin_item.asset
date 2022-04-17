@@ -37,22 +37,7 @@ MonoBehaviour:
   failedDialogue: {fileID: 0}
   onInactiveToStart: []
   onStartToInProgress: []
-  onInProgressToEnd:
-  - name: Stop Sounds
-    classToCall: 1
-    functionName: StopAllSounds
-    stringParams: []
-    intParams: 
-    floatParams: []
-    boolParams: 01
-  - name: Play Quest Theme
-    classToCall: 1
-    functionName: Play
-    stringParams:
-    - Quest Theme
-    intParams: 
-    floatParams: []
-    boolParams: 01
+  onInProgressToEnd: []
   onEndToCompleted:
   - name: Change to End of Day 1
     classToCall: 2

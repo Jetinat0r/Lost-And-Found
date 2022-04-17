@@ -15,7 +15,7 @@ MonoBehaviour:
   idQuestName: go_outside
   idQuestItemNames: []
   initialQuestState: 1
-  curQuestState: 3
+  curQuestState: 4
   unlockOnComplete: []
   inactiveIdNpcName: 
   startIdNpcName: Charlie_npc
