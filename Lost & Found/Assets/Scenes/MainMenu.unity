@@ -20028,6 +20028,22 @@ MonoBehaviour:
     source: {fileID: 0}
     startVolume: 0
     isFading: 0
+  - name: Quest Theme
+    clip: {fileID: 8300000, guid: f040547370c0b4fbd946129475d276cf, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+    startVolume: 0
+    isFading: 0
+  - name: Day 1 Theme
+    clip: {fileID: 8300000, guid: 92bd263c866d8470ca0a7c97e60d4a20, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+    startVolume: 0
+    isFading: 0
 --- !u!4 &1669756913
 Transform:
   m_ObjectHideFlags: 0

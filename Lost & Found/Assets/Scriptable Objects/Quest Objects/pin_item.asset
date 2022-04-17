@@ -16,7 +16,7 @@ MonoBehaviour:
   idQuestItemNames:
   - pin_item
   initialQuestState: 1
-  curQuestState: 0
+  curQuestState: 4
   unlockOnComplete: []
   inactiveIdNpcName: 
   startIdNpcName: Darcy_npc
@@ -37,7 +37,22 @@ MonoBehaviour:
   failedDialogue: {fileID: 0}
   onInactiveToStart: []
   onStartToInProgress: []
-  onInProgressToEnd: []
+  onInProgressToEnd:
+  - name: Stop Sounds
+    classToCall: 1
+    functionName: StopAllSounds
+    stringParams: []
+    intParams: 
+    floatParams: []
+    boolParams: 01
+  - name: Play Quest Theme
+    classToCall: 1
+    functionName: Play
+    stringParams:
+    - Quest Theme
+    intParams: 
+    floatParams: []
+    boolParams: 01
   onEndToCompleted:
   - name: Change to End of Day 1
     classToCall: 2
