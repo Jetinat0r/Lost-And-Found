@@ -964,7 +964,7 @@ MonoBehaviour:
       stringParams: []
       intParams: 
       floatParams: []
-      boolParams: 01
+      boolParams: 00
     hasPlayedYet: 0
 --- !u!114 &-2961721944813487140
 MonoBehaviour:
