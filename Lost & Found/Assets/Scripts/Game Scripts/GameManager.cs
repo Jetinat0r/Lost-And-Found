@@ -46,10 +46,10 @@ public class GameManager : MonoBehaviour
             QuitGame();
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            ToggleJournal();
-        }
+        //if (Input.GetKeyDown(KeyCode.Tab))
+        //{
+        //    ToggleJournal();
+        //}
     }
 
     public void QuitGame()
