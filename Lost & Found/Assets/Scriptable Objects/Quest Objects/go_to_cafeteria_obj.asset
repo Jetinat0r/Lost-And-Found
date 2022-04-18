@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idQuestName: go_to_cafeteria
   idQuestItemNames: []
-  initialQuestState: 1
-  curQuestState: 2
+  initialQuestState: 2
+  curQuestState: 4
   unlockOnComplete: []
   inactiveIdNpcName: 
   startIdNpcName: Chris_npc
