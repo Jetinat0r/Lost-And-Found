@@ -65,4 +65,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cutscenes/BullyCafeteria.unity
     guid: abdc63c53242644b9ab236bdeca1689c
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/End of Day 1.unity
+    guid: 8456a169e7b9b48fca3b7a161fb130bb
   m_configObjects: {}

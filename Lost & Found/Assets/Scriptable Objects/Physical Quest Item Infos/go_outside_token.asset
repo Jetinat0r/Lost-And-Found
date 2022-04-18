@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f63d1b045eb55a84b8038232bce263f3, type: 3}
   m_Name: go_outside_token
   m_EditorClassIdentifier: 
-  spawnTimes: []
+  spawnTimes:
+  - day: 0
+    time: 4
   itemPrefab: {fileID: 8497214823782066947, guid: 57c0812853b0f4ce1857bc70b75141ea, type: 3}
   objectSceneInfo:
     nodeId: 

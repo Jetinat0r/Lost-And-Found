@@ -20,7 +20,7 @@ MonoBehaviour:
     priority: 0
     objectSceneInfo:
       nodeId: outside
-      positionInScene: {x: 8.46, y: -0.93, z: 0}
-  unpopularDialogue: {fileID: 11400000, guid: 01fcc3504b7654e909d8637116ea3bf5, type: 2}
+      positionInScene: {x: -1.46, y: -2.86, z: 0}
+  unpopularDialogue: {fileID: 11400000, guid: 9649b65234c4947b0ac4b6723073263d, type: 2}
   neutralDialogue: {fileID: 0}
   popularDialogue: {fileID: 0}

@@ -15,8 +15,8 @@ MonoBehaviour:
   timeBlock:
     day: 0
     time: 1
-  displayDate: Day 01
-  displayTime: 10:00am
+  displayDate: Day 1
+  displayTime: 10:00 am
   startingNodeId: in_class
   questInfos: []
   physicalQuestItemInfos: []

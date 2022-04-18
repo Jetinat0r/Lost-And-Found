@@ -310,7 +310,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.1
   m_LightVolumeIntensity: 0
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -379,7 +379,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73355277}
   m_LocalRotation: {x: 0, y: 0, z: -0.71224695, w: 0.701929}
-  m_LocalPosition: {x: 23.97, y: 2.44, z: 0}
+  m_LocalPosition: {x: 23.96, y: 2.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -664,8 +664,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 2
-  m_PointLightOuterRadius: 7.3663588
+  m_PointLightInnerRadius: 0.69285846
+  m_PointLightOuterRadius: 1.6614656
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -683,7 +683,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463704706}
-  m_LocalRotation: {x: 0, y: 0, z: -0.67917687, w: 0.73397464}
+  m_LocalRotation: {x: 0, y: 0, z: -0.6566545, w: 0.7541916}
   m_LocalPosition: {x: -9.15, y: 1.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -916,7 +916,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.1
   m_LightVolumeIntensity: 0
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -966,7 +966,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 16.517664
+  m_PointLightOuterRadius: 12.949168
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -984,7 +984,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1188692781}
-  m_LocalRotation: {x: 0, y: 0, z: -0.70615244, w: 0.70805985}
+  m_LocalRotation: {x: 0, y: 0, z: -0.70700306, w: 0.70721054}
   m_LocalPosition: {x: -13.76, y: 2.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1248,7 +1248,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1347253888}
   m_LocalRotation: {x: 0, y: 0, z: -0.7037671, w: 0.71043074}
-  m_LocalPosition: {x: 11.48, y: 2.33, z: 0}
+  m_LocalPosition: {x: 11.48, y: 2.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1666,8 +1666,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760464087}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.06, y: 3.76, z: -1.4938}
-  m_LocalScale: {x: 44.9704, y: 2.624014, z: 0.82322}
+  m_LocalPosition: {x: 7.06, y: 3.71, z: -1.4938}
+  m_LocalScale: {x: 44.9704, y: 2.522618, z: 0.82322}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1791,7 +1791,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.1
   m_LightVolumeIntensity: 0
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -1841,7 +1841,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 17.379047
+  m_PointLightOuterRadius: 14.14282
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -1859,8 +1859,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1771869119}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7046439, w: 0.70956117}
-  m_LocalPosition: {x: -1.26, y: 2.21, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7373957, w: 0.67546105}
+  m_LocalPosition: {x: -1.26, y: 1.92, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

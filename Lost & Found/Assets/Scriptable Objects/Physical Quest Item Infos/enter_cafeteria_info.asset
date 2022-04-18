@@ -17,5 +17,5 @@ MonoBehaviour:
     time: 2
   itemPrefab: {fileID: 7821498447949652349, guid: 23b18f8e5e95c4492972335dd4b367b2, type: 3}
   objectSceneInfo:
-    nodeId: hallway_01
-    positionInScene: {x: -9.39, y: -2.56, z: 0}
+    nodeId: 
+    positionInScene: {x: 0, y: 0, z: 0}

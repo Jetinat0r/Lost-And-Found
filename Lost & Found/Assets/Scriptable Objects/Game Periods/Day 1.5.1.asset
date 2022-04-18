@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f13e00aa30222224ca5e401cbd0db3ca, type: 3}
+  m_Name: Day 1.5.1
+  m_EditorClassIdentifier: 
+  timeBlock:
+    day: 0
+    time: 5
+  displayDate: Day 1
+  displayTime: 3:00 pm
+  startingNodeId: outside
+  questInfos:
+  - {fileID: 11400000, guid: 097ceb6dfac114be2800c5fb41f3d384, type: 2}
+  physicalQuestItemInfos:
+  - {fileID: 11400000, guid: 403ce968a64bc45058b32d6e1d3f506a, type: 2}
+  fillerNpcInfos:
+  - {fileID: 11400000, guid: 672d7f877bed746559d4065d56070399, type: 2}
+  floatingObjects: []
