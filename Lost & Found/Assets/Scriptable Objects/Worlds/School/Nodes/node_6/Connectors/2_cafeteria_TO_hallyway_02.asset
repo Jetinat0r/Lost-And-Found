@@ -23,7 +23,7 @@ MonoBehaviour:
     y: 0
     width: 0
     height: 0
-  isSelected: 1
+  isSelected: 0
   style:
     m_Name: 
     m_Normal:
@@ -160,5 +160,5 @@ MonoBehaviour:
     m_StretchHeight: 0
   entranceNode: {fileID: 11400000, guid: 35cd4e1ca5be842448f9461cefadb45a, type: 2}
   destinationNode: {fileID: 11400000, guid: 62906181bfd0ad64c9c52478570e98eb, type: 2}
-  tempEndPoint: {x: 41.999977, y: -8.000337}
+  tempEndPoint: {x: 200.00009, y: -15.000241}
   arrowSize: 16
