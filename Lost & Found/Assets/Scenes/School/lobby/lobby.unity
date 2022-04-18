@@ -375,11 +375,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connections:
   - connectionTitle: default
-    connectionPosition: {x: 5, y: -1.96, z: 0}
+    connectionPosition: {x: 5, y: -1.3, z: 0}
   - connectionTitle: outside_to_lobby
-    connectionPosition: {x: 10.43, y: -1.96, z: 0}
+    connectionPosition: {x: 10.43, y: -1.3, z: 0}
   - connectionTitle: hallway_01_to_lobby
-    connectionPosition: {x: -3.14, y: -1.96, z: 0}
+    connectionPosition: {x: -3.14, y: -1.3, z: 0}
   cutscenes: []
 --- !u!4 &324817901
 Transform:
