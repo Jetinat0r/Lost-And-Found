@@ -22,8 +22,8 @@ MonoBehaviour:
   path: Assets/Scriptable Objects/Worlds/School/Nodes/node_2
   rect:
     serializedVersion: 2
-    x: 410.00027
-    y: 367.00037
+    x: -354.99988
+    y: 104.000305
     width: 200
     height: 50
   isDragged: 0
@@ -301,85 +301,85 @@ MonoBehaviour:
   - connector: {fileID: 11400000, guid: 505aa491938bb164eb5aab407a8fce16, type: 2}
     connectionPoint:
       serializedVersion: 2
-      x: 598.0005
-      y: 384.0003
+      x: -166.99956
+      y: 121.000244
       width: 0
       height: 0
   - connector: {fileID: 11400000, guid: 0d8a6d60619376a4084e9ef09f658817, type: 2}
     connectionPoint:
       serializedVersion: 2
-      x: 521.00055
-      y: 407.0003
+      x: -243.99957
+      y: 144.00026
       width: 0
       height: 0
   - connector: {fileID: 11400000, guid: 17157316fd2b28d41a1016fa55a632c3, type: 2}
     connectionPoint:
       serializedVersion: 2
-      x: 429.00003
-      y: 409.0003
+      x: -336.00012
+      y: 146.00026
       width: 0
       height: 0
   - connector: {fileID: 11400000, guid: f14f1294430ecc843b333a2084f053e0, type: 2}
     connectionPoint:
       serializedVersion: 2
-      x: 580.0005
-      y: 375.00012
+      x: -184.99959
+      y: 112.00006
       width: 0
       height: 0
   - connector: {fileID: 11400000, guid: 0756a07526d1a7f429bdc834117c278b, type: 2}
     connectionPoint:
       serializedVersion: 2
-      x: 419.00015
-      y: 402.00018
+      x: -346
+      y: 139.00014
       width: 0
       height: 0
   - connector: {fileID: 11400000, guid: c36107fffba43df459d8af7d806011d9, type: 2}
     connectionPoint:
       serializedVersion: 2
-      x: 454.00018
-      y: 377
+      x: -310.99994
+      y: 113.99994
       width: 0
       height: 0
   outgoingConnections:
   - connector: {fileID: 11400000, guid: 571467dda472534459761e2b34e52369, type: 2}
     connectionPoint:
       serializedVersion: 2
-      x: 600.0005
-      y: 400.00018
+      x: -164.99956
+      y: 137.00014
       width: 0
       height: 0
   - connector: {fileID: 11400000, guid: d02ca5aae5934f243a58295eba7ac9bd, type: 2}
     connectionPoint:
       serializedVersion: 2
-      x: 539.00037
-      y: 404.00043
+      x: -225.9997
+      y: 141.00038
       width: 0
       height: 0
   - connector: {fileID: 11400000, guid: 28ba3707f667c274da63378f193b2d4b, type: 2}
     connectionPoint:
       serializedVersion: 2
-      x: 452.00015
-      y: 405.00043
+      x: -313
+      y: 142.00038
       width: 0
       height: 0
   - connector: {fileID: 11400000, guid: 174bd933ee2949f4fb009c62ba38c6b3, type: 2}
     connectionPoint:
       serializedVersion: 2
-      x: 553.0006
-      y: 375.00012
+      x: -211.99947
+      y: 112.00006
       width: 0
       height: 0
   - connector: {fileID: 11400000, guid: 41d964db6660efa418a1ba81bddb4f65, type: 2}
     connectionPoint:
       serializedVersion: 2
-      x: 419.00015
-      y: 382.00006
+      x: -346
+      y: 119
       width: 0
       height: 0
   - connector: {fileID: 11400000, guid: 1f9b64ead2f2d264c914ac06d19b7e6d, type: 2}
     connectionPoint:
       serializedVersion: 2
-      x: 431.00003
-      y: 379
+      x: -334.00012
+      y: 115.99994
       width: 0
       height: 0

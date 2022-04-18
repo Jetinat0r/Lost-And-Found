@@ -109,7 +109,7 @@ MonoBehaviour:
     functionToCall:
       name: Play Silence
       classToCall: 1
-      functionName: PlaySong
+      functionName: StopSong
       stringParams:
       - Silence
       intParams: 
