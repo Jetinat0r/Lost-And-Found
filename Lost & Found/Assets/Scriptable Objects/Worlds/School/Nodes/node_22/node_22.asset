@@ -22,12 +22,12 @@ MonoBehaviour:
   path: Assets/Scriptable Objects/Worlds/School/Nodes/node_22
   rect:
     serializedVersion: 2
-    x: 377.00024
-    y: 275.0001
+    x: 468.00006
+    y: 520.0001
     width: 200
     height: 50
   isDragged: 0
-  isSelected: 0
+  isSelected: 1
   hasNewConnection: 0
   style:
     m_Name: 

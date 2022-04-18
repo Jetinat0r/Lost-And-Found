@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTimes:
   - day: 0
-    time: 4
+    time: 2
   npcPrefab: {fileID: 4423508127966084833, guid: 1b73bb236f9784091b608f1e96b12d06, type: 3}
   sceneInfo:
     priority: 0
