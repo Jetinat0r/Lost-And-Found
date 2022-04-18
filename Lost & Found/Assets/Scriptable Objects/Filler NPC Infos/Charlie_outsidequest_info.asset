@@ -20,7 +20,7 @@ MonoBehaviour:
     priority: 0
     objectSceneInfo:
       nodeId: classroom_02
-      positionInScene: {x: -7.68, y: -2.17, z: 0.1037309}
+      positionInScene: {x: -7.68, y: -2.02, z: 0.1037309}
   unpopularDialogue: {fileID: 11400000, guid: 80ae41c224fd14aa080df63db3bfac5f, type: 2}
   neutralDialogue: {fileID: 0}
   popularDialogue: {fileID: 0}

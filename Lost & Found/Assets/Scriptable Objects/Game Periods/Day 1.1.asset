@@ -15,7 +15,7 @@ MonoBehaviour:
   timeBlock:
     day: 0
     time: 0
-  displayDate: Day 01
+  displayDate: Day 1
   displayTime: 9:00 am
   startingNodeId: car_cutscene
   questInfos:
