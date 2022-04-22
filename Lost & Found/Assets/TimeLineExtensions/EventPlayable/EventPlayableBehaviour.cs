@@ -17,11 +17,12 @@ public class EventPlayableBehaviour : PlayableBehaviour
     {
         if (hasPlayedYet == false)
         {
+            hasPlayedYet = true;
+
 #if (UNITY_EDITOR)
             Debug.Log("There may be a null reference error about EventPlayableBehavior.ProcessFrame under this, that's because EventFinder does not exist in the scene, don't worry about it.");
 #endif
             EventFinder.instance.CallFunction(functionToCall);
-            hasPlayedYet = true;
         }
     }
 }

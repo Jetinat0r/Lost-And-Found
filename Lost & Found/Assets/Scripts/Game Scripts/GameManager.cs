@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject playerPrefab;
     private GameObject spawnedPlayer;
+    private bool playerHasControl = true;
 
     [HideInInspector]
     public List<QuestInfo> curQuestInfos = new List<QuestInfo>();
@@ -46,10 +47,10 @@ public class GameManager : MonoBehaviour
             QuitGame();
         }
 
-        //if (Input.GetKeyDown(KeyCode.Tab))
-        //{
-        //    ToggleJournal();
-        //}
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            ToggleJournal();
+        }
     }
 
     public void QuitGame()
@@ -66,7 +67,7 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        if (!journal.isOpen)
+        if (!journal.isOpen && playerHasControl)
         {
             DisablePlayerInput();
             journal.OpenJournal();
@@ -252,6 +253,7 @@ public class GameManager : MonoBehaviour
             PlayerMovement _playerMovement = spawnedPlayer.GetComponent<PlayerMovement>();
             if (_playerMovement != null)
             {
+                playerHasControl = false;
                 _playerMovement.DisableMovement();
                 _playerInteract.DisableInteract();
             }
@@ -280,6 +282,7 @@ public class GameManager : MonoBehaviour
             PlayerInteract _playerInteract = spawnedPlayer.GetComponent<PlayerInteract>();
             if (_playerMovement != null)
             {
+                playerHasControl = true;
                 _playerMovement.EnableMovement();
                 _playerInteract.EnableInteract();
             }
@@ -392,6 +395,19 @@ public class GameManager : MonoBehaviour
     {
         List<string> _itemIds = new List<string>(functionParams.stringParams);
         AddItemsToInventory(_itemIds);
+    }
+
+    //Removes EVERY Item from the Inventory, if it exists
+    public void ClearInventory()
+    {
+        if (HasSpawnedPlayer())
+        {
+            PlayerInventory.instance.ClearInventory();
+        }
+        else
+        {
+            Debug.LogWarning("No Player to clear inventory from!");
+        }
     }
 
     public void StartCutscene(string cutsceneTitle)

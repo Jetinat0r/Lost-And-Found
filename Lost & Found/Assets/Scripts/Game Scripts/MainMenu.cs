@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
         //AudioManager.instance.Play("Level One Loop 1");
 
         GameManager.instance.ChangeGamePeriod();
+        GameManager.instance.ClearInventory();
         //SceneController.instance.SetScene("Level_00");
     }
 

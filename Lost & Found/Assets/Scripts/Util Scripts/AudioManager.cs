@@ -89,6 +89,12 @@ public class AudioManager : MonoBehaviour
 
         if(curSong != null && !curSong.isFading)
         {
+            if(curSong == s)
+            {
+                Debug.LogWarning("Already playing that song!");
+                return;
+            }
+
             StopSong(fadeOtherSong);
         }
 

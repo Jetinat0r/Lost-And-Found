@@ -108,4 +108,9 @@ public class PlayerInventory : MonoBehaviour
 
         return false;
     }
+
+    public void ClearInventory()
+    {
+        curHeldItems = new List<QuestItemScriptableObject>();
+    }
 }
