@@ -1,9 +1,134 @@
+using System;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    private readonly string SaveDataVersionNumber = "0.2.1";
+
+    [Serializable]
+    private class SaveData
+    {
+        private string saveDataVersion;
+        private TimeBlock gamePeriodTimeBlock;
+        private bool isLoadStealthy;
+
+        private List<string> curQuestInfoIds = new List<string>();
+        private List<QuestState> curQuestStates = new List<QuestState>();
+
+        private List<string> curFillerNpcInfoIds = new List<string>();
+        private List<string> curPhysicalQuestItemInfoIds = new List<string>();
+        private List<string> curFloatingItemIds = new List<string>();
+
+        private List<string> curHeldItemIds = new List<string>();
+
+        //Constructor
+        public SaveData(
+            string _saveDataVersion,
+            GamePeriod _gamePeriod,
+            bool _isLoadStealthy,
+            List<QuestInfo> _curQuestInfos,
+            List<FillerNpcInfo> _curFillerNpcInfos,
+            List<PhysicalQuestItemInfo> _curPhysicalQuestItemInfos,
+            List<QuestItemScriptableObject> _curFloatingItems,
+            List<QuestItemScriptableObject> _curHeldItems)
+        {
+            SetData(_saveDataVersion, _gamePeriod, _isLoadStealthy, _curQuestInfos, _curFillerNpcInfos, _curPhysicalQuestItemInfos, _curFloatingItems, _curHeldItems);
+        }
+
+        //Acts like the constructor
+        public void SetData(
+            string _saveDataVersion,
+            GamePeriod _gamePeriod,
+            bool _isLoadStealthy,
+            List<QuestInfo> _curQuestInfos,
+            List<FillerNpcInfo> _curFillerNpcInfos,
+            List<PhysicalQuestItemInfo> _curPhysicalQuestItemInfos,
+            List<QuestItemScriptableObject> _curFloatingItems,
+            List<QuestItemScriptableObject> _curHeldItems)
+        {
+            saveDataVersion = _saveDataVersion;
+
+            gamePeriodTimeBlock = _gamePeriod.timeBlock;
+            isLoadStealthy = _isLoadStealthy;
+
+            foreach (QuestInfo _questInfo in _curQuestInfos)
+            {
+                curQuestInfoIds.Add(_questInfo.id);
+                curQuestStates.Add(_questInfo.quest.curQuestState);
+            }
+
+            foreach (FillerNpcInfo _fillerNpcInfo in _curFillerNpcInfos)
+            {
+                curFillerNpcInfoIds.Add(_fillerNpcInfo.id);
+            }
+
+            foreach (PhysicalQuestItemInfo _physicalQuestItemInfo in _curPhysicalQuestItemInfos)
+            {
+                curPhysicalQuestItemInfoIds.Add(_physicalQuestItemInfo.id);
+            }
+
+            foreach (QuestItemScriptableObject _curFloatingItem in _curFloatingItems)
+            {
+                curFloatingItemIds.Add(_curFloatingItem.idItemName);
+            }
+
+            if (_curHeldItems != null)
+            {
+                foreach (QuestItemScriptableObject _curHeldItem in _curHeldItems)
+                {
+                    curHeldItemIds.Add(_curHeldItem.idItemName);
+                }
+            }
+        }
+
+        //Made to retrieve data by reference
+        public void RetrieveData(
+            out string _saveDataVersion,
+            out TimeBlock _gamePeriodTimeBlock,
+            out bool _isLoadStealthy,
+            out List<string> _curQuestInfoIds,
+            out List<QuestState> _curQuestStates,
+            out List<string> _curFillerNpcInfoIds,
+            out List<string> _curPhysicalQuestItemInfoIds,
+            out List<string> _curFloatingItemids,
+            out List<string> _curHeldItems)
+        {
+            _saveDataVersion = saveDataVersion;
+
+            _gamePeriodTimeBlock = new TimeBlock
+            {
+                day = gamePeriodTimeBlock.day,
+                time = gamePeriodTimeBlock.time
+            };
+            _isLoadStealthy = isLoadStealthy;
+
+            _curQuestInfoIds = new List<string>(curQuestInfoIds);
+            _curQuestStates = new List<QuestState>(curQuestStates);
+
+            _curFillerNpcInfoIds = new List<string>(curFillerNpcInfoIds);
+            _curPhysicalQuestItemInfoIds = new List<string>(curPhysicalQuestItemInfoIds);
+            _curFloatingItemids = new List<string>(curFloatingItemIds);
+
+            _curHeldItems = new List<string>(curHeldItemIds);
+        }
+    }
+    
+    private class LoadedPeriod
+    {
+        public GamePeriod gamePeriod;
+        public bool isStealthy;
+
+        public LoadedPeriod(GamePeriod _gamePeriod, bool _isStealthy)
+        {
+            gamePeriod = _gamePeriod;
+            isStealthy = _isStealthy;
+        }
+    }
+
     public static GameManager instance;
 
     public TimeBlock curTime;
@@ -160,8 +285,13 @@ public class GameManager : MonoBehaviour
         ChangeGamePeriod(functionParams.boolParams[0]);
     }
 
-    private void LoadPeriod(GamePeriod periodToLoad, bool _isStealthy = false)
+    private void LoadPeriod(GamePeriod periodToLoad, bool _isStealthy = false, bool _saveGame = true)
     {
+        if (_saveGame)
+        {
+            SaveGame(periodToLoad, _isStealthy);
+        }
+
         //TODO: Display Time Block on UI to indicate change
         if (!_isStealthy)
         {
@@ -190,7 +320,7 @@ public class GameManager : MonoBehaviour
             curPhysicalQuestItemInfos.Add(info);
         }
 
-        foreach (QuestItemScriptableObject item in periodToLoad.floatingObjects)
+        foreach (QuestItemScriptableObject item in periodToLoad.floatingItems)
         {
             curFloatingItems.Add(item);
         }
@@ -201,6 +331,190 @@ public class GameManager : MonoBehaviour
             FadeTransitionManager.instance.SetTransitionText(periodToLoad.GetDisplayTime());
         }
         SceneController.instance.GotoNode(periodToLoad.startingNodeId);
+    }
+
+    public void SaveGame(GamePeriod gamePeriod, bool _isLoadStealthy)
+    {
+        //Safely gets the player's current held items
+        List<QuestItemScriptableObject> _curHeldItems = new List<QuestItemScriptableObject>();
+        if (HasSpawnedPlayer())
+        {
+            _curHeldItems = PlayerInventory.instance.curHeldItems;
+        }
+
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/LnF_SaveData.txt");
+        SaveData data = new SaveData(SaveDataVersionNumber, gamePeriod, _isLoadStealthy, curQuestInfos, curFillerNpcInfos, curPhysicalQuestItemInfos, curFloatingItems, _curHeldItems);
+        bf.Serialize(file, data);
+        file.Close();
+        Debug.Log("Game data saved!");
+    }
+
+    //Loads relevant Game Data into the necessary spots, and returns the next GamePeriod to load
+    //If anything fails, returns null
+    private LoadedPeriod LoadData()
+    {
+        if (File.Exists(Application.persistentDataPath + "/LnF_SaveData.txt"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/LnF_SaveData.txt", FileMode.Open);
+            SaveData data = (SaveData)bf.Deserialize(file);
+            file.Close();
+
+            string _saveDataVersion = "-1";
+            TimeBlock _nextGamePeriodTimeBlock;
+            bool _isLoadStealthy;
+            List<string> _curQuestInfoIds, _curFillerNpcInfoIds, _curPhysicalQuestItemInfoIds, _curFloatingItemIds, _curHeldItemIds;
+            List<QuestState> _curQuestStates;
+
+            data.RetrieveData(out _saveDataVersion, out _nextGamePeriodTimeBlock, out _isLoadStealthy, out _curQuestInfoIds, out _curQuestStates, out _curFillerNpcInfoIds, out _curPhysicalQuestItemInfoIds, out _curFloatingItemIds, out _curHeldItemIds);
+
+            //Check if the save data is up to date
+            if(_saveDataVersion != SaveDataVersionNumber)
+            {
+                Debug.LogWarning("Outdated and incompatible save data! Current Version (" + SaveDataVersionNumber + "); Saved Version (" + _saveDataVersion + ")");
+                return null;
+            }
+
+            //Debug.Log("Loaded Game Period with Time Block (Day: " + _nextGamePeriodTimeBlock.day + "; Time: " + _nextGamePeriodTimeBlock.time + ")");
+
+            //Get the nextGamePeriod
+            GamePeriod _nextGamePeriod = null;
+            int _curTimeSlotIndex = -1;
+            for(int i = 0; i < timeSlots.Count; i++)
+            {
+                if(timeSlots[i].timeBlock.IsEqual(_nextGamePeriodTimeBlock))
+                {
+                    _nextGamePeriod = timeSlots[i];
+                    _curTimeSlotIndex = i;
+                    break;
+                }
+            }
+
+            //Check if the GamePeriod actually exists
+            if(_nextGamePeriod == null)
+            {
+                Debug.LogWarning("No Game Period found for TimeBlock: " + _nextGamePeriodTimeBlock);
+                return null;
+            }
+
+            //Loads data by GamePeriod
+            for(int i = 0; i < _curTimeSlotIndex; i++)
+            {
+                //Get QuestInfos
+                foreach(QuestInfo _questInfo in timeSlots[i].questInfos)
+                {
+                    if (_curQuestInfoIds.Contains(_questInfo.id))
+                    {
+                        curQuestInfos.Add(_questInfo);
+                        //Get index of QuestInfo for QuestState
+                        int index = -1;
+                        for(int j = 0; j < _curQuestInfoIds.Count; j++)
+                        {
+                            if(_curQuestInfoIds[j] == _questInfo.id)
+                            {
+                                index = j;
+                                break;
+                            }
+                        }
+
+                        //Extra checking, should literally never happen
+                        if(index == -1)
+                        {
+                            Debug.LogWarning("Critical error in loading questInfos!");
+                        }
+
+                        _questInfo.quest.curQuestState = _curQuestStates[index];
+
+
+                        _curQuestInfoIds.Remove(_questInfo.id);
+                        _curQuestStates.RemoveAt(index);
+                    }
+                }
+
+                //Get FillerNpcInfos
+                foreach(FillerNpcInfo _fillerNpcInfo in timeSlots[i].fillerNpcInfos)
+                {
+                    if (_curFillerNpcInfoIds.Contains(_fillerNpcInfo.id))
+                    {
+                        curFillerNpcInfos.Add(_fillerNpcInfo);
+                        _curFillerNpcInfoIds.Remove(_fillerNpcInfo.id);
+                    }
+                }
+
+                //Things below this point assume that a player has been successfully created
+
+                //Get PhysicalQuestItemInfos and maybe some of CurHeldItems
+                foreach(PhysicalQuestItemInfo _physicalQuestItemInfo in timeSlots[i].physicalQuestItemInfos)
+                {
+                    //PhysicalQuestItemInfos
+                    if (_curPhysicalQuestItemInfoIds.Contains(_physicalQuestItemInfo.id))
+                    {
+                        curPhysicalQuestItemInfos.Add(_physicalQuestItemInfo);
+                        _curPhysicalQuestItemInfoIds.Remove(_physicalQuestItemInfo.id);
+                    }
+
+                    //CurHeldItems
+                    if (_curHeldItemIds.Contains(_physicalQuestItemInfo.itemPrefab.GetItem().idItemName))
+                    {
+                        PlayerInventory.instance.PickupItem(_physicalQuestItemInfo.itemPrefab.GetItem());
+                        _curHeldItemIds.Remove(_physicalQuestItemInfo.itemPrefab.GetItem().idItemName);
+                    }
+                }
+
+                //Get FloatingItems and hopefully the rest of CurHeldItems
+                foreach(QuestItemScriptableObject _floatingItem in timeSlots[i].floatingItems)
+                {
+                    //FloatingItems
+                    if (_curFloatingItemIds.Contains(_floatingItem.idItemName))
+                    {
+                        curFloatingItems.Add(_floatingItem);
+                        _curFloatingItemIds.Remove(_floatingItem.idItemName);
+                    }
+
+                    //CurHeldItems
+                    if (_curHeldItemIds.Contains(_floatingItem.idItemName))
+                    {
+                        PlayerInventory.instance.PickupItem(_floatingItem);
+                        _curHeldItemIds.Remove(_floatingItem.idItemName);
+                    }
+                }
+            }
+
+
+            Debug.Log("Game data loaded!");
+            return new LoadedPeriod(_nextGamePeriod, _isLoadStealthy);
+        }
+        else
+        {
+            Debug.LogWarning("There is no save data!");
+            return null;
+        }
+    }
+
+    //Starts a new game
+    public void StartGame()
+    {
+        SpawnPlayer();
+        ChangeGamePeriod();
+        ClearInventory();
+    }
+
+    //Loads game from given file, if that file does not exist or something goes wrong while loading, starts a new game
+    public void LoadGame()
+    {
+        SpawnPlayer();
+        LoadedPeriod _periodToLoad = LoadData();
+
+        if(_periodToLoad == null)
+        {
+            Debug.Log("No save data found or save data invalid, starting new game...");
+            StartGame();
+        }
+        else
+        {
+            LoadPeriod(_periodToLoad.gamePeriod, _periodToLoad.isStealthy, false);
+        }
     }
 
     public void SpawnPlayer()

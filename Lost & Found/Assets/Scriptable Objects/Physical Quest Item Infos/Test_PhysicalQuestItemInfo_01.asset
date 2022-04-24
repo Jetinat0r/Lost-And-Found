@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f63d1b045eb55a84b8038232bce263f3, type: 3}
   m_Name: Test_PhysicalQuestItemInfo_01
   m_EditorClassIdentifier: 
+  id: test_physical_quest_item_info
   spawnTimes:
   - day: 0
     time: 0
