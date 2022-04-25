@@ -197,7 +197,7 @@ public class GameManager : MonoBehaviour
             DisablePlayerInput();
             journal.OpenJournal();
         }
-        else
+        else if(journal.isOpen)
         {
             EnablePlayerInput();
             journal.CloseJournal();
@@ -329,6 +329,11 @@ public class GameManager : MonoBehaviour
         if (!_isStealthy)
         {
             FadeTransitionManager.instance.SetTransitionText(periodToLoad.GetDisplayTime());
+        }
+        else
+        {
+            //If it is stealthy, set the text to empty so that the fade treats it correctly
+            FadeTransitionManager.instance.SetTransitionText("");
         }
         SceneController.instance.GotoNode(periodToLoad.startingNodeId);
     }
