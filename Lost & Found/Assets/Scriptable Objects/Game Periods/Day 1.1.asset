@@ -17,7 +17,7 @@ MonoBehaviour:
     time: 0
   displayDate: Day 1
   displayTime: 9:00 am
-  startingNodeId: car_cutscene
+  startingNodeId: lobby
   questInfos:
   - {fileID: 11400000, guid: 19ff81dfc3f37487b828f3849180856f, type: 2}
   physicalQuestItemInfos: []

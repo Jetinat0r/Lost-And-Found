@@ -15,6 +15,8 @@ MonoBehaviour:
   spawnTimes:
   - day: 0
     time: 0
+  - day: 0
+    time: 2
   npcPrefab: {fileID: 1966785857075478249, guid: 7f7b4f9082ba746fb9512bf282130eff, type: 3}
   sceneInfo:
     priority: 0
