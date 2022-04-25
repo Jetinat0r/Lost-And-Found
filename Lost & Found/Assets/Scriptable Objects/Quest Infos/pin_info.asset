@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 548c3fad9f0110440add467733f669f5, type: 3}
   m_Name: pin_info
   m_EditorClassIdentifier: 
+  id: Day_1_Pin
   spawnTimes:
   - day: 0
     time: 5

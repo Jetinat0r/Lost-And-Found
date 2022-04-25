@@ -280,7 +280,7 @@ public class GamePeriod : ScriptableObject
     public List<QuestInfo> questInfos;
     public List<PhysicalQuestItemInfo> physicalQuestItemInfos;
     public List<FillerNpcInfo> fillerNpcInfos;
-    public List<QuestItemScriptableObject> floatingObjects;
+    public List<QuestItemScriptableObject> floatingItems;
 
     public string GetDisplayTime()
     {

@@ -179,4 +179,14 @@ public class QuestItemPhysical : InteractionTarget
             itCanInteract = true;
         }
     }
+
+    public QuestItemScriptableObject GetItem()
+    {
+        if(questItemScriptableObject == null)
+        {
+            Debug.LogWarning("Tried to get an item that was never assigned, errors inbound!");
+        }
+
+        return questItemScriptableObject;
+    }
 }

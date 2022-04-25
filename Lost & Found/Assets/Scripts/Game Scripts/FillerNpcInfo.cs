@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewFillerNpcInfo", menuName = "ScriptableObjects/Filler NPC Info")]
 public class FillerNpcInfo : ScriptableObject
 {
+    //Used for saving and loading
+    public string id;
+
     public List<TimeBlock> spawnTimes;
     //TODO: Add an "end time" to remove when the curTimeBlock == it
 

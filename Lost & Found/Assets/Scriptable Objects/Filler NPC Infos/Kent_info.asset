@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9bf2e6cd7040c147864076c8371c039, type: 3}
   m_Name: Kent_info
   m_EditorClassIdentifier: 
+  id: Kent_Info
   spawnTimes:
   - day: 0
     time: 0
