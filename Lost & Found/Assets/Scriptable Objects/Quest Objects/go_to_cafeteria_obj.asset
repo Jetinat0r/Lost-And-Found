@@ -15,7 +15,7 @@ MonoBehaviour:
   idQuestName: go_to_cafeteria
   idQuestItemNames: []
   initialQuestState: 2
-  curQuestState: 4
+  curQuestState: 3
   unlockOnComplete: []
   inactiveIdNpcName: 
   startIdNpcName: Chris_npc
@@ -24,8 +24,8 @@ MonoBehaviour:
   completedIdNpcName: Drew_npc
   failedIdNpcName: 
   displayQuestName: Go To the Cafeteria
-  displayNpcName: Chris
-  displayQuestDescription: Go to the cafeteria and have lunch
+  displayNpcName: 
+  displayQuestDescription: 
   isDisplayed: 1
   reputationPoints: 0
   inactiveDialogue: {fileID: 0}

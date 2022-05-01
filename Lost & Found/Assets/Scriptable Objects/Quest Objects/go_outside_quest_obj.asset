@@ -24,8 +24,8 @@ MonoBehaviour:
   completedIdNpcName: Darcy_npc
   failedIdNpcName: 
   displayQuestName: Go Outside
-  displayNpcName: Charlie
-  displayQuestDescription: School's over. Go outside.
+  displayNpcName: 
+  displayQuestDescription: 
   isDisplayed: 1
   reputationPoints: 0
   inactiveDialogue: {fileID: 0}

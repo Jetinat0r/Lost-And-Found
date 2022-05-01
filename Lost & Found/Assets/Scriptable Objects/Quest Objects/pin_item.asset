@@ -25,8 +25,8 @@ MonoBehaviour:
   completedIdNpcName: Darcy_npc
   failedIdNpcName: 
   displayQuestName: Find the Pin
-  displayNpcName: Darcy
-  displayQuestDescription: Find the pin in the girls locker room
+  displayNpcName: 
+  displayQuestDescription: 
   isDisplayed: 1
   reputationPoints: 0
   inactiveDialogue: {fileID: 0}

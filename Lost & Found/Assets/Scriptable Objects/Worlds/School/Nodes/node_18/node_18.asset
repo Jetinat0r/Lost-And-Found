@@ -27,7 +27,7 @@ MonoBehaviour:
     width: 200
     height: 50
   isDragged: 0
-  isSelected: 0
+  isSelected: 1
   hasNewConnection: 0
   style:
     m_Name: 
