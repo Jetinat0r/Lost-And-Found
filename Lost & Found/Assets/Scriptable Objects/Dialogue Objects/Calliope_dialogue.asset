@@ -16,7 +16,7 @@ MonoBehaviour:
   dialogueText:
   - 'Hello, new person! '
   - 'Welcome to Thornton Academy!! '
-  - "You should have gotten your schedule in the mail. Here\u2019s a map of the school!
+  - "You should have gotten your schedule in the mail. Press 'tab' to view your information.
     Don\u2019t be late to any of your classes!"
   - And remember to say hello to all your new schoolmates!!
   timeBetweenChars: 0.1

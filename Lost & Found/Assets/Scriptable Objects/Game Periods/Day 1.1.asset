@@ -17,7 +17,7 @@ MonoBehaviour:
     time: 0
   displayDate: Day 1
   displayTime: 9:00 am
-  startingNodeId: lobby
+  startingNodeId: car_cutscene
   questInfos:
   - {fileID: 11400000, guid: 19ff81dfc3f37487b828f3849180856f, type: 2}
   physicalQuestItemInfos: []
@@ -34,5 +34,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7bb6498df568a4cb7b731f0a03ab5c22, type: 2}
   - {fileID: 11400000, guid: 23988b888362c44f6bb0697ff93460e8, type: 2}
   - {fileID: 11400000, guid: a39df3df284af4274b92d6877ae1a4f3, type: 2}
-  floatingObjects:
-  - {fileID: 11400000, guid: 9bb6ac03f4a594a57a41f2994ae63da0, type: 2}
+  floatingItems: []
